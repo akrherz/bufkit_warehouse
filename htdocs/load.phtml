@@ -1,0 +1,110 @@
+<html>
+<head>
+
+<style type="text/css" media="screen">
+        DIV#loader1 {
+            width: 1100px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        DIV#loader2 {
+            width: 1100px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        DIV#loader3 {
+            width: 1100px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        DIV#loader4 {
+            width: 1100px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        DIV#loader5 {
+            width: 1100px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        DIV#loader6 {
+            width: 1100px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        DIV#loader7 {
+            width: 1100px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+	DIV#loader1.loading {
+            background: url(images/loading_bar.gif) no-repeat center center;
+        }
+
+	DIV#loader2.loading {
+            background: url(images/loading_bar.gif) no-repeat center center;
+        }
+
+        DIV#loader3.loading {
+            background: url(images/loading_bar.gif) no-repeat center center;
+        }
+
+        DIV#loader4.loading {
+            background: url(images/loading_bar.gif) no-repeat center center;
+        }
+
+        DIV#loader5.loading {
+            background: url(images/loading_bar.gif) no-repeat center center;
+        }
+
+        DIV#loader6.loading {
+            background: url(images/loading_bar.gif) no-repeat center center;
+        }
+
+        DIV#loader7.loading {
+            background: url(images/loading_bar.gif) no-repeat center center;
+        }
+
+    </style>
+
+    <script src="jquery.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    $(function () {
+        var img = new Image();
+        $(img).load(function () {
+            $(this).hide();
+            $('#loader1').removeClass('loading').append(this);
+            $(this).fadeIn();
+        }).error(function () {
+            // notify the user that the image could not be loaded
+        }).attr('src', 'images/plotter.php?var=td');
+    });
+
+    $(function () {
+        var img = new Image();
+        $(img).load(function () {
+            $(this).hide();
+            $('#loader2').removeClass('loading').append(this);
+            $(this).fadeIn();
+        }).error(function () {
+            // notify the user that the image could not be loaded
+        }).attr('src', 'images/plotter.php');
+    });
+
+    </script>
+
+</head>
+<body>
+    <div id="loader1" class="loading"></div>
+    <div id="loader2" class="loading"></div>
+
+</body>
+</html>

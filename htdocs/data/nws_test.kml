@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<GroundOverlay>
+<name>nws_test</name>
+<Icon>
+<href>http://www.meteor.iastat.edu/~ckarsten/bufkit/data/nws_test.png</href>
+</Icon><LatLonBox>
+<north>47.78908157348633</north>
+<south>35.352760314941406</south>
+<east>-85.34752655029297</east>
+<west>-103.28228759765625</west>
+</LatLonBox>
+</GroundOverlay>
+</kml>

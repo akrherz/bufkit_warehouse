@@ -1,0 +1,78 @@
+DIV#loader1 {
+	width: 1100px;
+        height: 450px;
+        overflow: hidden;
+}
+
+DIV#loader1.loading {
+        background: url(loading_bar.gif) no-repeat center center;
+}
+
+
+DIV#loader2 {
+        width: 1100px;
+        height: 450px;
+        overflow: hidden;
+}
+
+DIV#loader2.loading {
+        background: url(http://www.meteor.iastate.edu/~ckarsten/bufkit/images/loading_bar.gif) no-repeat center center;
+}
+
+
+DIV#loader3 {
+        width: 1100px;
+        height: 450px;
+        overflow: hidden;
+}
+
+DIV#loader3.loading {
+        background: url(loading_bar.gif) no-repeat center center;
+}
+
+
+DIV#loader4 {
+        width: 1100px;
+        height: 450px;
+        overflow: hidden;
+}
+
+DIV#loader4.loading {
+        background: url(loading_bar.gif) no-repeat center center;
+}
+
+
+DIV#loader5 {
+        width: 1100px;
+        height: 450px;
+        overflow: hidden;
+}
+
+DIV#loader5.loading {
+        background: url(loading_bar.gif) no-repeat center center;
+}
+
+
+DIV#loader6 {
+        width: 1100px;
+        height: 450px;
+        overflow: hidden;
+}
+
+DIV#loader6.loading {
+        background: url(loading_bar.gif) no-repeat center center;
+}
+
+
+DIV#loader7 {
+        width: 1100px;
+        height: 450px;
+        overflow: hidden;
+}
+
+DIV#loader7.loading {
+        background: url(loading_bar.gif) no-repeat center center;
+}
+
+
+

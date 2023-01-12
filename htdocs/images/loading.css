@@ -1,0 +1,17 @@
+#soundingWrapper {
+	background: url(loading_bar.gif) no-repeat;
+	background-position: center center;
+	padding: 0;
+	margin: 0;
+	height: 750px;
+	width: 100%;
+}
+
+div.soundingImageWrapper {
+	margin: 10px;
+	margin-right: 0px;
+	float: left;
+	height: 722px;
+	width: 690px;
+}
+

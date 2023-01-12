@@ -1,0 +1,14 @@
+41.90,-93.70,p#a,Slater
+41.55,-95.28,hnr,Harlan
+41.53,-93.65,kdsm,Des Moines
+42.00,-95.00,crl,Carroll
+43.15,-93.33,kmcw,Mason City
+42.55,-92.40,kalo,Waterloo
+41.88,-91.70,kcid,Cedar Rapids
+40.78,-91.13,kbrl,Burlington
+41.10,-92.45,kotm,Ottumwa
+42.40,-90.70,kdbq,Dubuque
+41.61,-90.57,dvn,Davenport
+40.90,-92.80,aia,Albia
+43.50,-95.60,che,Cherokee
+40.69,-94.47,rdd,Redding

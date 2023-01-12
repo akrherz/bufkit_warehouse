@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document><name>WeatherCaster Images</name>
+<open>1</open>
+<Folder>  <name>WeatherCaster</name>
+<ScreenOverlay>  <name>www.wxcaster.com</name>   <description>
+Wxcaster.com Single Site Imagery http://www.wxcaster.com/weather.php3
+</description>   <visibility>1</visibility> <Icon>  <href>
+http://wxcaster.com/wxcaster.png</href>  </Icon>  <overlayXY x="0" 
+y="1" xunits="fraction" yunits="fraction" />  <screenXY x="0" y="1" 
+xunits="fraction" yunits="fraction" />  <rotationXY x="0" y="0" 
+xunits="fraction" yunits="fraction" />  <size x="0" y="0" 
+xunits="fraction" yunits="fraction" />  </ScreenOverlay></Folder> 
+<Folder><name>DMX</name><Folder><name>84hr NAM Total Precip</name> 
+<ScreenOverlay><name>Legend</name><visibility>1</visibility><Icon>
+<href>http://charlie.wxcaster.com/model/overlays/TotalPrecip_Legend.png</href></Icon>
+<overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+<screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+<rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/></ScreenOverlay>
+<GroundOverlay><name>84hr NAM Total Precip</name><Icon><href>
+http://charlie.wxcaster.com/model/overlays/KDMX/KDMX_NAM_SFC_ACCUM-PRECIP_84HR.png</href>
+</Icon><visibility>1</visibility><LatLonBox>
+<north>44.3767001897639
+</north><south>39.0756595403498</south><east>-90.8267037270286
+</east><west>-96.609657162753
+</west></LatLonBox></GroundOverlay></Folder></Folder></Document></kml>

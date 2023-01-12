@@ -1,0 +1,3088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<ScreenOverlay>
+<name>NOAA/NWS/SPC Storm Reports</name>
+<visibility>1</visibility>
+<Icon>
+<href>http://www.weather.gov/images/xml_logo.gif</href>
+</Icon>
+<overlayXY x="0" y="-1" xunits="fraction" yunits="fraction"/>
+<screenXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+<rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+<size x="0" y="0" xunits="fraction" yunits="fraction"/>
+</ScreenOverlay>
+<Style id="tornado">
+<IconStyle>
+<Icon>
+<href>http://www.spc.noaa.gov/misc/reports_kml/torn.png</href>
+</Icon>
+</IconStyle>
+</Style>
+<Style id="wind">
+<IconStyle>
+<Icon>
+<href>http://www.spc.noaa.gov/misc/reports_kml/wind.png</href>
+</Icon>
+</IconStyle>
+</Style>
+<Style id="strong_wind">
+<IconStyle>
+<Icon>
+<href>http://www.spc.noaa.gov/misc/reports_kml/strongwind.png</href>
+</Icon>
+</IconStyle>
+</Style>
+<Style id="hail">
+<IconStyle>
+<Icon>
+<href>http://www.spc.noaa.gov/misc/reports_kml/hail.png</href>
+</Icon>
+</IconStyle>
+</Style>
+<Style id="large_hail">
+<IconStyle>
+<Icon>
+<href>http://www.spc.noaa.gov/misc/reports_kml/largehail.png</href>
+</Icon>
+</IconStyle>
+</Style>
+<Folder>
+<name>SPC Storm Reports Info</name>
+<open>1</open>
+<visibility>1</visibility>
+<description>
+<![CDATA[
+<img src="http://www.weather.gov/images/xml_logo.gif" alt="NOAA/NWS Logo"><br />
+The NOAA/NWS/SPC Storm Reports KML/KMZ is experimental.<br />
+Adjust the time slider on top of the GoogleEarth display to view reports.<br />
+Please send feedback to http://www.spc.noaa.gov/misc/feedback.html<br />
+NOTE: Storm Reports data are preliminary and unofficial.<br />
+For official reports, go to NCDC http://www4.ncdc.noaa.gov/cgi-win/wwcgi.dll?wwEvent~Storms<br />
+<img src="http://www.spc.noaa.gov/misc/reports_kml/torn.png" alt="Torndado Marking">Tornado Reports<br />
+<img src="http://www.spc.noaa.gov/misc/reports_kml/wind.png" alt="Wind Marking">Wind Reports<br />
+<img src="http://www.spc.noaa.gov/misc/reports_kml/strongwind.png" alt="High Wind Marking">High Wind Reports (65KT +)<br />
+<img src="http://www.spc.noaa.gov/misc/reports_kml/hail.png" alt="Hail Marking">Hail Reports<br />
+<img src="http://www.spc.noaa.gov/misc/reports_kml/largehail.png" alt="Large Hail Marking">Large Hail Reports (2" dia. +)
+]]>
+</description>
+</Folder>
+<Folder>
+<name>SPC Tornado Reports 2010-05-10 1200Z - 2010-05-11 1159Z</name>
+<visibility>1</visibility>
+<open>0</open>
+<Placemark>
+<name>1 ENE LEOTI</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -101.34, 38.49,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  18:30 UTC
+WICHITA, KS
+EF-SCALE: UNKNOWN
+BRIEF TOUCHDOWN IN OPEN FIELD (GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T18:30:00Z</begin>
+<end>2010-05-10T18:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 N MARIENTHAL</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -101.21, 38.56,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  18:31 UTC
+WICHITA, KS
+EF-SCALE: UNKNOWN
+(GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T18:31:00Z</begin>
+<end>2010-05-10T18:31:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 S RUSSELL SPRINGS</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -101.18, 38.84,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  19:19 UTC
+LOGAN, KS
+EF-SCALE: UNKNOWN
+(GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T19:19:00Z</begin>
+<end>2010-05-10T19:19:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>15 SW OAKLEY</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -101.05, 38.97,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  19:30 UTC
+LOGAN, KS
+EF-SCALE: UNKNOWN
+(GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T19:30:00Z</begin>
+<end>2010-05-10T19:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 SSW ARNOLD</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -100.08, 38.58,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:08 UTC
+NESS, KS
+EF-SCALE: UNKNOWN
+A WEAK TORNADO BRIEFLY TOUCHED DOWN. (DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:08:00Z</begin>
+<end>2010-05-10T20:08:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>11 SW WAKITA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -98.06, 36.77,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:33 UTC
+GRANT, OK
+EF-SCALE: UNKNOWN
+ON THE GROUND FOR A MINUTE BEFORE LIFTING OFF THE GROUND. REPORTS FROM MULTIPLE SPOTTER AND CHASERS. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:33:00Z</begin>
+<end>2010-05-10T20:33:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 NW MEDFORD</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.81, 36.87,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:43 UTC
+GRANT, OK
+EF-SCALE: UNKNOWN
+SIGNIFICANT DAMAGE REPORTED. LOCATION ESTIMATED. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:43:00Z</begin>
+<end>2010-05-10T20:43:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>SW ZENDA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -98.28, 37.44,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:12 UTC
+KINGMAN, KS
+EF-SCALE: UNKNOWN
+TORNADO LIFTED AT 415 PM. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:12:00Z</begin>
+<end>2010-05-10T21:12:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 N BRAMAN</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.33, 36.98,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:30 UTC
+KAY, OK
+EF-SCALE: UNKNOWN
+LOCATION ESTIMATED. DAMAGE REPORTED WITH TRANSPORTS FLIPPED. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:30:00Z</begin>
+<end>2010-05-10T21:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>8 WNW NORWICH</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.98, 37.5,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:37 UTC
+KINGMAN, KS
+EF-SCALE: UNKNOWN
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:37:00Z</begin>
+<end>2010-05-10T21:37:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>S GEUDA SPRINGS</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.15, 37.11,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:40 UTC
+SUMNER, KS
+EF-SCALE: UNKNOWN
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:40:00Z</begin>
+<end>2010-05-10T21:40:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 NW NORWICH</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.92, 37.52,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:49 UTC
+KINGMAN, KS
+EF-SCALE: UNKNOWN
+DAMAGE WAS REPORTED TO A HOME. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:49:00Z</begin>
+<end>2010-05-10T21:49:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 SW YUKON</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.8, 35.47,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:50 UTC
+CANADIAN, OK
+EF-SCALE: UNKNOWN
+VIA KOTV...AND NUMEROUS SPOTTER REPORTS. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:50:00Z</begin>
+<end>2010-05-10T21:50:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 NNE RED ROCK</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.17, 36.47,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:53 UTC
+NOBLE, OK
+EF-SCALE: UNKNOWN
+TWO INDEPENDENT REPORTS OF A TORNADO NORTH OF RED ROCK. ONE REPORT SAID DEBRIS IN THE AIR. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:53:00Z</begin>
+<end>2010-05-10T21:53:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>8 N VIOLA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.64, 37.6,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:58 UTC
+SEDGWICK, KS
+EF-SCALE: UNKNOWN
+TORNADO ON THE GROUND WITH 80 MPH WINDS AT SPOTTERS LOCATION. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:58:00Z</begin>
+<end>2010-05-10T21:58:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 E ARKANSAS CITY</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.93, 37.07,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:05 UTC
+COWLEY, KS
+EF-SCALE: UNKNOWN
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:05:00Z</begin>
+<end>2010-05-10T22:05:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>7 N VIOLA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.64, 37.58,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:06 UTC
+SEDGWICK, KS
+EF-SCALE: UNKNOWN
+TORNADO DAMAGE TO A HOUSE (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:06:00Z</begin>
+<end>2010-05-10T22:06:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SW MOORE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.51, 35.32,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:18 UTC
+CLEVELAND, OK
+EF-SCALE: UNKNOWN
+TORNADO ORIGINALLY REPORTED BY MULTIPLE SOURCES NEAR 164TH AND JUST EAST OF WESTERN AVE IN MOORE. NUMEROUS TORNADO REPORTS TO THE EAST NORTHEAST THROUGH MOORE CITY LIMI (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:18:00Z</begin>
+<end>2010-05-10T22:18:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 ESE MOORE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.44, 35.32,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:25 UTC
+CLEVELAND, OK
+EF-SCALE: UNKNOWN
+POWER LINES DOWN AND REPORTS OF ROOFS BLOWN OFF HOUSES SE 149TH BETWEEN SUNNYLANE AND SOONER RD. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:25:00Z</begin>
+<end>2010-05-10T22:25:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 SW GRENOLA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.5, 37.31,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:28 UTC
+ELK, KS
+EF-SCALE: UNKNOWN
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:28:00Z</begin>
+<end>2010-05-10T22:28:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SE NORMAN</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.42, 35.2,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:33 UTC
+CLEVELAND, OK
+EF-SCALE: UNKNOWN
+FUNNEL CLOUD WAS ORIGINALLY OBSERVED DESCENDING RAPIDLY AT 532 PM FROM THE NATIONAL WEATHER CENTER BUILDING. DAMAGE AND TOUCHDOWN REPORTED JUST EAST OF THE BUILDING ALO (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:33:00Z</begin>
+<end>2010-05-10T22:33:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 SE NORMAN</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.39, 35.18,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:38 UTC
+CLEVELAND, OK
+EF-SCALE: UNKNOWN
+TORNADO THAT ORIGINALLY TOUCHED DOWN NEAR HIGHWAY 9 CROSSED NEAR HIGHWAY 9 AND 60TH. MEASURED WINDS OF 103 MPH REPORTED BY AN ANEMOMETER AT THAT LOCATION. TIME IS EXACT (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:38:00Z</begin>
+<end>2010-05-10T22:38:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>8 W PAWHUSKA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.48, 36.67,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:41 UTC
+OSAGE, OK
+EF-SCALE: UNKNOWN
+TOUCHDOWN NEAR HIGHWAY 60 AND 80 ROAD. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:41:00Z</begin>
+<end>2010-05-10T22:41:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 NW PAWHUSKA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.35, 36.68,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:46 UTC
+OSAGE, OK
+EF-SCALE: UNKNOWN
+BRIEF TOUCHDOWN IN OPEN AREA ON NORTHWEST SIDE OF CITY. OBSERVED BY SEVERAL PERSONS. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:46:00Z</begin>
+<end>2010-05-10T22:46:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>7 W SEMINOLE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.8, 35.23,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:05 UTC
+POTTAWATOMIE, OK
+EF-SCALE: UNKNOWN
+LOCATION ESTIMATED BY EMERGENCY MANAGER WHO VIEWED THE TORNADO. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:05:00Z</begin>
+<end>2010-05-10T23:05:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 SE HEALDTON</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.45, 34.2,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:15 UTC
+CARTER, OK
+EF-SCALE: UNKNOWN
+TORNADO TOUCHED DOWN CAUSING DAMAGE TO TREES AND POWER LINES...WITH MINOR STRUCTURAL DAMAGE. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:15:00Z</begin>
+<end>2010-05-10T23:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 N SEMINOLE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.67, 35.24,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:20 UTC
+SEMINOLE, OK
+EF-SCALE: UNKNOWN
+LARGE TORNADO REPORTED BY THE VORTEX TEAMS CROSSING JUST NORTH OF SEMINOLE. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:20:00Z</begin>
+<end>2010-05-10T23:20:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>ARDMORE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.13, 34.17,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:34 UTC
+CARTER, OK
+EF-SCALE: UNKNOWN
+TORNADO NEAR ARDMORE...EXACT LOCATION UNSPECIFIED. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:34:00Z</begin>
+<end>2010-05-10T23:34:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 W BEARDEN</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.41, 35.35,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:37 UTC
+OKFUSKEE, OK
+EF-SCALE: UNKNOWN
+TORNADO OBSERVED BY EM ON GROUND COMING INTO OKFUSKE COUNTY FROM CROMWELL AREA. TORNADO LIFTED ABOUT 1 MILE WEST AND 1/4 MILE SOUTH. NO OTHER SIGNIFICANT DAMAGE UNTIL I (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:37:00Z</begin>
+<end>2010-05-10T23:37:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 SW PURCELL</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -97.41, 34.98,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:38 UTC
+MCCLAIN, OK
+EF-SCALE: UNKNOWN
+NUMEROUS REPORTS OF STRUCTURAL DAMAGE ALONG A LINE FROM THE MID AMERICA TECHNOLOGY CENTER...TO SE OF LEXINGTON...TO ALONG HIGHWAY 39 IN S CLEVELAND CO...AND JUST INTO S (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:38:00Z</begin>
+<end>2010-05-10T23:38:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 W MANNSVILLE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.97, 34.19,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:39 UTC
+CARTER, OK
+EF-SCALE: UNKNOWN
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:39:00Z</begin>
+<end>2010-05-10T23:39:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>BRYANT</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.06, 35.39,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:03 UTC
+OKMULGEE, OK
+EF-SCALE: UNKNOWN
+LARGE TORNADO REPORTED ON THE GROUND NEAR BRYANT (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:03:00Z</begin>
+<end>2010-05-11T00:03:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>LEBANON</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.91, 33.99,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:08 UTC
+MARSHALL, OK
+EF-SCALE: UNKNOWN
+LARGE TORNADO REPORTED JUST ON OKLAHOMA SIDE OF RED RIVER BY MULTIPLE SOURCES. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:08:00Z</begin>
+<end>2010-05-11T00:08:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SE HENRYETTA</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -95.96, 35.42,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:12 UTC
+OKMULGEE, OK
+EF-SCALE: UNKNOWN
+TORNADO REPORTED ON GROUND JUST NORTH OF TURNPIKE SOUTHEAST OF HENRYETTA (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:12:00Z</begin>
+<end>2010-05-11T00:12:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 S LEBANON</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.91, 33.97,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:19 UTC
+MARSHALL, OK
+EF-SCALE: UNKNOWN
+NEW TORNADO...DIFFERENT FROM PREVIOUSLY REPORTED TORNADO...JUST ON OKLAHOMA SIDE OF RED RIVER. ALSO REPORTED AS A LARGE TORNADO. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:19:00Z</begin>
+<end>2010-05-11T00:19:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 S BOLEY</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.48, 35.48,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:20 UTC
+OKFUSKEE, OK
+EF-SCALE: UNKNOWN
+NWS STORM SURVEY CONFIRMS A TORNADO THAT BEGAN 1 MILE SOUTH OF BOLEY AND ENDED 10.5 MILES NORTH NORTHEAST OF OKEMAH. THE MAXIMUM PATH WIDTH WAS 650 YARDS AND THE PATH L (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:20:00Z</begin>
+<end>2010-05-11T00:20:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>PIERCE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -95.72, 35.43,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:26 UTC
+MCINTOSH, OK
+EF-SCALE: UNKNOWN
+TORNADO REPORTED BY NEWS MEDIA. LOCATIONS APPROXIMATE. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:26:00Z</begin>
+<end>2010-05-11T00:26:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 S RENTIESVILLE</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -95.49, 35.49,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:40 UTC
+MCINTOSH, OK
+EF-SCALE: UNKNOWN
+TORNADO REPORTED 2 SOUTH OF RENTIESVILLE. RAIN WRAPPED. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:40:00Z</begin>
+<end>2010-05-11T00:40:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>7 NE OKEMAH</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.22, 35.5,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:43 UTC
+OKFUSKEE, OK
+EF-SCALE: UNKNOWN
+TORNADO SIGHTED AND TREES DOWN. RELAYED FROM OUN. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:43:00Z</begin>
+<end>2010-05-11T00:43:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 S MILL CREEK</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.82, 34.36,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:10 UTC
+JOHNSTON, OK
+EF-SCALE: UNKNOWN
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:10:00Z</begin>
+<end>2010-05-11T01:10:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 SW MILL CREEK</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.89, 34.35,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:11 UTC
+MURRAY, OK
+EF-SCALE: UNKNOWN
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:11:00Z</begin>
+<end>2010-05-11T01:11:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 S COLEMAN</name>
+<styleUrl>#tornado</styleUrl>
+<Point>
+<coordinates> -96.42, 34.23,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:50 UTC
+JOHNSTON, OK
+EF-SCALE: UNKNOWN
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:50:00Z</begin>
+<end>2010-05-11T01:50:00Z</end>
+</TimeSpan>
+</Placemark>
+</Folder>
+<Folder>
+<name>SPC Damaging Wind Reports 2010-05-10 1200Z - 2010-05-11 1159Z</name>
+<visibility>1</visibility>
+<open>0</open>
+<Placemark>
+<name>2 N JOHNSON CITY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -101.75, 37.6,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  17:30 UTC
+STANTON, KS
+WIND SPEED: 60 MPH
+(DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T17:30:00Z</begin>
+<end>2010-05-10T17:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 SSE FRIEND</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -100.88, 38.16,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  18:50 UTC
+FINNEY, KS
+WIND SPEED: UNKNOWN
+TWO SEMI TRAILERS WERE BLOWN OVER ON HIGHWAY 83. (DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T18:50:00Z</begin>
+<end>2010-05-10T18:50:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>7 N HOLCOMB</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -100.99, 38.09,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  18:53 UTC
+FINNEY, KS
+WIND SPEED: 60 MPH
+WINDS ESTIMATED BETWEEN 55 AND 65 MPH. (DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T18:53:00Z</begin>
+<end>2010-05-10T18:53:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 S SHALLOW WATER</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -100.91, 38.35,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  18:55 UTC
+SCOTT, KS
+WIND SPEED: UNKNOWN
+ONE SEMI TRAILER WAS BLOWN OVER ON HIGHWAY 83. (DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T18:55:00Z</begin>
+<end>2010-05-10T18:55:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>SCOTT CITY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -100.91, 38.48,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  19:10 UTC
+SCOTT, KS
+WIND SPEED: 70 MPH
+(DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T19:10:00Z</begin>
+<end>2010-05-10T19:10:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>TRIBUNE</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -101.75, 38.47,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:00 UTC
+GREELEY, KS
+WIND SPEED: 67 MPH
+TRIBUNE AWOS REPORTED A WIND GUST OF 67 MPH. (GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:00:00Z</begin>
+<end>2010-05-10T21:00:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>LEOTI</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -101.36, 38.48,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:32 UTC
+WICHITA, KS
+WIND SPEED: 60 MPH
+(GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:32:00Z</begin>
+<end>2010-05-10T21:32:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 NNW PERRY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.32, 36.36,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:45 UTC
+NOBLE, OK
+WIND SPEED: UNKNOWN
+HALF OF A ROOF BLOWN OFF A HOME ON OLD JOHN DEERE ROAD. TIME IS APPROXIMATED BASED ON RADAR. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:45:00Z</begin>
+<end>2010-05-10T21:45:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 S NORWICH</name>
+<styleUrl>#strong_wind</styleUrl>
+<Point>
+<coordinates> -97.85, 37.43,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:45 UTC
+KINGMAN, KS
+WIND SPEED: 100 MPH
+WINDS OF 75-100 MPH REPORTED. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:45:00Z</begin>
+<end>2010-05-10T21:45:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 E CASHION</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.64, 35.8,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:50 UTC
+LOGAN, OK
+WIND SPEED: UNKNOWN
+3 HAM ANTENNAS BLOWN DOWN...NUMEROUS SHEDS DAMAGED. SIDING FROM A HOUSE WAS DAMAGED. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:50:00Z</begin>
+<end>2010-05-10T21:50:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 W NORWICH</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.94, 37.46,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:52 UTC
+KINGMAN, KS
+WIND SPEED: UNKNOWN
+TREES BEEN REPORTED DOWN (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:52:00Z</begin>
+<end>2010-05-10T21:52:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>CHENEY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.78, 37.63,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:52 UTC
+SEDGWICK, KS
+WIND SPEED: 60 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:52:00Z</begin>
+<end>2010-05-10T21:52:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>ARKANSAS CITY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.04, 37.07,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:55 UTC
+COWLEY, KS
+WIND SPEED: 63 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:55:00Z</begin>
+<end>2010-05-10T21:55:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>WINFIELD</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.97, 37.27,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:55 UTC
+COWLEY, KS
+WIND SPEED: 60 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:55:00Z</begin>
+<end>2010-05-10T21:55:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>9 E KINGMAN</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.95, 37.65,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:05 UTC
+KINGMAN, KS
+WIND SPEED: UNKNOWN
+TREES DOWN (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:05:00Z</begin>
+<end>2010-05-10T22:05:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>LAKE AFTON</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.62, 37.61,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:12 UTC
+SEDGWICK, KS
+WIND SPEED: 60 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:12:00Z</begin>
+<end>2010-05-10T22:12:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 N NORMAN</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.44, 35.26,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:15 UTC
+CLEVELAND, OK
+WIND SPEED: UNKNOWN
+BRADFORD PEAR TREE SHEARED OFF AT THE BOTTOM. FENCE BLOWN ACROSS ROAD. SOME SHINGLES OFF HOUSES. POWER POLES DOWN TOO. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:15:00Z</begin>
+<end>2010-05-10T22:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>BURBANK</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.73, 36.69,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:25 UTC
+OSAGE, OK
+WIND SPEED: 65 MPH
+BURBANK MESONET...ENDING AT 525 PM (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:25:00Z</begin>
+<end>2010-05-10T22:25:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SE NORMAN</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.42, 35.2,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:32 UTC
+CLEVELAND, OK
+WIND SPEED: 64 MPH
+56 KNOT WIND GUST MEASURED BY ANEMOMETER AT NATIONAL WEATHER CENTER AS FUNNEL PASSED NEARBY. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:32:00Z</begin>
+<end>2010-05-10T22:32:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 W SHIDLER</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.7, 36.78,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:15 UTC
+OSAGE, OK
+WIND SPEED: UNKNOWN
+FOUR POWER POLES BLOWN DOWN JUST WEST OF TOWN. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:15:00Z</begin>
+<end>2010-05-10T23:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>DOUGLASS</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -97.01, 37.52,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:21 UTC
+BUTLER, KS
+WIND SPEED: 70 MPH
+2 TO 4 INCH DIAMETER TREES REPORTED DOWN. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:21:00Z</begin>
+<end>2010-05-10T23:21:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>EL DORADO</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.86, 37.82,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:21 UTC
+BUTLER, KS
+WIND SPEED: 70 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:21:00Z</begin>
+<end>2010-05-10T23:21:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 NW DEXTER</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.75, 37.21,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:29 UTC
+COWLEY, KS
+WIND SPEED: 63 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:29:00Z</begin>
+<end>2010-05-10T23:29:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>8 NW EUREKA</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.39, 37.9,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:38 UTC
+GREENWOOD, KS
+WIND SPEED: 70 MPH
+AN INCH OF RAIN HAS FALLEN IN 15 MINS. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:38:00Z</begin>
+<end>2010-05-10T23:38:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>MADISON</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.14, 38.13,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:38 UTC
+GREENWOOD, KS
+WIND SPEED: 60 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:38:00Z</begin>
+<end>2010-05-10T23:38:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>S SEDAN</name>
+<styleUrl>#strong_wind</styleUrl>
+<Point>
+<coordinates> -96.18, 37.13,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:53 UTC
+CHAUTAUQUA, KS
+WIND SPEED: 80 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:53:00Z</begin>
+<end>2010-05-10T23:53:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 E OKEMAH</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.25, 35.43,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:55 UTC
+OKFUSKEE, OK
+WIND SPEED: 59 MPH
+OKEMAH MESONET...ENDING AT 655 PM (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:55:00Z</begin>
+<end>2010-05-10T23:55:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>GRIDLEY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.88, 38.1,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:56 UTC
+COFFEY, KS
+WIND SPEED: 60 MPH
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:56:00Z</begin>
+<end>2010-05-10T23:56:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 W GRIDLEY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.9, 38.1,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:02 UTC
+COFFEY, KS
+WIND SPEED: 70 MPH
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:02:00Z</begin>
+<end>2010-05-11T00:02:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 NW YATES CENTER</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.82, 37.93,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:04 UTC
+WOODSON, KS
+WIND SPEED: 70 MPH
+ALONG WITH DIME SIZE HAIL. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:04:00Z</begin>
+<end>2010-05-11T00:04:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>W FREDONIA</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.82, 37.53,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:15 UTC
+WILSON, KS
+WIND SPEED: UNKNOWN
+REPORTS OF PROPERTY DAMAGE ALONG WITH TREES AND POWERLINES DOWN. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:15:00Z</begin>
+<end>2010-05-11T00:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>MAUD</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.78, 35.13,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:20 UTC
+POTTAWATOMIE, OK
+WIND SPEED: UNKNOWN
+SHINGLES BLOWN OFF ROOF AND TREE LIMBS DOWN. ALSO QUARTER SIZE HAIL REPORTED. APPROXIMATE TIME. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:20:00Z</begin>
+<end>2010-05-11T00:20:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 SE FREDONIA</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.82, 37.53,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:23 UTC
+WILSON, KS
+WIND SPEED: 60 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:23:00Z</begin>
+<end>2010-05-11T00:23:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>NEOSHO FALLS</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.56, 38.01,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:23 UTC
+WOODSON, KS
+WIND SPEED: 65 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:23:00Z</begin>
+<end>2010-05-11T00:23:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 E WESTPHALIA</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.46, 38.18,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:23 UTC
+ANDERSON, KS
+WIND SPEED: 60 MPH
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:23:00Z</begin>
+<end>2010-05-11T00:23:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 N CASTLE</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -96.38, 35.52,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:24 UTC
+OKFUSKEE, OK
+WIND SPEED: UNKNOWN
+DAMAGE TO TREES AND STRUCTURES NEAR IXL. PROBABLE TORNADO. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:24:00Z</begin>
+<end>2010-05-11T00:24:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 N ADA</name>
+<styleUrl>#strong_wind</styleUrl>
+<Point>
+<coordinates> -96.66, 34.83,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:25 UTC
+PONTOTOC, OK
+WIND SPEED: 75 MPH
+LOCATION APPROXIMATE. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:25:00Z</begin>
+<end>2010-05-11T00:25:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>8 S YATES CENTER</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.74, 37.76,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:26 UTC
+WOODSON, KS
+WIND SPEED: UNKNOWN
+REPORTS OF PROPERTY DAMAGE ON US 75 (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:26:00Z</begin>
+<end>2010-05-11T00:26:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>CHANUTE</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.46, 37.67,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:30 UTC
+NEOSHO, KS
+WIND SPEED: 60 MPH
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:30:00Z</begin>
+<end>2010-05-11T00:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>FORT SCOTT</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -94.71, 37.84,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:30 UTC
+BOURBON, KS
+WIND SPEED: 60 MPH
+SPOTTER REPORTED EST 60 MPH WINDS AND 1/2 INCH HAIL. (SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:30:00Z</begin>
+<end>2010-05-11T00:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 S BRAGGS</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.2, 35.59,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:08 UTC
+MUSKOGEE, OK
+WIND SPEED: UNKNOWN
+AT BREWERS BEND CAMPGROUND...TRAILER TURNED OVER TRAPPING A COUPLE. LARGE TREES BLOWN DOWN ON VEHICLES. THREE INJURED. PROBABLE TORNADO. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:08:00Z</begin>
+<end>2010-05-11T01:08:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 S MARBLE CITY</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -94.82, 35.57,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:31 UTC
+SEQUOYAH, OK
+WIND SPEED: UNKNOWN
+SEVERAL LARGE TREES BLOWN DOWN. LARGE ROOT BALLS ABOVE THE GROUND. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:31:00Z</begin>
+<end>2010-05-11T01:31:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 S NEVADA</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -94.35, 37.82,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:34 UTC
+VERNON, MO
+WIND SPEED: UNKNOWN
+TREE DOWN BLOCKING ROAD ON SOUTH PORTION OF TOWN. (SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:34:00Z</begin>
+<end>2010-05-11T01:34:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>CHESTER</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -94.18, 35.68,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:15 UTC
+CRAWFORD, AR
+WIND SPEED: UNKNOWN
+MANY BROKEN TREE LIMBS. ONE TREE REPORTED BLOWN DOWN ON A CAR. SEVERAL OTHER TREES DOWN. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:15:00Z</begin>
+<end>2010-05-11T02:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>OSCEOLA</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -93.7, 38.05,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:20 UTC
+ST. CLAIR, MO
+WIND SPEED: 60 MPH
+EST 60 MPH WIND IN TOWN. SMALL LIMBS DOWN. (SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:20:00Z</begin>
+<end>2010-05-11T02:20:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>10 NNE BOSWELL</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -95.8, 34.16,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:26 UTC
+CHOCTAW, OK
+WIND SPEED: UNKNOWN
+NUMEROUS LARGE TREE LIMBS BROKEN. HAIL ALSO BUT SIZE UNKNOWN. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:26:00Z</begin>
+<end>2010-05-11T02:26:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 NW AVILLA</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -94.16, 37.23,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:28 UTC
+JASPER, MO
+WIND SPEED: UNKNOWN
+TREES UPROOTED AT THE INTERSECTION OF COUNTY ROAD 60 AND LOCUST ROAD. (SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:28:00Z</begin>
+<end>2010-05-11T02:28:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 NNE MAPLE GROVE</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -94.1, 37.29,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:32 UTC
+JASPER, MO
+WIND SPEED: 60 MPH
+(SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:32:00Z</begin>
+<end>2010-05-11T02:32:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>OARK</name>
+<styleUrl>#wind</styleUrl>
+<Point>
+<coordinates> -93.58, 35.68,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  03:00 UTC
+JOHNSON, AR
+WIND SPEED: UNKNOWN
+A FEW TREES ACROSS THE AREA WERE BLOWN DOWN. (LZK)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T03:00:00Z</begin>
+<end>2010-05-11T03:00:00Z</end>
+</TimeSpan>
+</Placemark>
+</Folder>
+<Folder>
+<name>SPC Hail Reports 2010-05-10 1200Z - 2010-05-11 1159Z</name>
+<visibility>1</visibility>
+<open>0</open>
+<Placemark>
+<name>1 E MANHATTAN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.55, 39.18,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  14:15 UTC
+RILEY, KS
+HAIL SIZE: 1 IN. DIA.
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T14:15:00Z</begin>
+<end>2010-05-10T14:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 W WAVERLY</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -93.61, 39.21,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  18:45 UTC
+LAFAYETTE, MO
+HAIL SIZE: 1.5 IN. DIA.
+(EAX)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T18:45:00Z</begin>
+<end>2010-05-10T18:45:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 WNW FRIEND</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -101.02, 38.28,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  18:57 UTC
+SCOTT, KS
+HAIL SIZE: 1 IN. DIA.
+HAIL LASTED 20 MINUTES. (DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T18:57:00Z</begin>
+<end>2010-05-10T18:57:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 SSW WINDTHORST</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -99.67, 37.71,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  19:19 UTC
+FORD, KS
+HAIL SIZE: 1 IN. DIA.
+(DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T19:19:00Z</begin>
+<end>2010-05-10T19:19:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>NW ALVA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.67, 36.8,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  19:45 UTC
+WOODS, OK
+HAIL SIZE: 1.5 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T19:45:00Z</begin>
+<end>2010-05-10T19:45:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>CHEROKEE</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -98.35, 36.75,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:10 UTC
+ALFALFA, OK
+HAIL SIZE: 4.25 IN. DIA.
+NUMEROUS BUILDINGS HAD BROKEN WINDOWS. REPORT RELAYED FROM NWS TULSA. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:10:00Z</begin>
+<end>2010-05-10T20:10:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 ESE LAKE CITY</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.73, 37.33,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:30 UTC
+BARBER, KS
+HAIL SIZE: 1.5 IN. DIA.
+THIS LOCATION ALSO RECEIVED A HALF INCH OF RAIN IN 22 MINUTES. (DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:30:00Z</begin>
+<end>2010-05-10T20:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>SSE NASHVILLE</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -98.42, 37.43,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:30 UTC
+KINGMAN, KS
+HAIL SIZE: 2.5 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:30:00Z</begin>
+<end>2010-05-10T20:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 W BROWNELL</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -99.8, 38.64,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:30 UTC
+NESS, KS
+HAIL SIZE: 1 IN. DIA.
+(DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:30:00Z</begin>
+<end>2010-05-10T20:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>BLUFF CITY</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.88, 37.08,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:48 UTC
+HARPER, KS
+HAIL SIZE: 1 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:48:00Z</begin>
+<end>2010-05-10T20:48:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 S PENALOSA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.32, 37.69,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:49 UTC
+KINGMAN, KS
+HAIL SIZE: 1 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:49:00Z</begin>
+<end>2010-05-10T20:49:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>7 NE MEDICINE LODGE</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.5, 37.37,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  20:52 UTC
+BARBER, KS
+HAIL SIZE: 1 IN. DIA.
+(DDC)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T20:52:00Z</begin>
+<end>2010-05-10T20:52:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>WAUKOMIS</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.9, 36.28,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:00 UTC
+GARFIELD, OK
+HAIL SIZE: 1.75 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:00:00Z</begin>
+<end>2010-05-10T21:00:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 SE RENFROW</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -97.62, 36.89,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:00 UTC
+GRANT, OK
+HAIL SIZE: 2.75 IN. DIA.
+DAMAGE REPORTED (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:00:00Z</begin>
+<end>2010-05-10T21:00:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>CALDWELL</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.61, 37.04,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:06 UTC
+SUMNER, KS
+HAIL SIZE: 1 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:06:00Z</begin>
+<end>2010-05-10T21:06:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 E BILLINGS</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -97.34, 36.53,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:15 UTC
+NOBLE, OK
+HAIL SIZE: 4.75 IN. DIA.
+DAMAGE TO CARS. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:15:00Z</begin>
+<end>2010-05-10T21:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>GARBER</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -97.58, 36.44,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:17 UTC
+GARFIELD, OK
+HAIL SIZE: 2.5 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:17:00Z</begin>
+<end>2010-05-10T21:17:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>S KINGMAN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.11, 37.65,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:23 UTC
+KINGMAN, KS
+HAIL SIZE: 1.75 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:23:00Z</begin>
+<end>2010-05-10T21:23:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>SPIVEY</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.17, 37.45,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:25 UTC
+KINGMAN, KS
+HAIL SIZE: 1 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:25:00Z</begin>
+<end>2010-05-10T21:25:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 NW KINGMAN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.18, 37.7,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:42 UTC
+KINGMAN, KS
+HAIL SIZE: 1.75 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:42:00Z</begin>
+<end>2010-05-10T21:42:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>7 NW NORWICH</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.94, 37.53,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:45 UTC
+KINGMAN, KS
+HAIL SIZE: 1.75 IN. DIA.
+60 MPH WINDS REPORTED ALONG WITH GOLF BALL SIZE HAIL. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:45:00Z</begin>
+<end>2010-05-10T21:45:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 NNW PROCTOR</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -102.97, 40.85,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:45 UTC
+LOGAN, CO
+HAIL SIZE: 1 IN. DIA.
+(BOU)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:45:00Z</begin>
+<end>2010-05-10T21:45:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 W GARDEN PLAIN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.74, 37.66,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  21:53 UTC
+SEDGWICK, KS
+HAIL SIZE: 1 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T21:53:00Z</begin>
+<end>2010-05-10T21:53:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>6 N SUSANK</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.77, 38.73,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:00 UTC
+RUSSELL, KS
+HAIL SIZE: 1 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:00:00Z</begin>
+<end>2010-05-10T22:00:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>GREAT BEND</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -98.81, 38.36,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:07 UTC
+BARTON, KS
+HAIL SIZE: 1.75 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:07:00Z</begin>
+<end>2010-05-10T22:07:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>ANDOVER</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.14, 37.69,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:12 UTC
+BUTLER, KS
+HAIL SIZE: 1.25 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:12:00Z</begin>
+<end>2010-05-10T22:12:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>DEL CITY</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -97.44, 35.45,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:15 UTC
+OKLAHOMA, OK
+HAIL SIZE: 3.75 IN. DIA.
+3.5 TO 4 INCH DIAMETER HAIL. DELAYED REPORT. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:15:00Z</begin>
+<end>2010-05-10T22:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 ENE MOORE</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -97.47, 35.34,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:25 UTC
+CLEVELAND, OK
+HAIL SIZE: 4 IN. DIA.
+INITIAL OBSERVER REPORTED THAT THE HAIL WAS ACTUALLY LARGER BEFORE IT WAS LATER PHOTOGRAPHED AT AROUND 4 INCHES IN DIAMETER. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:25:00Z</begin>
+<end>2010-05-10T22:25:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 S CHOCTAW</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.27, 35.44,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:30 UTC
+OKLAHOMA, OK
+HAIL SIZE: 1.75 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:30:00Z</begin>
+<end>2010-05-10T22:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>RYAN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.95, 34.02,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:32 UTC
+JEFFERSON, OK
+HAIL SIZE: 1.75 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:32:00Z</begin>
+<end>2010-05-10T22:32:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>7 W PAWHUSKA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.46, 36.67,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:32 UTC
+OSAGE, OK
+HAIL SIZE: 1 IN. DIA.
+(TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:32:00Z</begin>
+<end>2010-05-10T22:32:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>STILLWATER</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.06, 36.12,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:37 UTC
+PAYNE, OK
+HAIL SIZE: 1.75 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:37:00Z</begin>
+<end>2010-05-10T22:37:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>HAYSVILLE</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.35, 37.57,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  22:46 UTC
+SEDGWICK, KS
+HAIL SIZE: 1 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T22:46:00Z</begin>
+<end>2010-05-10T22:46:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>OSCAR</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -97.75, 33.98,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:00 UTC
+JEFFERSON, OK
+HAIL SIZE: 2 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:00:00Z</begin>
+<end>2010-05-10T23:00:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>POTWIN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.02, 37.94,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:09 UTC
+BUTLER, KS
+HAIL SIZE: 1 IN. DIA.
+WIND GUSTS OF 50 TO 55 MPH REPORTED. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:09:00Z</begin>
+<end>2010-05-10T23:09:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>LEON</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.78, 37.69,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:12 UTC
+BUTLER, KS
+HAIL SIZE: 1.25 IN. DIA.
+(ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:12:00Z</begin>
+<end>2010-05-10T23:12:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>9 E OVERBROOK</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.99, 34.07,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:20 UTC
+CARTER, OK
+HAIL SIZE: 1.75 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:20:00Z</begin>
+<end>2010-05-10T23:20:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 W ROSALIA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.66, 37.82,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:21 UTC
+BUTLER, KS
+HAIL SIZE: 1 IN. DIA.
+REPORT ALONG US 54 (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:21:00Z</begin>
+<end>2010-05-10T23:21:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SE NORMAN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.42, 35.2,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:25 UTC
+CLEVELAND, OK
+HAIL SIZE: 1 IN. DIA.
+FALLING AT THE NATIONAL WEATHER CENTER. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:25:00Z</begin>
+<end>2010-05-10T23:25:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>10 NW MARIETTA</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -97.25, 34.04,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:30 UTC
+LOVE, OK
+HAIL SIZE: 4.25 IN. DIA.
+REPORTS OF GOLFBALL...BASEBALL...UP TO SOFTBALL SIZE HAIL IN NORTHERN LOVE COUNTY. TIME APPROXIMATE. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:30:00Z</begin>
+<end>2010-05-10T23:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 SE DAVIS</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.06, 34.45,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:30 UTC
+MURRAY, OK
+HAIL SIZE: 1 IN. DIA.
+DELAYED REPORT RELAYED BY NWS AMARILLO EMPLOYEE (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:30:00Z</begin>
+<end>2010-05-10T23:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>GRAINOLA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.65, 36.94,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:30 UTC
+OSAGE, OK
+HAIL SIZE: 1 IN. DIA.
+(TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:30:00Z</begin>
+<end>2010-05-10T23:30:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>BEARDEN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.39, 35.35,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:34 UTC
+OKFUSKEE, OK
+HAIL SIZE: 1 IN. DIA.
+FEW HAIL STONES. SOME THE SIZE OF QUARTERS. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:34:00Z</begin>
+<end>2010-05-10T23:34:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>EUREKA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.29, 37.82,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:35 UTC
+GREENWOOD, KS
+HAIL SIZE: 1 IN. DIA.
+65 TO 70 MPH WIND GUSTS HAVE BEEN REPORTED. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:35:00Z</begin>
+<end>2010-05-10T23:35:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>BETHUNE</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -102.42, 39.3,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-10  23:45 UTC
+KIT CARSON, CO
+HAIL SIZE: 1.25 IN. DIA.
+(GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-10T23:45:00Z</begin>
+<end>2010-05-10T23:45:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>LAKE MURRAY</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.07, 34.07,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:05 UTC
+LOVE, OK
+HAIL SIZE: 1 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:05:00Z</begin>
+<end>2010-05-11T00:05:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SSE BETHUNE</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -102.4, 39.27,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:05 UTC
+KIT CARSON, CO
+HAIL SIZE: 1 IN. DIA.
+QUARTER SIZED HAIL COVERED THE GROUND (GLD)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:05:00Z</begin>
+<end>2010-05-11T00:05:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 SE FREDONIA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -95.82, 37.53,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:12 UTC
+WILSON, KS
+HAIL SIZE: 1 IN. DIA.
+REPORTS OF TREE AND POWERLINES DOWN ESTIMATED 55 MPH WIND GUSTS. (ICT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:12:00Z</begin>
+<end>2010-05-11T00:12:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 S HENRYETTA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -95.98, 35.41,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:15 UTC
+OKMULGEE, OK
+HAIL SIZE: 1.75 IN. DIA.
+(TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:15:00Z</begin>
+<end>2010-05-11T00:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>MAUD</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.78, 35.13,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:20 UTC
+POTTAWATOMIE, OK
+HAIL SIZE: 1 IN. DIA.
+APPROXIMATE TIME. ALSO SHINGLES BLOWN OFF ROOF AND TREE LIMBS BLOWN DOWN. (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:20:00Z</begin>
+<end>2010-05-11T00:20:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>12 SW ADA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.81, 34.65,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:32 UTC
+PONTOTOC, OK
+HAIL SIZE: 1 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:32:00Z</begin>
+<end>2010-05-11T00:32:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>COUNCIL HILL</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -95.65, 35.56,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:35 UTC
+MCINTOSH, OK
+HAIL SIZE: 2.75 IN. DIA.
+(TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:35:00Z</begin>
+<end>2010-05-11T00:35:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>OKTAHA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -95.47, 35.58,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:41 UTC
+MUSKOGEE, OK
+HAIL SIZE: 1 IN. DIA.
+NOT MANY STONES NICKLE TO QUARTER IN SIZE. (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:41:00Z</begin>
+<end>2010-05-11T00:41:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>DEVON</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -94.82, 37.92,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:44 UTC
+BOURBON, KS
+HAIL SIZE: 1 IN. DIA.
+DEVON FIRE DEPARTMENT REPORTED 1 INCH HAIL. (SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:44:00Z</begin>
+<end>2010-05-11T00:44:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 S DAVIS</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -97.12, 34.43,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  00:50 UTC
+MURRAY, OK
+HAIL SIZE: 1 IN. DIA.
+ALONG HWY 77 (OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T00:50:00Z</begin>
+<end>2010-05-11T00:50:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 S FITTSTOWN</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.63, 34.55,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:15 UTC
+PONTOTOC, OK
+HAIL SIZE: 1 IN. DIA.
+(OUN)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:15:00Z</begin>
+<end>2010-05-11T01:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SSW BURDICK</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.86, 38.54,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:16 UTC
+MORRIS, KS
+HAIL SIZE: 1 IN. DIA.
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:16:00Z</begin>
+<end>2010-05-11T01:16:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 SW DUNLAP</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.4, 38.55,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:16 UTC
+MORRIS, KS
+HAIL SIZE: 1 IN. DIA.
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:16:00Z</begin>
+<end>2010-05-11T01:16:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>4 N BOX</name>
+<styleUrl>#large_hail</styleUrl>
+<Point>
+<coordinates> -94.98, 35.64,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:20 UTC
+SEQUOYAH, OK
+HAIL SIZE: 2.75 IN. DIA.
+SNAKE CREEK WILDERNESS LODGE (TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:20:00Z</begin>
+<end>2010-05-11T01:20:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 S BUSHONG</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -96.26, 38.6,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:23 UTC
+LYON, KS
+HAIL SIZE: 1.75 IN. DIA.
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:23:00Z</begin>
+<end>2010-05-11T01:23:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>1 NW BUNCH</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -94.77, 35.69,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:35 UTC
+ADAIR, OK
+HAIL SIZE: 1 IN. DIA.
+(TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:35:00Z</begin>
+<end>2010-05-11T01:35:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>5 NW OSAGE CITY</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -95.89, 38.69,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:49 UTC
+OSAGE, KS
+HAIL SIZE: 1 IN. DIA.
+(TOP)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:49:00Z</begin>
+<end>2010-05-11T01:49:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>12 S BAIRD</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -99.4, 32.22,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  01:51 UTC
+CALLAHAN, TX
+HAIL SIZE: 1 IN. DIA.
+(SJT)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T01:51:00Z</begin>
+<end>2010-05-11T01:51:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 S WINSLOW</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -94.13, 35.76,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:13 UTC
+WASHINGTON, AR
+HAIL SIZE: 1 IN. DIA.
+(TSA)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:13:00Z</begin>
+<end>2010-05-11T02:13:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>2 SSW OSCEOLA</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -93.72, 38.02,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:15 UTC
+ST. CLAIR, MO
+HAIL SIZE: 1 IN. DIA.
+ONE INCH HAIL REPORTED NEAR MO 82 AND OLD MO 82/DIVISION RD. (SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:15:00Z</begin>
+<end>2010-05-11T02:15:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>3 NNE MAPLE GROVE</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -94.1, 37.29,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  02:32 UTC
+JASPER, MO
+HAIL SIZE: 1 IN. DIA.
+REPORTED AT HWY37 AND HWY NN. (SGF)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T02:32:00Z</begin>
+<end>2010-05-11T02:32:00Z</end>
+</TimeSpan>
+</Placemark>
+<Placemark>
+<name>TILLY</name>
+<styleUrl>#hail</styleUrl>
+<Point>
+<coordinates> -92.83, 35.72,0</coordinates>
+</Point>
+<description>
+<![CDATA[
+2010-05-11  03:30 UTC
+POPE, AR
+HAIL SIZE: 1 IN. DIA.
+QUARTER SIZE HAIL WAS REPORTED IN TILLY. (LZK)
+]]>
+</description>
+<TimeSpan>
+<begin>2010-05-11T03:30:00Z</begin>
+<end>2010-05-11T03:30:00Z</end>
+</TimeSpan>
+</Placemark>
+</Folder>
+</Document>
+</kml>

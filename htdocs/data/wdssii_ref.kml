@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Folder>
+	<name>NSSL/U. of Oklahoma Weather Products</name>
+	<visibility>0</visibility>
+	<open>1</open>
+	<description>These data are experimental and are provided for research purposes only. Images are (C) 2008 University of Oklahoma and the National Severe Storms Laboratory. See wdssii.org and wdssii.nssl.noaa.gov for more details.</description>
+	<lookAt>
+		<longitude>-94.30748438559675</longitude>
+		<latitude>36.2972521725685</latitude>
+		<altitude>0</altitude>
+		<range>5139465.519150443</range>
+		<tilt>0</tilt>
+		<heading>0.20760638</heading>
+	</lookAt>
+      	<NetworkLink>
+      		<name>Radar: Lowest Altitude Reflectivity</name>
+      		<visibility>0</visibility>
+      		<Url>
+      			<href>http://wdssii.nssl.noaa.gov/tiles/ReflectivityAtLowestAltitude_00.00/index.kmz</href>
+      			<refreshMode>onInterval</refreshMode>
+      			<refreshInterval>300</refreshInterval>
+      		</Url>
+      	</NetworkLink>
+
+      	<NetworkLink>
+      		<name>Colormaps: Weather Products Colormaps</name>
+      		<visibility>0</visibility>
+      		<Url>
+      			<href>http://wdssii.nssl.noaa.gov/geotiff/colormaps.kmz</href>
+      			<refreshMode>onInterval</refreshMode>
+      			<refreshInterval>300</refreshInterval>
+      		</Url>
+      	</NetworkLink>
+</Folder>
+</kml>

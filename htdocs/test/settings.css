@@ -1,0 +1,96 @@
+body {
+ font-family: Futura Lt BT;
+ font-size: 14px;
+ background-image: url(background.png);
+ margin: 20px;
+ }
+
+ 
+
+/*http://calebegg.com/grad/ */
+
+#wrapper { 
+ margin: auto;
+ background: #333333;
+ border: 2px solid #000000;
+ width: 900px;
+ }
+
+#header {
+ height: 122px;
+ width: 900px;
+ font-size: 0px;
+ border: 0px;
+ color: #333;
+ }
+
+#menu {
+ height: 40px;
+ width: 900px;
+ padding: 0px;
+ color: #333;
+ background-image: url(menu.jpg);
+ background-repeat: repeat-x;
+ }
+
+#menu a {
+ color: #fcfc00;
+ text-decoration: none;
+ } 
+
+#menu a:hover {
+ color: #FFFFFF;
+ font-size: 12px;
+ } 
+
+#menu td.menu {
+ height: 38px;
+ width: 80px;
+ border: 0px;
+ padding: 0px;
+ color: #333333;
+ /*background-image: url(menu.jpg);*/
+ background-repeat: repeat-x;
+ font-size: 11px;
+ font-weight: bold;
+ text-align: center;
+ }
+
+#menu td.menusplit {
+ height: 38px;
+ width: 2px;
+ border: 0px;
+ padding: 0px;
+ background-image: url(menu.jpg);
+ background-repeat: repeat-x;
+ }
+
+#contentblock {
+ color: #00EE00;
+ position: relative;
+ width: 900px;
+ padding: 0px;
+ background: #333333;
+ }
+
+#contentblock a {
+ color: #00EE00;
+ text-decoration: none;
+ }
+
+#contentblock a:visited {
+ color: #006699;
+ text-decoration: none;
+ }
+
+#contentblock a:hover {
+ color: #FFFFFF;
+ text-decoration: none;
+ }
+
+#content { 
+ width: 870px;
+ padding: 15px;
+ color: #FFFFFF;
+ background:#333333;
+ }
