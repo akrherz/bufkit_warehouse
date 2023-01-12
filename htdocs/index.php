@@ -1,3 +1,7 @@
+<?php
+require_once "../config/settings.php";
+
+?>
 <html>
 <head>
 
@@ -20,8 +24,7 @@ echo '<pre>';
 print_r($des);
 echo '</pre>';
 
-//$url2 = "https://graph.facebook.com/{$group_id}/feed";
-$url2 = "https://graph.facebook.com/106061659471133/feed?access_token=108092205956277|uIPbQH6KHF8d4Qz7_u6q531HZBU";
+$url2 = "https://graph.facebook.com/106061659471133/feed?access_token=". FACEBOOK_ACCESS_TOKEN;
 $data = json_decode(file_get_contents($url2));
 ?>
 </div>
