@@ -1,7 +1,15 @@
 <?php
-// Added by daryl to prevent washoe bugs from filling apache errors logs!
-// merry christmas, 18 dec 2013
-error_reporting(0);
+// Author:	Chris Karstens
+// Date:	February 13, 2012
+// Version:	PHP, JPGraph
+// Purpose:	Generates meteogram from user-specified variables using available data
+require_once "../../config/settings.php";
+
+require_once "../../include/jpgraph/jpgraph.php";
+require_once "../../include/jpgraph/jpgraph_line.php";
+require_once "../../include/jpgraph/jpgraph_date.php";
+require_once "../../include/jpgraph/jpgraph_scatter.php";
+require_once "../../include/jpgraph/jpgraph_iconplot.php";
 
 function xssafe($data, $encoding = 'UTF-8')
 {
@@ -11,26 +19,14 @@ function xssafe($data, $encoding = 'UTF-8')
     return htmlspecialchars($data, ENT_QUOTES | ENT_HTML401, $encoding);
 }
 
-
-// Author:	Chris Karstens
-// Date:	February 13, 2012
-// Version:	PHP, JPGraph
-// Purpose:	Generates meteogram from user-specified variables using available data
-
 //putenv("TZ=UTC");
 date_default_timezone_set('UTC');
 
-if (isset($argv)) {
-    for ($i = 1; $i < count($argv); $i++) {
-        $it = split("=", $argv[$i]);
-        $_GET[$it[0]] = $it[1];
-    }
-}
-
-
 $hgt = isset($_GET["hgt"]) ? xssafe($_GET["hgt"]) : "80";
 $ratio = isset($_GET["ratio"]) ? xssafe($_GET["ratio"]) : "11";
-
+$parse_date = "";
+$gfs_init = 0;
+$gfsm_init = 0;
 
 $vars_available = array('stn', 'date', 'pmsl', 'pres', 'sktc', 'stc1', 'snfl', 'wtns', 'p01m', 'c01m', 'stc2', 'lcld', 'mcld', 'hcld', 'snra', 'uwnd', 'vwnd', 'r01m', 'bfgr', 't2ms', 'q2ms', 'wxts', 'wxtp', 'wxtz', 'wxtr', 'ustm', 'vstm', 'hlcy', 'sllh', 'wsym', 'cdbp', 'vsbk', 'td2m', 'evap', 'p03m', 'c03m', 'swem', 's03m', 'show', 'lift', 'swet', 'kinx', 'lclp', 'pwat', 'totl', 'cape', 'lclt', 'cins', 'eqlv', 'lfct', 'brch', 'buf_snow_sr', 'buf_snow_maxt', 'snra_constant', 'snra_maxt', 'maxt', 'mom_wind_mean', 'mom_wind_max', 'tf', 'td', 'wspd', 'wdir', 'hiwc', 'qpf', 'qpf_accum', 'wagl', 'frz_rain', 'sleet', 'rh', 'buf_snow_sr_rate', 'buf_snow_maxt_rate');
 
@@ -65,11 +61,11 @@ $date = isset($_GET["date"]) ? xssafe($_GET["date"]) : "";
 $start_time = isset($_GET["start_time"]) ? xssafe($_GET["start_time"]) : "";
 $end_time = isset($_GET["end_time"]) ? xssafe($_GET["end_time"]) : "";
 
-//$cobb = 0;
-
 $nam4km_cobb_time = array();
 
-if (!empty($start_time) and !empty($end_time)) {
+$start = "";
+$end = "";
+if (!empty($start_time) && !empty($end_time)) {
     $s = str_split($start_time);
     $start = strtotime($s[0] . $s[1] . $s[2] . $s[3] . "-" . $s[4] . $s[5] . "-" . $s[6] . $s[7] . " " . $s[8] . $s[9] . ":" . $s[10] . $s[11] . ":" . $s[12] . $s[13]);
     $s = str_split($end_time);
@@ -103,8 +99,6 @@ for ($z = 0; $z <= 1; $z++) {
     $sites = array();
     foreach ($data as $line) {
         $d = explode(" ", trim(preg_replace('/\s+/', ' ', $line)));
-        //print_r($d);
-        //echo $line;
         $sites[] = strtolower($d[3]);
         if ($site == strtolower($d[3])) {
             $found = 1;
@@ -135,7 +129,6 @@ for ($z = 0; $z <= 1; $z++) {
         break;
     }
 }
-//die();
 if (!(in_array($site, $sites))) {
     $bad = imagecreatefrompng("not_available.png");
     header('Content-Type: image/png');
@@ -233,7 +226,7 @@ for ($z = 0; $z <= 5; $z++) {
                 $parse_date = "" . $year . "" . $mon . "" . $day . "12";
             }
         }
-        @$parse_date_gfs = $parse_date;
+        $parse_date_gfs = $parse_date;
     } elseif ($z == 3) {
         $mdl = "gfsm";
         $dt = 3;
@@ -254,7 +247,7 @@ for ($z = 0; $z <= 5; $z++) {
                 $parse_date = "" . $year . "" . $mon . "" . $day . "18";
             }
         }
-        @$parse_date_gfsm = $parse_date;
+        $parse_date_gfsm = $parse_date;
     } elseif ($z == 4) {
         $mdl = "rap";
         $dt = 1;
@@ -288,9 +281,18 @@ for ($z = 0; $z <= 5; $z++) {
     $tz2 = 0;
 
     if ($date == "") {
-        @$link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&hgt=" . $hgt . "&ratio=" . $ratio . "&start_time=" . $start . "&end_time=" . $end;
+        $link = sprintf(
+            "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?" .
+                "model=%s&site=%s&hgt=%s&ratio=%s&start_time=%s&end_time=%s",
+            $mdl,
+            $site_l,
+            $hgt,
+            $ratio,
+            $start,
+            $end
+        );
     } else {
-        @$link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&hgt=" . $hgt . "&date=" . $parse_date . "&ratio=" . $ratio . "&start_time=" . $start . "&end_time=" . $end;
+        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&hgt=" . $hgt . "&date=" . $parse_date . "&ratio=" . $ratio . "&start_time=" . $start . "&end_time=" . $end;
     }
     $temp_maxt = 0;
     $temp_sr = 0;
@@ -607,9 +609,6 @@ for ($z = 0; $z <= 5; $z++) {
     }
 }
 
-//print_r($buf_t_gfs);
-//print_r($gfs_var);
-//die();
 
 if (!empty($start_time) && !empty($end_time)) {
     $min = $start;
@@ -620,20 +619,22 @@ if (!empty($start_time) && !empty($end_time)) {
     $start = $min;
     $end = $max;
 } else {
-    $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser2.php?model=gfs&site=kdsm&date=" . $parse_date_gfs . "";
+    $link = ROOTURL . "data/parser2.php?model=gfs&site=kdsm&date=" . $parse_date_gfs . "";
     $data = file($link);
     foreach ($data as $line) {
-        $d = explode("\t", trim($line));
-        $buf_t_gfs[] = strtotime($d[1]);
+        $d = explode(",", trim($line));
+        $minvalid = strtotime($d[0]);
+        $maxvalid = strtotime($d[1]);
     }
-    $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser2.php?model=gfsm&site=kdsm&date=" . $parse_date_gfsm . "";
+    $link = ROOTURL . "data/parser2.php?model=gfsm&site=kdsm&date=" . $parse_date_gfsm . "";
     $data = file($link);
     foreach ($data as $line) {
-        $d = explode("\t", trim($line));
-        $buf_t_gfsm[] = strtotime($d[1]);
+        $d = explode(",", trim($line));
+        $minvalidm = strtotime($d[0]);
+        $maxvalidm = strtotime($d[1]);
     }
-    $min = min($buf_t_gfs[1], $buf_t_gfsm[1]);
-    $max = max($buf_t_gfs[count($buf_t_gfs) - 1], $buf_t_gfsm[count($buf_t_gfsm) - 1]);
+    $min = min($minvalid, $minvalidm);
+    $max = max($maxvalid, $maxvalidm);
     $start = $min;
     $end = $max;
 }
@@ -773,32 +774,8 @@ if ($var1 == "snow_accum" && $date == "") {
                 }
             }
         }
-        //print_r($gfs_var2);
-        //print_r($gfs_cobb_time);
-        //die();
     }
 }
-
-
-/*
-if($nam == 1){
-    $mins[] = $buf_t_nam[0];
-    $maxs[] = $buf_t_nam[84];
-}
-if($namm == 1){
-        $mins[] = $buf_t_namm[0];
-        $maxs[] = $buf_t_namm[84];
-}
-if($gfs == 1){
-        $mins[] = $buf_t_gfs[0];
-        $maxs[] = $buf_t_gfs[60];
-}
-if($gfsm == 1){
-        $mins[] = $buf_t_gfsm[0];
-        $maxs[] = $buf_t_gfsm[60];
-}
-*/
-
 
 $init_year = date('Y', $min);
 $init_mon = date('m', $min);
@@ -823,24 +800,37 @@ $obs_pres = array();
 $obs_gust = array();
 $obs_hiwc = array();
 $ob_station = strtoupper($site);
-if ($obs == 1 && in_array($site, $sites)) {
+if ($obs == "1" && in_array($site, $sites)) {
     $ob_vars = array('id', 'valid', 'tmpf', 'dwpf', 'sknt', 'drct', 'phour', 'alti', 'gust');
     if ($date != "" && $diff_time > 129600) {
-        $link3 = "http://mesonet.agron.iastate.edu/request/asos/csv.php?lat=" . $lat . "&lon=" . $lon . "&date=" . date("Y-m-d", $min) . "";
+        $link3 = sprintf(
+            "http://mesonet.agron.iastate.edu/request/asos/csv.php".
+            "?lat=%s&lon=%s&date=%s",
+            $lat, $lon, $min);
     } else {
-        $link3 = "http://mesonet.agron.iastate.edu/request/asos/csv.php?lat=" . $lat . "&lon=" . $lon . "";
+        $link3 = sprintf(
+            "http://mesonet.agron.iastate.edu/request/asos/csv.php?lat=%s&lon=%s",
+            $lat, $lon);
     }
-    $k = -1;
     $oHourLast = -99;
     $data = file($link3);
     foreach ($data as $line) {
-        $k++;
         $d = explode(",", trim($line));
+        if ($d[0] == "id") {
+            continue;
+        }
         $ob_time = strtotime("" . $d[1] . "Z");
         $minute = date("i", $ob_time);
         $oHour = date("H", $ob_time);
-
-        if ($ob_time >= $min && $ob_time <= $max && $d[2] != -99 && $k >= 0 && $minute >= 45 && $minute <= 56 && !empty($d[2]) && !empty($d[3]) && $oHour != $oHourLast) {
+        if (($ob_time >= $min) &&
+            ($ob_time <= $max) &&
+            ($d[2] != -99) &&
+            ($minute >= 45) &&
+            ($minute <= 56) &&
+            !empty($d[2]) &&
+            !empty($d[3]) &&
+            ($oHour != $oHourLast)
+        ) {
             $obs_lat = $d[10];
             $obs_lon = $d[9];
             $lat_diff = abs($lat - $obs_lat);
@@ -862,7 +852,7 @@ if ($obs == 1 && in_array($site, $sites)) {
             $obs_precip_accum[] = array_sum($obs_precip);
             $obs_pres[] = $d[7];
             if ($d[8] != 0) {
-                $obs_gust[] = $d[8] * 1.15077945;
+                $obs_gust[] = floatval($d[8]) * 1.15077945;
             } else {
                 $obs_gust[] = "";
             }
@@ -956,8 +946,8 @@ for ($z = 0; $z <= 2; $z++) {
                 $nam_mos_dew[] = $d[6];
                 $nam_mos_wdir[] = $d[8];
                 $nam_mos_wspd[] = $d[9] * 1.15077945;
-                $nam_mos_snow[] = $d[16];
-                $nam_mos_qpf[] = $d[12];
+                $nam_mos_snow[] = floatval($d[16]);
+                $nam_mos_qpf[] = floatval($d[12]);
                 $nam_mos_snow_accum[] = array_sum($nam_mos_snow);
                 $nam_mos_qpf_accum[] = array_sum($nam_mos_qpf);
                 $nam_mos_wind_x[] = cos(deg2rad(270 - $d[8])) * ($d[9] * 0.514444444);
@@ -1096,7 +1086,6 @@ function file_curl($url)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
     $data = curl_exec($ch);
-    curl_close($ch);
     $array = explode("\n", $data);
     return $array;
 }
@@ -1172,10 +1161,6 @@ if ($nws == 1 && in_array($site, $sites) && $date == "") {
     }
 }
 
-//print_r($nws_var1);
-//print_r($nws_time1);
-//echo $link4;
-//die();
 
 $len = count($nws_time);
 $nws_time_temp = array();
@@ -1427,15 +1412,6 @@ if ($con == 1) {
                     $c_ang = $c_ang - 360;
                 }
                 $consensus[] = $c_ang;
-                //if($j == 21){
-                //echo "".$nam_uwnd[$index]."\n".$namm_uwnd[$index]."\n".$gfs_uwnd[$index]."\n".$gfsm_uwnd[$index]."\n".$rap_uwnd[$index]."\n";
-                //echo "".."\n".."\n".."\n";
-                //print_r($var_list);
-                //echo "".array_sum($var_list)."\n";
-                //echo "".$total_x.",".$total_y."\n";
-                //echo "".$cx.",".$cy."\n";
-                //echo "".$c_ang."\n\n";
-                //}
             } else {
                 $consensus[] = ($total / $n);
             }
@@ -1487,62 +1463,9 @@ if ($freese != "no") {
 }
 
 
-//echo "here";
-//die();
-
-include("/var/www/jpgraph3/jpgraph.php");
-include("/var/www/jpgraph3/jpgraph_line.php");
-include("/var/www/jpgraph3/jpgraph_date.php");
-include("/var/www/jpgraph3/jpgraph_scatter.php");
-include("/var/www/jpgraph3/jpgraph_iconplot.php");
 
 $graph = new Graph(1100, 450);
-if ($var == "wdir") {
-    $graph->SetScale("datlin", 0, 360, $min, $max);
-    $graph->yscale->ticks->Set(45, 22.5);
-}
-//elseif($var == "hlcy"){
-//      $graph->SetScale("datlin",0,1000,$min,$max);
-//}
-else {
-    $graph->SetScale("datlin", "", "", $min, $max);
-}
-$graph->title->Set("" . $site_upper_case . " - Hourly " . $title . " Forecast");
-$graph->yaxis->title->Set($y_label);
-$graph->SetMarginColor('white');
-$graph->SetBox();
-$graph->SetFrame(false);
-$graph->yaxis->SetTitleMargin(40);
-$graph->xaxis->SetLabelAngle(90);
-$graph->xaxis->scale->SetDateFormat('D H e');
-$graph->xaxis->SetPos("min");
-
-$graph->img->SetMargin(60, 140, 40, 90);
-$graph->SetColor('gray9');
-$graph->ygrid->SetColor('gray');
-$graph->ygrid->SetFill(true, '#DDDDDD@0.5', '#BBBBBB@0.5');
-$graph->xgrid->Show();
-$graph->xgrid->SetLineStyle('dashed');
-$graph->xgrid->SetColor('gray');
-$graph->legend->SetColumns(1);
-$graph->legend->SetAbsPos(30, 40, 'right', 'top');
-$graph->legend->SetShadow(false);
-$graph->legend->SetFillColor("gray8");
-if ($var1 == "snow_accum" || $var1 == "wind" || $freese != "no") {
-    $graph->legend->SetAbsPos(2, 40, 'right', 'top');
-    if ($var1 == "snow_accum") {
-        $graph->legend->SetFont(FF_VERDANA, FS_NORMAL, 5.4);
-    } else {
-        $graph->legend->SetFont(FF_VERDANA, FS_NORMAL, 5.5);
-    }
-    if ($compaction == 1 && $var1 == "snow_accum") {
-        $graph->title->Set("" . $site_upper_case . " - Accumulated " . $title . " Forecast (with compaction)");
-    } elseif ($var1 == "snow_accum") {
-        $graph->title->Set("" . $site_upper_case . " - Accumulated " . $title . " Forecast (no compaction)");
-    } elseif ($var1 == "wind") {
-        $graph->title->Set("" . $site_upper_case . " - 10 m AGL " . $title . " Forecast (Gusts via Momentum Transfer)");
-    }
-}
+$graph->SetScale("datlin");
 
 if ($nam == 1 && !empty($nam_var) && !empty($buf_t_nam) && count($nam_var) == count($buf_t_nam)) {
     if ($var == "wdir") {
@@ -1797,8 +1720,7 @@ if ($var1 == "snow_accum") {
     }
 }
 
-
-if ($gfs == 1 && !empty($gfs_var) && !empty($buf_t_gfs) && count($gfs_var) == count($buf_t_gfs)) {
+if ($gfs == "1" && !empty($gfs_var) && !empty($buf_t_gfs) && count($gfs_var) == count($buf_t_gfs)) {
     if ($var == "wdir") {
         $lineplot_gfs = new ScatterPlot($gfs_var, $buf_t_gfs);
         $lineplot_gfs->mark->SetType(MARK_FILLEDCIRCLE);
@@ -2285,6 +2207,47 @@ if ($freese != "no" && !empty($freese_time)) {
     $lineplot_freese->SetLegend("Freese-Notis - " . $freese_id . "");
     $graph->Add($lineplot_freese);
     $lineplot_freese->SetColor("black");
+}
+if ($var == "wdir") {
+    $graph->SetScale("lin", 0, 360, $min, $max);
+    $graph->yscale->ticks->Set(45, 22.5);
+}
+
+$graph->title->Set("" . $site_upper_case . " - Hourly " . $title . " Forecast");
+$graph->yaxis->SetTitle($y_label);
+$graph->SetMarginColor('white');
+$graph->SetBox();
+$graph->SetFrame(false);
+$graph->yaxis->SetTitleMargin(40);
+$graph->xaxis->SetLabelAngle(90);
+$graph->xaxis->scale->SetDateFormat('D H e');
+$graph->xaxis->SetPos("min");
+
+$graph->img->SetMargin(60, 140, 40, 90);
+$graph->SetColor('gray9');
+$graph->ygrid->SetColor('gray');
+$graph->ygrid->SetFill(true, '#DDDDDD@0.5', '#BBBBBB@0.5');
+$graph->xgrid->Show();
+$graph->xgrid->SetLineStyle('dashed');
+$graph->xgrid->SetColor('gray');
+$graph->legend->SetColumns(1);
+$graph->legend->SetAbsPos(30, 40, 'right', 'top');
+$graph->legend->SetShadow(false);
+$graph->legend->SetFillColor("gray8");
+if ($var1 == "snow_accum" || $var1 == "wind" || $freese != "no") {
+    $graph->legend->SetAbsPos(2, 40, 'right', 'top');
+    if ($var1 == "snow_accum") {
+        $graph->legend->SetFont(FF_VERDANA, FS_NORMAL, 5.4);
+    } else {
+        $graph->legend->SetFont(FF_VERDANA, FS_NORMAL, 5.5);
+    }
+    if ($compaction == 1 && $var1 == "snow_accum") {
+        $graph->title->Set("" . $site_upper_case . " - Accumulated " . $title . " Forecast (with compaction)");
+    } elseif ($var1 == "snow_accum") {
+        $graph->title->Set("" . $site_upper_case . " - Accumulated " . $title . " Forecast (no compaction)");
+    } elseif ($var1 == "wind") {
+        $graph->title->Set("" . $site_upper_case . " - 10 m AGL " . $title . " Forecast (Gusts via Momentum Transfer)");
+    }
 }
 
 if ($var1 == "snow_accum") {
