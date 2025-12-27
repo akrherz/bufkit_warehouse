@@ -106,5 +106,3 @@ foreach ($data as $line) {
 }
 
 imagepng($im);
-
-?>

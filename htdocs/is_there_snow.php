@@ -27,9 +27,6 @@ foreach($data as $line){
      }
 }
 
-//print_r($snow_nam);  
-//print_r($hr_snow_nam);  
-//die();  
 
 $link = "/home/ckarsten/WWW/bufkit/data/cobb_namm/nam_".$site.".dat";
 $data = file($link);
@@ -49,9 +46,6 @@ foreach($data as $line){
      }
 }
 
-//print_r($snow_namm);  
-//print_r($hr_snow_namm);  
-//die();  
 
 $link = "/home/ckarsten/WWW/bufkit/data/cobb_gfs/gfs3_".$site.".dat";
 $data = file($link);
@@ -71,9 +65,6 @@ foreach($data as $line){
      }
 }
 
-//print_r($snow_gfs);
-//print_r($hr_snow_gfs);
-//die();
 
 $link = "/home/ckarsten/WWW/bufkit/data/cobb_gfsm/gfs3_".$site.".dat";
 $data = file($link);
@@ -93,9 +84,6 @@ foreach($data as $line){
      }
 }
 
-//print_r($snow_gfsm);
-//print_r($hr_snow_gfsm);
-//die();
 
 $max_nam = max($snow_nam);
 $max_namm = max($snow_namm); 
@@ -105,10 +93,8 @@ $max_gfsm = max($snow_gfsm);
 $max = max($max_nam,$max_namm,$max_gfs,$max_gfsm);
 
 if($max > 0){
-     echo yes;
+     echo "yes";
 }
 else{
-     echo no;
+     echo "no";
 }
-
-?>
