@@ -1,17 +1,94 @@
-body {background: #FFFFFF;}
-A:link {color: #0000FF; text-decoration: none;}
-A:hover {color: #FF0000; font-weight: bold; text-decoration: underline;}
-A:visited {color: #0000FF; text-decoration: none;}
-th { background: #dddddd; font-size: 10pt; font-family: helvetica; text-align:center;}
-td {font-size: 8pt; font-family: helvetica;}
-h2 {font-size: 18pt; font-family: helvetica; text-align:center;}
-#heading {position: absolute; left:240px; top:10px;}
-#menu {position: absolute; left:5px; top:48px;}
-#infobox {position: absolute; left:485px; top:610px;}
-.back {position: absolute; left:0px; top:0px; visibility:visible; z-index:0}
-.ct {background: #FFFFCC; border: groove blue 3px; text-align:center;}
-.outl {background: #FFFFCC; border: groove red 3px;}
-.basemap {position: absolute; left:172px; top:32px;}
-.imClass {position: absolute; left:172px; top:32px; visibility:hidden;}
-.imClass-sat {position: absolute; left:172px; top:32px; visibility:visible;}
+body {
+    background: #FFFFFF;
+}
 
+A:link {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+A:hover {
+    color: #FF0000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+A:visited {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+th {
+    background: #dddddd;
+    font-size: 10pt;
+    font-family: helvetica;
+    text-align: center;
+}
+
+td {
+    font-size: 8pt;
+    font-family: helvetica;
+}
+
+h2 {
+    font-size: 18pt;
+    font-family: helvetica;
+    text-align: center;
+}
+
+#heading {
+    position: absolute;
+    left: 240px;
+    top: 10px;
+}
+
+#menu {
+    position: absolute;
+    left: 5px;
+    top: 48px;
+}
+
+#infobox {
+    position: absolute;
+    left: 485px;
+    top: 610px;
+}
+
+.back {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    visibility: visible;
+    z-index: 0
+}
+
+.ct {
+    background: #FFFFCC;
+    border: groove blue 3px;
+    text-align: center;
+}
+
+.outl {
+    background: #FFFFCC;
+    border: groove red 3px;
+}
+
+.basemap {
+    position: absolute;
+    left: 172px;
+    top: 32px;
+}
+
+.imClass {
+    position: absolute;
+    left: 172px;
+    top: 32px;
+    visibility: hidden;
+}
+
+.imClass-sat {
+    position: absolute;
+    left: 172px;
+    top: 32px;
+    visibility: visible;
+}
