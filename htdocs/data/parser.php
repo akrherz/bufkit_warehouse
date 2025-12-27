@@ -1,10 +1,11 @@
 <?php
+require_once "../../config/settings.php";
 
 putenv("TZ=UTC");
 
 if (isset($argv))
      for ($i=1;$i<count($argv);$i++){
-          $it = split("=",$argv[$i]);
+          $it = explode("=",$argv[$i]);
           $_GET[$it[0]] = $it[1];
      }
 
