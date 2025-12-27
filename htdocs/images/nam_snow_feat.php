@@ -1,5 +1,9 @@
 <?php
-
+require_once "../../config/settings.php";
+require_once "../../include/jpgraph/jpgraph.php";
+require_once "../../include/jpgraph/jpgraph_line.php";
+require_once "../../include/jpgraph/jpgraph_date.php";
+require_once "../../include/jpgraph/jpgraph_scatter.php";
 // Script to read a bufkit file and parse it into a more friendly format.
 // Written by Chris Karstens with help from the IEM Horse - 07/2008.
 
@@ -27,10 +31,6 @@ foreach($data as $line){
      }
 }
 
-//print_r($snow_nam);  
-//print_r($hr_snow_nam);  
-//die();  
-
 $link = "../data/cobb_namm/nam_".$site.".dat";
 $data = file($link);
 $hr_count = "Z";
@@ -48,10 +48,6 @@ foreach($data as $line){
           $namm_init = date('H',$hr_snow_namm[0] - 3600);
      }
 }
-
-//print_r($snow_namm);  
-//print_r($hr_snow_namm);  
-//die();  
 
 $link = "../data/cobb_gfs/gfs3_".$site.".dat";
 $data = file($link);
@@ -71,10 +67,6 @@ foreach($data as $line){
      }
 }
 
-//print_r($snow_gfs);
-//print_r($hr_snow_gfs);
-//die();
-
 $link = "../data/cobb_gfsm/gfs3_".$site.".dat";
 $data = file($link);
 $hr_count = "Z";
@@ -92,10 +84,6 @@ foreach($data as $line){
           $gfsm_init = date('H',$hr_snow_gfsm[0] - 10800);
      }
 }
-
-//print_r($snow_gfsm);
-//print_r($hr_snow_gfsm);
-//die();
 
 $link2 = "bufkit.cty";
 $lat = 42;
@@ -125,9 +113,6 @@ $end_day = date('d',$max);
 $end_h = date('H',$max);
 $init_time =  "".$init_year."-".$init_mon."-".$init_day."T".$init_h."";
 $end_time =  "".$end_year."-".$end_mon."-".$end_day."T".$end_h."";
-
-//echo "".$init_time."".$end_time."";
-//die();
 
 $link4_1 = "http://www.weather.gov/forecasts/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&lat=".$lat."&lon=-".$lon."&listLatLon=&lat1=&lon1=&lat2=&lon2=&resolutionSub=&listLat1=&listLon1=&";
 $link4_2 = "&listLat2=&listLon2=&resolutionList=&endPoint1Lat=&endPoint1Lon=&endPoint2Lat=&endPoint2Lon=&listEndPoint1Lat=&listEndPoint1Lon=&listEndPoint2Lat=&listEndPoint2Lon=&zipCodeList=";
@@ -217,15 +202,7 @@ foreach ($data as $line) {
      }
 }
 
-//print_r($t5);
-//print_r($add_nws_precip);
-//echo $link4;
-//die();
 
-include ("/var/www/jpgraph/jpgraph.php");
-include ("/var/www/jpgraph/jpgraph_line.php");
-include ("/var/www/jpgraph/jpgraph_date.php");
-include ("/var/www/jpgraph/jpgraph_scatter.php");
 
 $graph = new Graph(1100,300);    
 $graph->SetScale("datlin");
