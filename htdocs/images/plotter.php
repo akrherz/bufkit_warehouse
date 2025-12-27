@@ -2209,7 +2209,7 @@ if ($freese != "no" && !empty($freese_time)) {
     $lineplot_freese->SetColor("black");
 }
 if ($var == "wdir") {
-    $graph->SetScale("lin", 0, 360, $min, $max);
+    $graph->SetScale("datlin", 0, 360, $min, $max);
     $graph->yscale->ticks->Set(45, 22.5);
 }
 
