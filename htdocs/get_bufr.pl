@@ -1,1 +1,0 @@
-/local/ckarsten/bufkit/modsnd/get_bufr.pl
