@@ -804,13 +804,18 @@ if ($obs == "1" && in_array($site, $sites)) {
     $ob_vars = array('id', 'valid', 'tmpf', 'dwpf', 'sknt', 'drct', 'phour', 'alti', 'gust');
     if ($date != "" && $diff_time > 129600) {
         $link3 = sprintf(
-            "http://mesonet.agron.iastate.edu/request/asos/csv.php".
-            "?lat=%s&lon=%s&date=%s",
-            $lat, $lon, $min);
+            "http://mesonet.agron.iastate.edu/request/asos/csv.php" .
+                "?lat=%s&lon=%s&date=%s",
+            $lat,
+            $lon,
+            $min
+        );
     } else {
         $link3 = sprintf(
             "http://mesonet.agron.iastate.edu/request/asos/csv.php?lat=%s&lon=%s",
-            $lat, $lon);
+            $lat,
+            $lon
+        );
     }
     $oHourLast = -99;
     $data = file($link3);
