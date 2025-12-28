@@ -1,4 +1,5 @@
 <?php
+require_once "../config/settings.php";
 
 header ("Content-type: image/png");
 

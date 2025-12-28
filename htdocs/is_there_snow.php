@@ -1,4 +1,5 @@
 <?php
+require_once "../config/settings.php";
 
 // Script to read a bufkit file and parse it into a more friendly format.
 // Written by Chris Karstens with help from the IEM Horse - 07/2008.
