@@ -29,12 +29,7 @@ var postState = '';
 // To edit the list, just delete a line or add a line. Order is important.
 // The order displayed here is the order it appears on the drop down.
 //
-var station = '\
-IA:kdsm:Des Moines|\
-IA:kmcw:Mason City|\
-IA:p#a:Slater|\
-
-';
+var station = 'IA:kdsm:Des Moines|IA:kmcw:Mason City|IA:p#a:Slater|';
 
 // States data table
 //

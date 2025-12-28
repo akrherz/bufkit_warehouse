@@ -1,39 +1,3 @@
-//Crosshairs - http://www.btinternet.com/~kurt.grigg/javascript
-
-/*
-Paste this link as the last thing on your page, just before </body></html>
-
-<script type="text/javascript" src="crosshairs.js"></script>
-
-To edit the colour, right click on the crosshairs.js file icon and choose edit.
-Avoid using a tiled background image. It causes strange CPU strain in Opera.
-*/
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-
-<title>CrossHairs</title>
-
-<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-<meta http-equiv="content-script-type" content="text/javascript">
-<meta http-equiv="content-style-type" content="text/css">
-
-
-<style type="text/css">
-<!--
-
-body{
-background-color : #ffffff;
-}
-//-->
-</style>
-
-</head>
-<body>
-
-<script type="text/javascript">
-//Crosshairs - http://www.btinternet.com/~kurt.grigg/javascript
 
 if  ((document.getElementById) && 
 window.addEventListener || window.attachEvent){
@@ -145,7 +109,4 @@ else if (window.attachEvent){
 
 })();
 }//End.
-</script>
 
-</body>
-</html>
