@@ -925,6 +925,7 @@ td {
 
 .slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 100px;
     height: 15px;
     background: #d3d3d3;
