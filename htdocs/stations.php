@@ -1,4 +1,5 @@
 <?php
+require_once "../config/settings.php";
 
 header( 'Content-type: text/plain');
 
@@ -21,10 +22,4 @@ foreach ($data as $line) {
      if($lat <= 40 && $lat >= 24 && $lon >= 73 && $lon <= 87){
           echo "".$lat.",-".$lon.",".$stn_id."\n";
      }
-
-//     if($state){
-//          echo "".$state.":".$stn_id.":".$site."|\\\n";
-//     }
 }
-
-?>
