@@ -7,7 +7,8 @@ Alias /bufkit "/opt/bufkit_warehouse/htdocs"
   Require all granted
   <FilesMatch \.html$>
     ProxyErrorOverride On
-    SetHandler "proxy:unix:/run/php-fpm/www.sock|fcgi://localhost"
+    # sigh, this is CI specific at the moment
+    SetHandler "proxy:unix:/run/php/php8.3-fpm.sock|fcgi://localhost"
   </FilesMatch>
 
 </Directory>
