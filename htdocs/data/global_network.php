@@ -171,10 +171,10 @@ foreach($data as $line){
      if($site_gfs != "---"){
         $gfs_i = $gfs_i_orig;
         $gfsm_i = $gfsm_i_orig;
-        $gfs = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfs/gfs3_".$site.".buf";
-        $gfsm = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfsm/gfs3_".$site.".buf";
-        $gfs_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfs/gfs3_".$site_l.".buf";
-        $gfsm_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfsm/gfs3_".$site_l.".buf";
+        $gfs = "https://metfs1.agron.iastate.edu/data/bufkit/gfs/gfs3_".$site.".buf";
+        $gfsm = "https://metfs1.agron.iastate.edu/data/bufkit/gfsm/gfs3_".$site.".buf";
+        $gfs_l = "https://metfs1.agron.iastate.edu/data/bufkit/gfs/gfs3_".$site_l.".buf";
+        $gfsm_l = "https://metfs1.agron.iastate.edu/data/bufkit/gfsm/gfs3_".$site_l.".buf";
         $gfs_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=gfs&site=".$site_l."";
         $gfsm_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=gfsm&site=".$site_l."";
 	$view_gfs_cobb = "View Cobb Output!";
@@ -191,10 +191,10 @@ foreach($data as $line){
         $view_gfs_cobb = "";
      }
      if($site_nam != "---"){
-     	$nam = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/nam/nam_".$site.".buf";
-     	$namm = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/namm/namm_".$site.".buf";
-     	$nam_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/nam/nam_".$site_l.".buf";
-     	$namm_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/namm/namm_".$site_l.".buf";
+     	$nam = "https://metfs1.agron.iastate.edu/data/bufkit/nam/nam_".$site.".buf";
+     	$namm = "https://metfs1.agron.iastate.edu/data/bufkit/namm/namm_".$site.".buf";
+     	$nam_l = "https://metfs1.agron.iastate.edu/data/bufkit/nam/nam_".$site_l.".buf";
+     	$namm_l = "https://metfs1.agron.iastate.edu/data/bufkit/namm/namm_".$site_l.".buf";
      	$nam_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=nam&site=".$site_l."";
      	$namm_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=namm&site=".$site_l."";
      	$view_nam_cobb = "View Cobb Output!";
@@ -213,8 +213,8 @@ foreach($data as $line){
         $view_nam_cobb = "";
      }
      if($site_rap != "---"){
-     	$rap = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/rap/rap_".$site.".buf";
-     	$rap_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/rap/rap_".$site_l.".buf";
+     	$rap = "https://metfs1.agron.iastate.edu/data/bufkit/rap/rap_".$site.".buf";
+     	$rap_l = "https://metfs1.agron.iastate.edu/data/bufkit/rap/rap_".$site_l.".buf";
 	$rap_cobb = "";
         $rap_i = $rap_i_orig;
      }
@@ -225,8 +225,8 @@ foreach($data as $line){
         $rap_cobb = "";
      }
      if($site_sref != "---"){ 
-        $sref = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/sref/sref_".$site.".buz";
-        $sref_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/sref/sref_".$site_l.".buz";
+        $sref = "https://metfs1.agron.iastate.edu/data/bufkit/sref/sref_".$site.".buz";
+        $sref_l = "https://metfs1.agron.iastate.edu/data/bufkit/sref/sref_".$site_l.".buz";
         $sref_i = "Latest SREF Profile";
      }
      else{
