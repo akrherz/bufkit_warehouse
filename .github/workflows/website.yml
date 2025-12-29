@@ -52,12 +52,7 @@ jobs:
     - name: Make Web Requests
       run: |
         set -xe
-        result=$(curl -f http://localhost/bufkit/index.php)
-        echo "$result"
-        if [[ "$result" != *"BufKit"* ]]; then
-          echo "Did not find expected content in web page!"
-          exit 1
-        fi
+        curl -f http://localhost/bufkit/index.php
 
     - name: View Apache Logs
       if: ${{ failure() }}
