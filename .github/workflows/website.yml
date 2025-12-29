@@ -1,0 +1,72 @@
+name: CI
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+jobs:
+  build-linux:
+    name: Run Website
+    defaults:
+      run:
+        # Ensures environment gets sourced right
+        shell: bash -l {0}
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+
+    - name: Clone ci_tooling
+      run: |
+        git clone --depth 1 https://github.com/akrherz/ci_tooling.git .ci_tooling
+
+    # Copy repo's default settings into the real position
+    - name: Copy PHP Setting Defaults
+      run: |
+        cp config/settings_in.php config/settings.php
+
+    - name: Setup Apache / PHP
+      run: |
+        set -xe
+        sudo apt-get update
+        sudo apt-get install apache2 apache2-dev php-fpm
+        sudo a2enmod headers rewrite proxy proxy_http proxy_balancer ssl lbmethod_byrequests cgi expires authz_groupfile
+        sudo a2enmod proxy_fcgi setenvif
+        sudo a2enconf php8.3-fpm
+
+    - name: Configure repo for web access
+      run: |
+        set -xe
+        chmod 755 $HOME
+        sudo cp config/apache_config.inc /etc/apache2/sites-available/bufkit_warehouse.conf
+        sudo ln -s $PWD /opt/bufkit_warehouse
+        sudo cp .github/php_fpm.conf /etc/php/8.3/fpm/pool.d/00-bw.conf
+        sudo a2ensite bufkit_warehouse.conf
+        sudo systemctl restart apache2
+        sudo systemctl restart php8.3-fpm
+
+    # - name: Setup upterm session
+    #    uses: lhotari/action-upterm@v1
+    #    with:
+    #      limit-access-to-actor: true
+
+    - name: Make Web Requests
+      run: |
+        set -e
+        result=$(curl -f http://localhost/bufkit/bufkit.html)
+        # Ensure that the ?php string does not exist in the result
+        if echo "$result" | grep -q "?php"; then
+          echo "PHP code detected in response!"
+          exit 1
+        fi
+
+    - name: View Apache Logs
+      if: ${{ failure() }}
+      run: |
+        sudo systemctl status apache2 -l
+        sudo cat /var/log/apache2/error.log
+
+    - name: View PHP-FPM Logs
+      if: ${{ failure() }}
+      run: |
+        sudo cat /var/log/php*-fpm.log
