@@ -1,4 +1,5 @@
 <?php
+require_once "../../config/settings.php";
 
 putenv("TZ=UTC");
 
@@ -137,20 +138,21 @@ foreach ($data as $line) {
 
     $sym = "#";
     $site_l = $site;
-    preg_match_all(".$sym.", $site, $id);
-    $check1 = $id[0][0];
-    if ($check1 == $sym) {
-        $exam = str_split($site);
-        if ($exam[0] == $sym) {
-            $exam[0] = "%23";
+    if (preg_match_all(".$sym.", $site, $id)) {
+        $check1 = $id[0][0];
+        if ($check1 == $sym) {
+            $exam = str_split($site);
+            if ($exam[0] == $sym) {
+                $exam[0] = "%23";
+            }
+            if ($exam[1] == $sym) {
+                $exam[1] = "%23";
+            }
+            if ($exam[2] == $sym) {
+                $exam[2] = "%23";
+            }
+            $site_l = "" . $exam[0] . "" . $exam[1] . "" . $exam[2] . "";
         }
-        if ($exam[1] == $sym) {
-            $exam[1] = "%23";
-        }
-        if ($exam[2] == $sym) {
-            $exam[2] = "%23";
-        }
-        $site_l = "" . $exam[0] . "" . $exam[1] . "" . $exam[2] . "";
     }
 
     $x_name = "https://www.meteor.iastate.edu/~ckarsten/bufkit/image_loader.phtml?site=" . $site_l . "";
