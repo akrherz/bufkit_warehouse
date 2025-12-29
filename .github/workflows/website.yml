@@ -37,16 +37,17 @@ jobs:
     - name: Configure repo for web access
       run: |
         set -xe
+        chmod 755 $HOME
         sudo cp config/apache_config.inc /etc/apache2/sites-available/bufkit_warehouse.conf
         sudo ln -s $PWD /opt/bufkit_warehouse
         sudo a2ensite bufkit_warehouse.conf
         sudo systemctl restart apache2
         sudo systemctl restart php8.3-fpm
 
-    - name: Setup upterm session
-      uses: lhotari/action-upterm@v1
-      with:
-        limit-access-to-actor: true
+    # - name: Setup upterm session
+    #  uses: lhotari/action-upterm@v1
+    #  with:
+    #    limit-access-to-actor: true
 
     - name: Make Web Requests
       run: |
