@@ -10,7 +10,7 @@ $site = $_GET["site"];
 
 $site_upper = strtoupper($site);
 
-$link = "/home/ckarsten/WWW/bufkit/data/cobb_nam/nam_".$site.".dat";
+$link = METFS1 . "cobb/nam/nam_{$site}.dat";
 $data = file($link);
 $hr_count = "Z";
 $pop_count_nam = -1;
@@ -29,7 +29,7 @@ foreach($data as $line){
 }
 
 
-$link = "/home/ckarsten/WWW/bufkit/data/cobb_namm/nam_".$site.".dat";
+$link = METFS1 . "cobb/namm/nam_{$site}.dat";
 $data = file($link);
 $hr_count = "Z";
 $pop_count_namm = -1;
@@ -48,7 +48,7 @@ foreach($data as $line){
 }
 
 
-$link = "/home/ckarsten/WWW/bufkit/data/cobb_gfs/gfs3_".$site.".dat";
+$link = METFS1 . "cobb/gfs/gfs3_{$site}.dat";
 $data = file($link);
 $hr_count = "Z";
 $pop_count_gfs = -1;
@@ -67,7 +67,7 @@ foreach($data as $line){
 }
 
 
-$link = "/home/ckarsten/WWW/bufkit/data/cobb_gfsm/gfs3_".$site.".dat";
+$link = METFS1 . "cobb/gfsm/gfs3_{$site}.dat";
 $data = file($link);
 $hr_count = "Z";
 $pop_count_gfsm = -1;

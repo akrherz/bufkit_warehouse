@@ -1,7 +1,5 @@
 <?php
-// Added by daryl to prevent washoe bugs from filling apache errors logs!
-// merry christmas, 18 dec 2013
-error_reporting(0);
+require_once "../../config/settings.php";
 
 // Author:	Chris Karstens
 // Date:	February 13, 2012
@@ -13,7 +11,7 @@ date_default_timezone_set('UTC');
 
 if(isset($argv)){
 	for($i=1;$i<count($argv);$i++){
-        	$it = split("=",$argv[$i]);
+        	$it = explode("=",$argv[$i]);
           	$_GET[$it[0]] = $it[1];
      	}
 }
@@ -97,7 +95,7 @@ for($z=0;$z<=1;$z++){
 	$data = file($master_list);
 	$sites = array();
 	foreach($data as $line){
-		$d = explode(" ", trim(ereg_replace( ' +', ' ', $line)));
+		$d = explode(" ", trim(preg_replace( '/ +/', ' ', $line)));
 		$sites[] = strtolower($d[3]);
 		if($site == strtolower($d[3])){
 			$found = 1;
@@ -696,26 +694,26 @@ if($var1 == "snow_accum" && $date == ""){
 		$h = -1;
 		if($z == 0){
 			$dt = 1;
-			$link = "../data/cobb_nam/nam_".strtolower($site).".dat";
+			$link = METFS1 . "cobb/nam/nam_".strtolower($site).".dat";
 		}
                 elseif($z == 1){
                         $dt = 1;
-                        $link = "../data/cobb_namm/nam_".strtolower($site).".dat";
+                        $link = METFS1 . "cobb/namm/nam_".strtolower($site).".dat";
                 }                
                 elseif($z == 2){
                         $dt = 3;
-                        $link = "../data/cobb_gfs/gfs3_".strtolower($site).".dat";
+                        $link = METFS1 . "cobb/gfs/gfs3_".strtolower($site).".dat";
                 }                
                 elseif($z == 3){
                         $dt = 3;
-                        $link = "../data/cobb_gfsm/gfs3_".strtolower($site).".dat";
+                        $link = METFS1 . "cobb/gfsm/gfs3_".strtolower($site).".dat";
                 }     
 		elseif($z == 4){
                         $dt = 1;
-                        $link = "../data/cobb_nam4km/nam4km_".strtolower($site).".dat";
+                        $link = METFS1 . "cobb/nam4km/nam4km_".strtolower($site).".dat";
                 }           
-		$data = @file($link);
-		if($data == False){
+		$data = file($link);
+		if($data === False){
 			continue;
 		}
 		foreach($data as $line){
@@ -1176,7 +1174,6 @@ function file_curl($url){
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
         curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
         $data = curl_exec($ch);
-        curl_close($ch);
         $array = explode("\n", $data);
         return $array;
 }

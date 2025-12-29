@@ -650,22 +650,22 @@ if ($var1 == "snow_accum" && $date == "") {
         $h = -1;
         if ($z == 0) {
             $dt = 1;
-            $link = "../data/cobb_nam/nam_" . strtolower($site) . ".dat";
+            $link = METFS1 . "cobb/nam/nam_" . strtolower($site) . ".dat";
         } elseif ($z == 1) {
             $dt = 1;
-            $link = "../data/cobb_namm/nam_" . strtolower($site) . ".dat";
+            $link = METFS1 . "cobb/namm/nam_" . strtolower($site) . ".dat";
         } elseif ($z == 2) {
             $dt = 3;
-            $link = "../data/cobb_gfs/gfs3_" . strtolower($site) . ".dat";
+            $link = METFS1 . "cobb/gfs/gfs3_" . strtolower($site) . ".dat";
         } elseif ($z == 3) {
             $dt = 3;
-            $link = "../data/cobb_gfsm/gfs3_" . strtolower($site) . ".dat";
+            $link = METFS1 . "cobb/gfsm/gfs3_" . strtolower($site) . ".dat";
         } elseif ($z == 4) {
             $dt = 1;
-            $link = "../data/cobb_nam4km/nam4km_" . strtolower($site) . ".dat";
+            $link = METFS1 . "cobb/nam4km/nam4km_" . strtolower($site) . ".dat";
         }
-        $data = @file($link);
-        if ($data == False) {
+        $data = file($link);
+        if ($data === False) {
             continue;
         }
         foreach ($data as $line) {
