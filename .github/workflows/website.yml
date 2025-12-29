@@ -40,7 +40,7 @@ jobs:
         chmod 755 $HOME
         sudo cp config/apache_config.inc /etc/apache2/sites-available/bufkit_warehouse.conf
         sudo ln -s $PWD /opt/bufkit_warehouse
-        sudo cp .github/php_form.conf /etc/php/8.3/fpm/pool.d/00-bw.conf
+        sudo cp .github/php_fpm.conf /etc/php/8.3/fpm/pool.d/00-bw.conf
         sudo a2ensite bufkit_warehouse.conf
         sudo systemctl restart apache2
         sudo systemctl restart php8.3-fpm
