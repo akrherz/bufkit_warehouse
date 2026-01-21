@@ -7,12 +7,12 @@ Point-Based Model Forecast Table Viewer
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src='jquery.min.js'></script>
 <script src='bootstrap.min.js'></script>
-<script src='spectrum/spectrum.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
 <script src='ol.js'></script>
 <script src='FileSaver.min.js'></script>
 <script src='https://www.spc.noaa.gov/exper/sref/srefplumes/scripts/biglist.js'></script>
 <script src='https://www.spc.noaa.gov/exper/sref/srefplumes/scripts/wfolist.js'></script>
-<link rel='stylesheet' href='spectrum/spectrum.css' />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
 <link rel='stylesheet' href='bootstrap.min.css' />
 <link rel='stylesheet' href='ol.css' />
 
@@ -982,7 +982,7 @@ $ratio = 11;
 $vars_available = array('stn','date','pmsl','pres','sktc','stc1','snfl','wtns','p01m','c01m','stc2','lcld','mcld','hcld','snra','uwnd','vwnd','r01m','bfgr','t2ms','q2ms','wxts','wxtp','wxtz','wxtr','ustm','vstm','hlcy','sllh','wsym','cdbp','vsbk','td2m','evap','p03m','c03m','swem','s03m','show','lift','swet','kinx','lclp','pwat','totl','cape','lclt','cins','eqlv','lfct','brch','buf_snow_sr','buf_snow_maxt','snra_constant','snra_maxt','maxt','mom_wind_mean','mom_wind_max','tf','td','wspd','wdir','hiwc','qpf','qpf_accum','wagl','frz_rain','sleet','rh','buf_snow_sr_rate','buf_snow_maxt_rate');
 
 
-$titles = array('stn','date','Mean Sea Level Pressure','Surface Pressure','sktc','stc1','snfl','wtns','1-Hour QPF','c01m','stc2','lcld','mcld','hcld','snra','U-Wind','V_Wind','r01m','bfgr','Temperature','q2ms','wxts','wxtp','Freezing Rain Category','wxtr','ustm','vstm','0-3 km Helicity','sllh','wsym','cdbp','vsbk','Dewpoint','evap','3-Hour QPF','c03m','swem','s03m','show','lift','swet','kinx','lclp','pwat','totl','CAPE','lclt','cins','eqlv','lfct','brch','Snowfall','Snowfall','Constant Snow Ratio','Max-T in Profile Snow Ratio','Max Temp in Profile','Wind Gust','Wind Gust','Temperature','Dewpoint','Wind Speed','Wind Direction','Apparent Temperature','Precip','Precip Accumulation',''.$hgt.' m AGL Wind Speed','Freezing Rain Accumulation','Sleet Accumulation','Relative Humidity','Snow Rate ('.$ratio.':1 Ratio)','Snow Rate (Max-T Method)');
+$titles = array('stn','date','Mean Sea Level Pressure','Surface Pressure','sktc','stc1','snfl','wtns','1-Hour QPF','c01m','stc2','lcld','mcld','hcld','snra','U-Wind','V_Wind','r01m','bfgr','Temperature','q2ms','wxts','wxtp','Freezing Rain Category','wxtr','ustm','vstm','0-3 km Helicity','sllh','wsym','cdbp','vsbk','Dewpoint','evap','3-Hour QPF','c03m','swem','s03m','show','lift','swet','kinx','lclp','pwat','totl','CAPE','lclt','cins','eqlv','lfct','brch','Snowfall','Snowfall','Constant Snow Ratio','Max-T in Profile Snow Ratio','Max Temp in Profile','Wind Gust','Wind Gust','Temperature','Dewpoint','Wind Speed','Wind Direction','Apparent Temperature','Precip','Precip Accumulation','... m AGL Wind Speed','Freezing Rain Accumulation','Sleet Accumulation','Relative Humidity','Snow Rate ('.$ratio.':1 Ratio)','Snow Rate (Max-T Method)');
 
 $vars_available = array('tf','td','rh','wspd','mom_wind_mean','mom_wind_max','buf_snow_sr_rate','buf_snow_maxt_rate','frz_rain_rate','sleet_rate','fire','winter');
 
