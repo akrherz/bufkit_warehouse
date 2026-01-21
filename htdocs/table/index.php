@@ -7,12 +7,12 @@ Point-Based Model Forecast Table Viewer
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src='jquery.min.js'></script>
 <script src='bootstrap.min.js'></script>
-<script src='spectrum/spectrum.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
 <script src='ol.js'></script>
 <script src='FileSaver.min.js'></script>
 <script src='https://www.spc.noaa.gov/exper/sref/srefplumes/scripts/biglist.js'></script>
 <script src='https://www.spc.noaa.gov/exper/sref/srefplumes/scripts/wfolist.js'></script>
-<link rel='stylesheet' href='spectrum/spectrum.css' />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
 <link rel='stylesheet' href='bootstrap.min.css' />
 <link rel='stylesheet' href='ol.css' />
 
