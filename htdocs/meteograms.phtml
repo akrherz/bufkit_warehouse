@@ -4,7 +4,7 @@ putenv("TZ=UTC");
 
 if(isset($argv)){
         for($i=1;$i<count($argv);$i++){
-                $it = split("=",$argv[$i]);
+                $it = explode("=",$argv[$i]);
                 $_GET[$it[0]] = $it[1];
         }
 }
@@ -64,7 +64,7 @@ for($z=0;$z<=1;$z++){
        	$data = file($master_list);
         $sites = array();
         foreach($data as $line){
-                $d = explode(" ", trim(ereg_replace( ' +', ' ', $line)));
+                $d = explode(" ", trim(preg_replace( "/ +/", " ", $line)));
                 $sites[] = strtolower($d[3]);
                 if($site == strtolower($d[3])){
                         $found = 1;
@@ -3095,21 +3095,7 @@ for ($num = 0; $num <= $model_count; $num++) {
 
 </map>
 
-<script type="text/javascript">
-var sc_project=5230524; 
-var sc_invisible=1; 
-var sc_partition=59; 
-var sc_click_stat=1; 
-var sc_security="5b0b2ca6"; 
-</script>
-
-<script type="text/javascript"
-src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
-class="statcounter"><a title="wordpress blog stats"
-href="http://www.statcounter.com/wordpress.com/"
-target="_blank"><img class="statcounter"
-src="http://c.statcounter.com/5230524/0/5b0b2ca6/1/"
-alt="wordpress blog stats" ></a></div></noscript>
+<?php include("../include/statcounter.php"); ?>
 
 </body>
 </html>

@@ -13,7 +13,7 @@ date_default_timezone_set('UTC');
 
 if(isset($argv)){
 	for($i=1;$i<count($argv);$i++){
-        	$it = split("=",$argv[$i]);
+        	$it = explode("=",$argv[$i]);
           	$_GET[$it[0]] = $it[1];
      	}
 }
@@ -97,7 +97,7 @@ for($z=0;$z<=1;$z++){
 	$data = file($master_list);
 	$sites = array();
 	foreach($data as $line){
-		$d = explode(" ", trim(ereg_replace( ' +', ' ', $line)));
+		$d = explode(" ", trim(preg_replace( '/ +/', ' ', $line)));
 		$sites[] = strtolower($d[3]);
 		if($site == strtolower($d[3])){
 			$found = 1;
@@ -1178,7 +1178,6 @@ function file_curl($url){
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
         curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
         $data = curl_exec($ch);
-        curl_close($ch);
         $array = explode("\n", $data);
         return $array;
 }

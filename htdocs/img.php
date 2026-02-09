@@ -2356,23 +2356,7 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         </form>
     </map>
 
-    <script type="text/javascript">
-        var sc_project = 5230524;
-        var sc_invisible = 1;
-        var sc_partition = 59;
-        var sc_click_stat = 1;
-        var sc_security = "5b0b2ca6";
-    </script>
-
-    <script type="text/javascript"
-        src="http://www.statcounter.com/counter/counter.js"></script><noscript>
-        <div
-            class="statcounter"><a title="wordpress blog stats"
-                href="http://www.statcounter.com/wordpress.com/"
-                target="_blank"><img class="statcounter"
-                    src="http://c.statcounter.com/5230524/0/5b0b2ca6/1/"
-                    alt="wordpress blog stats"></a></div>
-    </noscript>
+<?php include("../include/statcounter.php"); ?>
 
 </body>
 

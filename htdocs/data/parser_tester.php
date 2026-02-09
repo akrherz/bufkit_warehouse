@@ -3,7 +3,7 @@
 if (isset($argv))
      for ($i=1;$i<count($argv);$i++)
      {
-          $it = split("=",$argv[$i]);
+          $it = explode("=",$argv[$i]);
           $_GET[$it[0]] = $it[1];
      }
 
@@ -38,7 +38,7 @@ for($z=0;$z<=1;$z++){
 	}
 	$data = file($master_list);
 	foreach($data as $line){
-	        $d = explode(" ", trim(ereg_replace( ' +', ' ', $line)));
+	        $d = explode(" ", trim(preg_replace( "/ +/", " ", $line)));
 	        $sites[] = strtolower($d[3]);
 	}
 }
