@@ -683,7 +683,7 @@ for($z=0;$z<=1;$z++){
         }
         $data = file($master_list);             
         foreach($data as $line){                       
-                $d = explode(" ", trim(ereg_replace( ' +', ' ', $line)));
+                $d = explode(" ", trim(preg_replace( "/ +/", " ", $line)));
                 $sites[] = strtolower($d[3]);                  
                 if($site == strtolower($d[3])){             
                         $found = 1;
