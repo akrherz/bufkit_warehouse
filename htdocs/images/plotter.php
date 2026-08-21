@@ -48,7 +48,6 @@ $max_t = get_str404("max_t", "1");
 $mean_mt = get_str404("mean_mt", "1");
 $max_mt = get_str404("max_mt", "1");
 $mean = get_str404("mean", "1");
-$freese = get_str404("freese", "no");
 $date = get_str404("date", "");
 $start_time = get_str404("start_time", "");
 $end_time = get_str404("end_time", "");
@@ -2169,14 +2168,6 @@ if ($obs == 1 && !empty($obs_var1) && !empty($obs_time) && count($obs_var1) == c
     $lineplot_obs1->mark->SetFillColor("cyan1");
 }
 
-if ($freese != "no" && !empty($freese_time)) {
-    $lineplot_freese = new LinePlot($freese_wind, $freese_time);
-    $lineplot_freese->SetColor("black");
-    $lineplot_freese->SetWeight(6);
-    $lineplot_freese->SetLegend("Freese-Notis - " . $freese_id . "");
-    $graph->Add($lineplot_freese);
-    $lineplot_freese->SetColor("black");
-}
 if ($var == "wdir") {
     $graph->SetScale("datlin", 0, 360, $min, $max);
     $graph->yscale->ticks->Set(45, 22.5);
@@ -2203,7 +2194,7 @@ $graph->legend->SetColumns(1);
 $graph->legend->SetAbsPos(30, 40, 'right', 'top');
 $graph->legend->SetShadow(false);
 $graph->legend->SetFillColor("gray8");
-if ($var1 == "snow_accum" || $var1 == "wind" || $freese != "no") {
+if ($var1 == "snow_accum" || $var1 == "wind") {
     $graph->legend->SetAbsPos(2, 40, 'right', 'top');
     if ($var1 == "snow_accum") {
         $graph->legend->SetFont(FF_VERDANA, FS_NORMAL, 5.4);
