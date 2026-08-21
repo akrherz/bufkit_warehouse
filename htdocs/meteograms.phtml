@@ -1,4 +1,5 @@
 <?php
+require_once "../../config/settings.php";
 
 putenv("TZ=UTC");
 
@@ -414,7 +415,7 @@ $k = -1;
 $l = -1;
 $m = -1;
 $v = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/nam/nam_".$site.".buf";
+$link = METFS1 . "bufkit/nam/nam_".$site.".buf";
 
 $data = file($link) or die('Could not read file!');
 foreach ($data as $line) {
@@ -643,7 +644,7 @@ $k = -1;
 $l = -1;
 $m = -1;
 $a = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/namm/namm_".$site.".buf";
+$link = METFS1 . "bufkit/namm/namm_".$site.".buf";
 
 $data = file($link) or die('Could not read file!');
 foreach ($data as $line) {
@@ -874,7 +875,7 @@ $l = -1;
 $m = -1;
 $b = -1;
 $x = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/gfs/gfs3_".$site.".buf";
+$link = METFS1 . "bufkit/gfs/gfs3_".$site.".buf";
 
 $data = file($link) or die('Could not read file!');
 foreach ($data as $line) {
@@ -1084,7 +1085,7 @@ $l = -1;
 $m = -1;
 $c = -1;
 $x = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/gfsm/gfs3_".$site.".buf";
+$link = METFS1 . "bufkit/gfsm/gfs3_".$site.".buf";
 
 $data = file($link) or die('Could not read file!');
 foreach ($data as $line) {
@@ -1293,7 +1294,7 @@ $k = -1;
 $l = -1;
 $m = -1;
 $v = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/ruc/ruc_".$site.".buf";
+$link = METFS1 . "bufkit/ruc/ruc_{$site}.buf";
 
 $data = file($link) or die('Could not read ruc file!');
 foreach ($data as $line) {
