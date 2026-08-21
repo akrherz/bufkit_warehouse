@@ -47,7 +47,7 @@ for($z=0;$z<=4;$z++){
 	$z2 = 0;
         $tz2 = 0;
 
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/snow.php?model=".$mdl."&site=".$site_l."";
+        $link = "/data/snow.php?model=".$mdl."&site=".$site_l."";
         //echo $link;
         //die();
         $temp_maxt = 0;

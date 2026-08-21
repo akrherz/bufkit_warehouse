@@ -282,7 +282,7 @@ for ($z = 0; $z <= 5; $z++) {
 
     if ($date == "") {
         $link = sprintf(
-            "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?" .
+            "/data/parser.php?" .
                 "model=%s&site=%s&hgt=%s&ratio=%s&start_time=%s&end_time=%s",
             $mdl,
             $site_l,
@@ -292,7 +292,7 @@ for ($z = 0; $z <= 5; $z++) {
             $end
         );
     } else {
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&hgt=" . $hgt . "&date=" . $parse_date . "&ratio=" . $ratio . "&start_time=" . $start . "&end_time=" . $end;
+        $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&hgt=" . $hgt . "&date=" . $parse_date . "&ratio=" . $ratio . "&start_time=" . $start . "&end_time=" . $end;
     }
     $temp_maxt = 0;
     $temp_sr = 0;

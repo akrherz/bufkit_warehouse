@@ -12,7 +12,7 @@ system("mv /home/ckarsten/WWW/bufkit/data/sref_temp/sref_".$site.".buf /home/cka
 
 $values = array();
 for($i=1;$i<=21;$i++){
-	$link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=sref&site=".$site."&member=".$i."&sref_name=".$filename."";
+	$link = "/data/parser.php?model=sref&site=".$site."&member=".$i."&sref_name=".$filename."";
 	$data = file($link);
 	$j = 0;
 	$index1 = $i - 1;

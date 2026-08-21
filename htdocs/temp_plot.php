@@ -3,7 +3,7 @@ require_once "../config/settings.php";
 
 header ("Content-type: image/png");
 
-$im = @imagecreatefrompng("http://www.meteor.iastate.edu/~ckarsten/bufkit/temp1.png");
+$im = @imagecreatefrompng("/temp1.png");
 $black = imagecolorallocate ($im,0,0,0);
 $black_alpha = imagecolorallocatealpha ($im,0,0,0,50);
 $color = 0;
@@ -27,7 +27,7 @@ $x13 = 1058;
 $x14 = 1128;
 $x15 = 1198;
 
-$file = 'http://www.meteor.iastate.edu/~ckarsten/bufkit/temp.php' or die();
+$file = '/temp.php' or die();
 $data = file($file);
 
 foreach ($data as $line) {
@@ -57,7 +57,7 @@ foreach ($data as $line) {
 
 }
 
-$file = 'http://www.meteor.iastate.edu/~ckarsten/bufkit/temp.php' or die();
+$file = '/temp.php' or die();
 $data = file($file);
 
 foreach ($data as $line) {

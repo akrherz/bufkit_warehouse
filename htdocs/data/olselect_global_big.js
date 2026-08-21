@@ -172,7 +172,7 @@ function get_my_url (bounds) {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
         protocol: new OpenLayers.Protocol.HTTP({
-            url: "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/kml.php?id=8",
+            url: "/data/kml.php?id=8",
             format: new OpenLayers.Format.KML({
                 extractStyles: true,
                 extractAttributes: true
@@ -186,7 +186,7 @@ function get_my_url (bounds) {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
         protocol: new OpenLayers.Protocol.HTTP({
-            url: "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/kml.php?id=3",
+            url: "/data/kml.php?id=3",
             format: new OpenLayers.Format.KML({
                 extractStyles: true,
                 extractAttributes: true
@@ -202,7 +202,7 @@ function get_my_url (bounds) {
         projection: map.displayProjection,
         strategies: [new OpenLayers.Strategy.Fixed()],
         protocol: new OpenLayers.Protocol.HTTP({
-            url: "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/kml.php?id=10",
+            url: "/data/kml.php?id=10",
             format: new OpenLayers.Format.KML({
                 extractStyles: true,
                 extractAttributes: true

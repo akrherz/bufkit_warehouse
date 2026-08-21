@@ -6,8 +6,8 @@ require_once "../config/settings.php";
 
 <head>
 
-    <link rel="stylesheet" href="http://www.meteor.iastate.edu/~ckarsten/bufkit/css/style.css" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="http://www.meteor.iastate.edu/~ckarsten/bufkit/css/fb.css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/fb.css" />
 
 </head>
 

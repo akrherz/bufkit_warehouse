@@ -149,10 +149,10 @@ foreach ($data as $line) {
         $ewrf_l2 = "http://wrfensemble.wdtb.noaa.gov/12/ewrf_" . $ewrf . ".buz";
         $gfs_i = $gfs_i_orig;
         $gfsm_i = $gfsm_i_orig;
-        $gfs = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfs/gfs3_" . $site . ".buf";
-        $gfsm = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfsm/gfs3_" . $site . ".buf";
-        $gfs_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfs/gfs3_" . $site_l . ".buf";
-        $gfsm_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfsm/gfs3_" . $site_l . ".buf";
+        $gfs = "/data/gfs/gfs3_" . $site . ".buf";
+        $gfsm = "/data/gfsm/gfs3_" . $site . ".buf";
+        $gfs_l = "/data/gfs/gfs3_" . $site_l . ".buf";
+        $gfsm_l = "/data/gfsm/gfs3_" . $site_l . ".buf";
         $gfs_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=gfs&site=" . $site_l . "";
         $gfsm_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=gfsm&site=" . $site_l . "";
         $view_gfs_cobb = "View Cobb Output!";
@@ -172,13 +172,13 @@ foreach ($data as $line) {
         $view_gfs_cobb = "";
     }
 
-    $nam = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/nam/nam_" . $site . ".buf";
-    $namm = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/namm/namm_" . $site . ".buf";
-    $rap = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/rap/rap_" . $site . ".buf";
-    $nam_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/nam/nam_" . $site_l . ".buf";
-    $namm_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/namm/namm_" . $site_l . ".buf";
-    $rap_l = "https://www.meteor.iastate.edu/~ckarsten/bufkit/data/rap/rap_" . $site_l . ".buf";
-    $x_name = "https://www.meteor.iastate.edu/~ckarsten/bufkit/image_loader.phtml?site=" . $site_l . "";
+    $nam = "/data/nam/nam_" . $site . ".buf";
+    $namm = "/data/namm/namm_" . $site . ".buf";
+    $rap = "/data/rap/rap_" . $site . ".buf";
+    $nam_l = "/data/nam/nam_" . $site_l . ".buf";
+    $namm_l = "/data/namm/namm_" . $site_l . ".buf";
+    $rap_l = "/data/rap/rap_" . $site_l . ".buf";
+    $x_name = "/image_loader.phtml?site=" . $site_l . "";
     $nam_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=nam&site=" . $site_l . "";
     $namm_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=namm&site=" . $site_l . "";
     $rap_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=rap&site=" . $site_l . "";

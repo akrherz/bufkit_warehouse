@@ -908,7 +908,7 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
                             title="IEM" />
 
                         <area shape=rect coords="972,8,1232,56"
-                            href="http://www.meteor.iastate.edu/~ckarsten/bufkit/bufkit.html" alt="Bufkit Warehouse"
+                            href="/bufkit.html" alt="Bufkit Warehouse"
                             title="Bufkit Warehouse" />
 
                 </td>
@@ -1181,9 +1181,9 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
             }
         }
         if ($archive_check != 1) {
-            $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
+            $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
         } else {
-            $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&date=" . $parse_date . "";
+            $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&date=" . $parse_date . "";
             //echo "".$link."\n";
         }
         $data = file($link);
@@ -1339,13 +1339,13 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         $min = min($gfs_time[0], $gfsm_time[0]);
         $max = max($gfs_time[60], @$gfsm_time[60]);
     } else {
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfs&site=kdsm&date=" . $gfs_init_date . "";
+        $link = "/data/parser.php?model=gfs&site=kdsm&date=" . $gfs_init_date . "";
         $data = file($link);
         foreach ($data as $line) {
             $d = explode("\t", trim($line));
             $buf_t_gfs[] = strtotime($d[1]);
         }
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfsm&site=kdsm&" . $gfsm_init_date . "";
+        $link = "/data/parser.php?model=gfsm&site=kdsm&" . $gfsm_init_date . "";
         $data = file($link);
         foreach ($data as $line) {
             $d = explode("\t", trim($line));

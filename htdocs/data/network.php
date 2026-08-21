@@ -91,11 +91,11 @@ foreach ($data as $line) {
     $site = $buf[2];
     $name = $buf[3];
 
-    $nam = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/nam/nam_" . $site . ".buf";
-    $namm = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/namm/namm_" . $site . ".buf";
-    $gfs = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfs/gfs3_" . $site . ".buf";
-    $gfsm = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/gfsm/gfs3_" . $site . ".buf";
-    $x_name = "http://www.meteor.iastate.edu/~ckarsten/bufkit/image_loader.phtml?site=" . $site . "";
+    $nam = "/data/nam/nam_" . $site . ".buf";
+    $namm = "/data/namm/namm_" . $site . ".buf";
+    $gfs = "/data/gfs/gfs3_" . $site . ".buf";
+    $gfsm = "/data/gfsm/gfs3_" . $site . ".buf";
+    $x_name = "/image_loader.phtml?site=" . $site . "";
     $load = "Visualize Data!";
 
     $st1 = "{\"type\":\"Feature\",\"id\":\"" . $site . "\",\"properties\":{\"sname\":\"" . $nam . "\",\"tname\":\"" . $namm . "\",\"vname\":\"" . $gfs . "\",\"wname\":\"" . $gfsm . "\",";

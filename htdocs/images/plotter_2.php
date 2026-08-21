@@ -296,10 +296,10 @@ for($z=0;$z<=5;$z++){
         $tz2 = 0;
 
 	if($date == ""){
-	        @$link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=".$mdl."&site=".$site_l."&hgt=".$hgt."&ratio=".$ratio."&start_time=".$start."&end_time=".$end;
+	        @$link = "/data/parser.php?model=".$mdl."&site=".$site_l."&hgt=".$hgt."&ratio=".$ratio."&start_time=".$start."&end_time=".$end;
 	}
 	else{
-                @$link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=".$mdl."&site=".$site_l."&hgt=".$hgt."&date=".$parse_date."&ratio=".$ratio."&start_time=".$start."&end_time=".$end;
+                @$link = "/data/parser.php?model=".$mdl."&site=".$site_l."&hgt=".$hgt."&date=".$parse_date."&ratio=".$ratio."&start_time=".$start."&end_time=".$end;
 	}
         $temp_maxt = 0;
         $temp_sr = 0;
@@ -667,13 +667,13 @@ elseif(!empty($buf_t_gfs) && !empty($buf_t_gfsm)){
         $end = $max;
 }
 else{
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser2.php?model=gfs&site=kdsm&date=".$parse_date_gfs."";
+        $link = "/data/parser2.php?model=gfs&site=kdsm&date=".$parse_date_gfs."";
         $data = file($link);
         foreach($data as $line){
                 $d = explode("\t",trim($line));
                 $buf_t_gfs[] = strtotime($d[1]);
         }
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser2.php?model=gfsm&site=kdsm&date=".$parse_date_gfsm."";
+        $link = "/data/parser2.php?model=gfsm&site=kdsm&date=".$parse_date_gfsm."";
         $data = file($link);
         foreach($data as $line){ 
                 $d = explode("\t",trim($line));

@@ -583,7 +583,7 @@ href="http://mesonet.agron.iastate.edu" alt="IEM"
 title="IEM" />
 
 <area shape=rect coords="972,8,1232,56"
-href="http://www.meteor.iastate.edu/~ckarsten/bufkit/bufkit.html" alt="Bufkit Warehouse"
+href="/bufkit.html" alt="Bufkit Warehouse"
 title="Bufkit Warehouse" />
 
 </td></tr>
@@ -906,10 +906,10 @@ for($z=0;$z<=5;$z++){
                 }
         }
 	if($archive_check != 1){
-		$link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=".$mdl."&site=".$site_l."";
+		$link = "/data/parser.php?model=".$mdl."&site=".$site_l."";
 	}
 	else{
-		$link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=".$mdl."&site=".$site_l."&date=".$parse_date."";
+		$link = "/data/parser.php?model=".$mdl."&site=".$site_l."&date=".$parse_date."";
 		//echo "".$link."\n";
 	}
 	$data = file($link);
@@ -1082,13 +1082,13 @@ if(!empty($gfs_time) && !empty($gfsm_time)){
 	$max = max($gfs_time[count($gfs_time)-1],@$gfsm_time[count($gfsm_time)-1]);
 }
 else{
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfs&site=kdsm&date=".$gfs_init_date."";
+        $link = "/data/parser.php?model=gfs&site=kdsm&date=".$gfs_init_date."";
         $data = file($link);
         foreach($data as $line){
                 $d = explode("\t",trim($line));
                 $buf_t_gfs[] = strtotime($d[1]);
         }
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfsm&site=kdsm&".$gfsm_init_date."";
+        $link = "/data/parser.php?model=gfsm&site=kdsm&".$gfsm_init_date."";
         $data = file($link);
         foreach($data as $line){
                 $d = explode("\t",trim($line));

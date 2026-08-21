@@ -76,7 +76,7 @@ function init(){
    });
 
   var geojsoni = new OpenLayers.Layer.GML("NC U.S. Bufkit Sites", 
-    "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/nc_network.php",
+    "/data/nc_network.php",
             {
                 projection: new OpenLayers.Projection('EPSG:4326'),
                 format: OpenLayers.Format.GeoJSON, 
@@ -84,7 +84,7 @@ function init(){
              });
 
   var geojsonj = new OpenLayers.Layer.GML("SC U.S. Bufkit Sites",
-    "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/sc_network.php",
+    "/data/sc_network.php",
             {
                 projection: new OpenLayers.Projection('EPSG:4326'),
                 format: OpenLayers.Format.GeoJSON,
@@ -92,7 +92,7 @@ function init(){
              });
 
   var geojsonk = new OpenLayers.Layer.GML("NE U.S. Bufkit Sites",
-    "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/ne_network.php",
+    "/data/ne_network.php",
             {
                 projection: new OpenLayers.Projection('EPSG:4326'),
                 format: OpenLayers.Format.GeoJSON,
@@ -100,7 +100,7 @@ function init(){
              });
 
   var geojsonl = new OpenLayers.Layer.GML("SE U.S. Bufkit Sites",
-    "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/se_network.php",
+    "/data/se_network.php",
             {
                 projection: new OpenLayers.Projection('EPSG:4326'),
                 format: OpenLayers.Format.GeoJSON,
@@ -108,7 +108,7 @@ function init(){
              });
 
   var geojsonm = new OpenLayers.Layer.GML("NW U.S. Bufkit Sites",
-    "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/nw_network.php",
+    "/data/nw_network.php",
             {
                 projection: new OpenLayers.Projection('EPSG:4326'),
                 format: OpenLayers.Format.GeoJSON,
@@ -116,7 +116,7 @@ function init(){
              });
 
   var geojsonn = new OpenLayers.Layer.GML("SW U.S. Bufkit Sites",
-    "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/sw_network.php",
+    "/data/sw_network.php",
             {
                 projection: new OpenLayers.Projection('EPSG:4326'),
                 format: OpenLayers.Format.GeoJSON,

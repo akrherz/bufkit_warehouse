@@ -155,7 +155,7 @@ foreach ($data as $line) {
         }
     }
 
-    $x_name = "https://www.meteor.iastate.edu/~ckarsten/bufkit/image_loader.phtml?site=" . $site_l . "";
+    $x_name = "/image_loader.phtml?site=" . $site_l . "";
     $load = "Visualize Data!";
 
     if ($ewrf != "---") {
