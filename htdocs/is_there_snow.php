@@ -11,11 +11,15 @@ $site = $_GET["site"];
 $site_upper = strtoupper($site);
 
 $link = METFS1 . "cobb/nam/nam_{$site}.dat";
-$data = file($link);
+$data = file_get_contents($link);
+if ($data === FALSE) {
+    echo "no";
+    exit;
+}
 $hr_count = "Z";
 $pop_count_nam = -1;
 
-foreach($data as $line){
+foreach(explode("\n",$data) as $line){
      $cobb = str_split(trim($line));
      if(@$cobb[11] == $hr_count){
           $pop_count_nam++;
@@ -30,7 +34,12 @@ foreach($data as $line){
 
 
 $link = METFS1 . "cobb/namm/nam_{$site}.dat";
-$data = file($link);
+$data = file_get_contents($link);
+if ($data === FALSE) {
+    echo "no";
+    exit;
+}
+$data = explode("\n",$data);
 $hr_count = "Z";
 $pop_count_namm = -1;
 
@@ -49,7 +58,12 @@ foreach($data as $line){
 
 
 $link = METFS1 . "cobb/gfs/gfs3_{$site}.dat";
-$data = file($link);
+$data = file_get_contents($link);
+if ($data === FALSE) {
+    echo "no";
+    exit;
+}
+$data = explode("\n",$data);
 $hr_count = "Z";
 $pop_count_gfs = -1;
 
@@ -68,11 +82,15 @@ foreach($data as $line){
 
 
 $link = METFS1 . "cobb/gfsm/gfs3_{$site}.dat";
-$data = file($link);
+$data = file_get_contents($link);
+if ($data === FALSE) {
+    echo "no";
+    exit;
+}
 $hr_count = "Z";
 $pop_count_gfsm = -1;
 
-foreach($data as $line){
+foreach(explode("\n",$data) as $line){
      $cobb = str_split(trim($line));
      if(@$cobb[11] == $hr_count){
           $pop_count_gfsm++;
