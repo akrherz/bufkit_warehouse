@@ -4,6 +4,7 @@
 // Version:	PHP, JPGraph
 // Purpose:	Generates meteogram from user-specified variables using available data
 require_once "../../config/settings.php";
+require_once "../../include/forms.php";
 
 require_once "../../include/jpgraph/jpgraph.php";
 require_once "../../include/jpgraph/jpgraph_line.php";
@@ -11,19 +12,10 @@ require_once "../../include/jpgraph/jpgraph_date.php";
 require_once "../../include/jpgraph/jpgraph_scatter.php";
 require_once "../../include/jpgraph/jpgraph_iconplot.php";
 
-function xssafe($data, $encoding = 'UTF-8')
-{
-    if (is_array($data)) {
-        return $data;
-    }
-    return htmlspecialchars($data, ENT_QUOTES | ENT_HTML401, $encoding);
-}
-
-//putenv("TZ=UTC");
 date_default_timezone_set('UTC');
 
-$hgt = isset($_GET["hgt"]) ? xssafe($_GET["hgt"]) : "80";
-$ratio = isset($_GET["ratio"]) ? xssafe($_GET["ratio"]) : "11";
+$hgt = get_str404("hgt", "80");
+$ratio = get_str404("ratio", "11");
 $parse_date = "";
 $gfs_init = 0;
 $gfsm_init = 0;
@@ -35,31 +27,31 @@ $y_labels = array('stn', 'date', 'MSLP (mb)', 'SFC Pressure (mb)', 'sktc', 'stc1
 $titles = array('stn', 'date', 'Mean Sea Level Pressure', 'Surface Pressure', 'sktc', 'stc1', 'snfl', 'wtns', '1-Hour QPF', 'c01m', 'stc2', 'lcld', 'mcld', 'hcld', 'snra', 'U-Wind', 'V_Wind', 'r01m', 'bfgr', 'Temperature', 'q2ms', 'wxts', 'wxtp', 'Freezing Rain Category', 'wxtr', 'ustm', 'vstm', '0-3 km Helicity', 'sllh', 'wsym', 'cdbp', 'vsbk', 'Dewpoint', 'evap', '3-Hour QPF', 'c03m', 'swem', 's03m', 'show', 'lift', 'swet', 'kinx', 'lclp', 'pwat', 'totl', 'CAPE', 'lclt', 'cins', 'eqlv', 'lfct', 'brch', 'Snowfall', 'Snowfall', 'Constant Snow Ratio', 'Max-T in Profile Snow Ratio', 'Max Temp in Profile', 'Wind Gust', 'Wind Gust', 'Temperature', 'Dewpoint', 'Wind Speed', 'Wind Direction', 'Apparent Temperature', 'Precip', 'Precip Accumulation', '' . $hgt . ' m AGL Wind Speed', 'Freezing Rain Accumulation', 'Sleet Accumulation', 'Relative Humidity', 'Snow Rate (' . $ratio . ':1 Ratio)', 'Snow Rate (Max-T Method)');
 
 $now = strtotime("now");
-$site = isset($_GET["site"]) ? xssafe($_GET["site"]) : "kdsm";
-$var = isset($_GET["var"]) ? xssafe($_GET["var"]) : "tf";
-$nam = isset($_GET["nam"]) ? xssafe($_GET["nam"]) : "1";
-$namm = isset($_GET["namm"]) ? xssafe($_GET["namm"]) : "1";
-$gfs = isset($_GET["gfs"]) ? xssafe($_GET["gfs"]) : "1";
-$gfsm = isset($_GET["gfsm"]) ? xssafe($_GET["gfsm"]) : "1";
-$rap = isset($_GET["rap"]) ? xssafe($_GET["rap"]) : "1";
-$nam4km = isset($_GET["nam4km"]) ? xssafe($_GET["nam4km"]) : "1";
-$nam_mos = isset($_GET["nam_mos"]) ? xssafe($_GET["nam_mos"]) : "1";
-$namm_mos = isset($_GET["namm_mos"]) ? xssafe($_GET["namm_mos"]) : "1";
-$gfs_mos = isset($_GET["gfs_mos"]) ? xssafe($_GET["gfs_mos"]) : "1";
-$gfsm_mos = isset($_GET["gfsm_mos"]) ? xssafe($_GET["gfsm_mos"]) : "1";
-$con = isset($_GET["con"]) ? xssafe($_GET["con"]) : "1";
-$obs = isset($_GET["obs"]) ? xssafe($_GET["obs"]) : "1";
-$nws = isset($_GET["nws"]) ? xssafe($_GET["nws"]) : "1";
-$compaction = isset($_GET["compaction"]) ? xssafe($_GET["compaction"]) : "1";
-$cobb = isset($_GET["cobb"]) ? xssafe($_GET["cobb"]) : "1";
-$max_t = isset($_GET["max_t"]) ? xssafe($_GET["max_t"]) : "1";
-$mean_mt = isset($_GET["mean_mt"]) ? xssafe($_GET["mean_mt"]) : "1";
-$max_mt = isset($_GET["max_mt"]) ? xssafe($_GET["max_mt"]) : "1";
-$mean = isset($_GET["mean"]) ? xssafe($_GET["mean"]) : "1";
-$freese = isset($_GET["freese"]) ? xssafe($_GET["freese"]) : "no";
-$date = isset($_GET["date"]) ? xssafe($_GET["date"]) : "";
-$start_time = isset($_GET["start_time"]) ? xssafe($_GET["start_time"]) : "";
-$end_time = isset($_GET["end_time"]) ? xssafe($_GET["end_time"]) : "";
+$site = get_str404("site", "kdsm");
+$var = get_str404("var", "tf");
+$nam = get_str404("nam", "1");
+$namm = get_str404("namm", "1");
+$gfs = get_str404("gfs", "1");
+$gfsm = get_str404("gfsm", "1");
+$rap = get_str404("rap", "1");
+$nam4km = get_str404("nam4km", "1");
+$nam_mos = get_str404("nam_mos", "1");
+$namm_mos = get_str404("namm_mos", "1");
+$gfs_mos = get_str404("gfs_mos", "1");
+$gfsm_mos = get_str404("gfsm_mos", "1");
+$con = get_str404("con", "1");
+$obs = get_str404("obs", "1");
+$nws = get_str404("nws", "1");
+$compaction = get_str404("compaction", "1");
+$cobb = get_str404("cobb", "1");
+$max_t = get_str404("max_t", "1");
+$mean_mt = get_str404("mean_mt", "1");
+$max_mt = get_str404("max_mt", "1");
+$mean = get_str404("mean", "1");
+$freese = get_str404("freese", "no");
+$date = get_str404("date", "");
+$start_time = get_str404("start_time", "");
+$end_time = get_str404("end_time", "");
 
 $nam4km_cobb_time = array();
 
@@ -1082,38 +1074,23 @@ if ($var == "tf") {
     $nws = 0;
 }
 
-function file_curl($url)
-{
-    $ch = curl_init();
-    $timeout = 5;
-    curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-    $data = curl_exec($ch);
-    $array = explode("\n", $data);
-    return $array;
-}
-
 $nws_time = array();
 $nws_var = array();
 $nws_time1 = array();
 $nws_var1 = array();
 if ($nws == 1 && in_array($site, $sites) && $date == "") {
-    $link4_1 = "http://preview.weather.gov/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&lat=" . $lat . "&lon=" . $lon . "&listLatLon=&lat1=&lon1=&lat2=&lon2=&resolutionSub=&listLat1=&listLon1=";
+    $link4_1 = "https://graphical.weather.gov/xml/SOAP_server/ndfdXMLclient.php?whichClient=NDFDgen&lat=" . $lat . "&lon=" . $lon . "&listLatLon=&lat1=&lon1=&lat2=&lon2=&resolutionSub=&listLat1=&listLon1=";
     $link4_2 = "&listLat2=&listLon2=&resolutionList=&endPoint1Lat=&endPoint1Lon=&endPoint2Lat=&endPoint2Lon=&listEndPoint1Lat=&listEndPoint1Lon=&listEndPoint2Lat=&listEndPoint2Lon=&zipCodeList=";
     $link4_3 = "&listZipCodeList=&centerPointLat=&centerPointLon=&distanceLat=&distanceLon=&resolutionSquare=&listCenterPointLat=&listCenterPointLon=&listDistanceLat=&listDistanceLon=";
     $link4_4 = "&listResolutionSquare=&citiesLevel=&listCitiesLevel=&sector=&gmlListLatLon=&featureType=&requestedTime=&startTime=&endTime=&compType=&propertyName=";
     $link4_5 = "&product=time-series&begin=" . $init_time . "%3A00%3A00&end=" . $end_t . "%3A00%3A00&Unit=e&" . $ndfd . "=" . $ndfd . "&Submit=Submit";
     $link4 = "" . $link4_1 . "" . $link4_2 . "" . $link4_3 . "" . $link4_4 . "" . $link4_5 . "";
-    //echo $link4;
-    //die();
 
     $nws_t = "start-valid-time";
     $value = "value";
 
-    //$data = file($link4);
-    $data = file_curl($link4);
+    $data = file_get_contents($link4);
+    $data = explode("\n", $data);
     foreach ($data as $line) {
         preg_match_all(".$nws_t.", $line, $id);
         $check1 = @$id[0][0];
@@ -1144,7 +1121,8 @@ if ($nws == 1 && in_array($site, $sites) && $date == "") {
     if ($var1 == "wind") {
         $link4_5 = "&product=time-series&begin=" . $init_time . "%3A00%3A00&end=" . $end_t . "%3A00%3A00&Unit=e&wgust=wgust&Submit=Submit";
         $link4 = "" . $link4_1 . "" . $link4_2 . "" . $link4_3 . "" . $link4_4 . "" . $link4_5 . "";
-        $data = file_curl($link4);
+        $data = file_get_contents($link4);
+        $data = explode("\n", $data);
         foreach ($data as $line) {
             preg_match_all(".$nws_t.", $line, $id);
             $check1 = @$id[0][0];
