@@ -97,7 +97,7 @@ if ($model == "nam") {
     if ($date == "") {
         $link = METFS1 . "bufkit/nam/nam_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/nam_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/nam_" . $site . ".buf";
     }
     $line_start = 11230;
     $line_end = 11739;
@@ -106,7 +106,7 @@ if ($model == "nam") {
     if ($date == "") {
         $link = METFS1 . "bufkit/namm/namm_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/namm_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/namm_" . $site . ".buf";
     }
     $line_start = 11230;
     $line_end = 11739;
@@ -120,7 +120,7 @@ if ($model == "nam") {
     if ($date == "") {
         $link = METFS1 . "bufkit/gfs/gfs3_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
     }
     if ($date == "") {
         $line_start = 19748;
@@ -139,7 +139,7 @@ if ($model == "nam") {
     if ($date == "") {
         $link = METFS1 . "bufkit/gfsm/gfs3_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
     }
     if ($date == "") {
         $line_start = 19748;
@@ -157,22 +157,22 @@ if ($model == "nam") {
     }
 } elseif ($model == "rap" || $model == "ruc") {
     if ($date == "" && $model == "rap") {
-        $link = "http://mtarchive.geol.iastate.edu/bufkit/rap/rap_" . $site . ".buf";
+        $link = MTARCHIVE . "bufkit/rap/rap_" . $site . ".buf";
         $line_start = 2474;
         $line_end = 2605;
         $hrs = 21;
     } elseif ($dCheck >= 1471953600) {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
         $line_start = 2474;
         $line_end = 2605;
         $hrs = 21;
     } elseif ($year >= 2012 && $mon >= 05 && $day >= 01) {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
         $line_start = 2138;
         $line_end = 2251;
         $hrs = 18;
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/ruc/ruc_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/ruc/ruc_" . $site . ".buf";
         $line_start = 2138;
         $line_end = 2251;
         $hrs = 18;

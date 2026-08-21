@@ -9,7 +9,7 @@ $a_year = date("Y", $at);
 $a_month = date("m", $at);
 $a_day = date("d", $at);
 
-$archive = "http://mtarchive.geol.iastate.edu/" . $a_year . "/" . $a_month . "/" . $a_day . "/bufkit/";
+$archive = MTARCHIVE . $a_year . "/" . $a_month . "/" . $a_day . "/bufkit/";
 
 $c = 0;
 $d = 5;

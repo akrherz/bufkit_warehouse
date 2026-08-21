@@ -289,6 +289,9 @@ for ($z = 0; $z <= 5; $z++) {
     $temp_maxt = 0;
     $temp_sr = 0;
     $data = file_get_contents($link);
+    if ($data === FALSE) {
+        continue;
+    }
     $data = explode("\n", $data);
     $snow = array();
     $snow1 = array();

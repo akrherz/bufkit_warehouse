@@ -1,5 +1,7 @@
-  
-  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+<?php
+require_once "../../config/settings.php";
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
       Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
  
 
@@ -23,7 +25,7 @@ $a_year = date("Y",$at);
 $a_month = date("m",$at);
 $a_day = date("d",$at);
 
-$archive = "https://mtarchive.geol.iastate.edu/".$a_year."/".$a_month."/".$a_day."/bufkit/";
+$archive = MTARCHIVE .$a_year."/".$a_month."/".$a_day."/bufkit/";
 
 ?>
 

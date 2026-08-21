@@ -20,7 +20,11 @@ function die405()
 */
 function xssafe($data, $encoding = 'UTF-8')
 {
-    if (is_array($data) || is_null($data)) {
+    // Do not allow this case
+    if (is_array($data) ){
+        die405();
+    }
+    if (is_null($data)) {
         return $data;
     }
     $res = htmlspecialchars($data, ENT_QUOTES | ENT_HTML401, $encoding);

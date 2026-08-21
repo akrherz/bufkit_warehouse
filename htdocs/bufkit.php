@@ -8,7 +8,7 @@ $a_year = date("Y",$at);
 $a_month = date("m",$at);
 $a_day = date("d",$at);
 
-$archive = "https://mtarchive.geol.iastate.edu/".$a_year."/".$a_month."/".$a_day."/bufkit/";
+$archive = MTARCHIVE . $a_year."/".$a_month."/".$a_day."/bufkit/";
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
