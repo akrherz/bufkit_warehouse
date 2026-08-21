@@ -1,7 +1,7 @@
 Alias /bufkit "/opt/bufkit_warehouse/htdocs"
 
 <Directory "/opt/bufkit_warehouse/htdocs">
-    Options -Indexes MultiViews
+    Options -Indexes +MultiViews
     AllowOverride None
     Require all granted
     <FilesMatch \.html$>
