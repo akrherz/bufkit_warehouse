@@ -274,8 +274,8 @@ for ($z = 0; $z <= 5; $z++) {
 
     if ($date == "") {
         $link = sprintf(
-            "/data/parser.php?" .
-                "model=%s&site=%s&hgt=%s&ratio=%s&start_time=%s&end_time=%s",
+            "%sdata/parser.php?model=%s&site=%s&hgt=%s&ratio=%s&start_time=%s&end_time=%s",
+            ROOTURL,
             $mdl,
             $site_l,
             $hgt,
@@ -284,21 +284,25 @@ for ($z = 0; $z <= 5; $z++) {
             $end
         );
     } else {
-        $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&hgt=" . $hgt . "&date=" . $parse_date . "&ratio=" . $ratio . "&start_time=" . $start . "&end_time=" . $end;
+        $link = ROOTURL . "data/parser.php?model=" . $mdl . "&site=" . $site_l . "&hgt=" . $hgt . "&date=" . $parse_date . "&ratio=" . $ratio . "&start_time=" . $start . "&end_time=" . $end;
     }
     $temp_maxt = 0;
     $temp_sr = 0;
-    $data = file($link);
+    $data = file_get_contents($link);
+    $data = explode("\n", $data);
     $snow = array();
     $snow1 = array();
     $h = -1;
     foreach ($data as $line) {
+        if ($line == "") {
+            continue;
+        }
         $z2++;
         $h2 = $z2 - 2;
         if ($z2 == 1) {
             // determine variable to plot
             $d = explode("\t", trim($line));
-            if (array_search($var, $d)) {
+            if (in_array($var, $d)) {
                 if ($var1 == "snow_accum") {
                     $index1 = array_search("buf_snow_maxt", $d);
                 } elseif ($var1 == "wind") {
@@ -311,8 +315,9 @@ for ($z = 0; $z <= 5; $z++) {
                 $y_label = $y_labels[$index];
                 $title = $titles[$index];
             } else {
-                die("Variable " . $var . " is not available.  Try again.");
+                die("Variable `$var` is not available for `$mdl`.  Try again.");
             }
+            continue;
         }
         if ($z2 > 1) {
             $h++;
@@ -611,15 +616,17 @@ if (!empty($start_time) && !empty($end_time)) {
     $start = $min;
     $end = $max;
 } else {
-    $link = ROOTURL . "data/parser2.php?model=gfs&site=kdsm&date=" . $parse_date_gfs . "";
-    $data = file($link);
+    $link = ROOTURL . "data/parser2.php?model=gfs&site={$site}&date=" . $parse_date_gfs . "";
+    $data = file_get_contents($link);
+    $data = explode("\n", $data);
     foreach ($data as $line) {
         $d = explode(",", trim($line));
         $minvalid = strtotime($d[0]);
         $maxvalid = strtotime($d[1]);
     }
-    $link = ROOTURL . "data/parser2.php?model=gfsm&site=kdsm&date=" . $parse_date_gfsm . "";
-    $data = file($link);
+    $link = ROOTURL . "data/parser2.php?model=gfsm&site={$site}&date=" . $parse_date_gfsm . "";
+    $data = file_get_contents($link);
+    $data = explode("\n", $data);
     foreach ($data as $line) {
         $d = explode(",", trim($line));
         $minvalidm = strtotime($d[0]);
@@ -656,10 +663,11 @@ if ($var1 == "snow_accum" && $date == "") {
             $dt = 1;
             $link = METFS1 . "cobb/nam4km/nam4km_" . strtolower($site) . ".dat";
         }
-        $data = file($link);
+        $data = file_get_contents($link);
         if ($data === False) {
             continue;
         }
+        $data = explode("\n", $data);
         foreach ($data as $line) {
             $d = str_split($line);
             if (@$d[11] == "Z") {
@@ -712,7 +720,6 @@ if ($var1 == "snow_accum" && $date == "") {
                     } elseif ($h % 3 != 0 && $h <= 120) {
                         continue;
                     }
-                    //$gfs_cobb_init = date('H',$cobb_init - (3600 * $dt));
                     $gfs_cobb_init = date('H', $cobb_init - 3600);
                     $gfs_cobb_time[] = strtotime($make_t);
                     if ($compaction == 1) {
@@ -810,10 +817,14 @@ if ($obs == "1" && in_array($site, $sites)) {
         );
     }
     $oHourLast = -99;
-    $data = file($link3);
+    $data = file_get_contents($link3);
+    if ($data === FALSE) {
+        die("Failed to retrieve data from $link3");
+    }
+    $data = explode("\n", $data);
     foreach ($data as $line) {
         $d = explode(",", trim($line));
-        if ($d[0] == "id") {
+        if ($d[0] == "id" || sizeof($d) < 5) {
             continue;
         }
         $ob_time = strtotime("" . $d[1] . "Z");
@@ -890,7 +901,7 @@ for ($z = 0; $z <= 2; $z++) {
         $nam_mos_wind_x = array();
         $nam_mos_wind_y = array();
         $mos_time = "" . $mos_year . "-" . $mos_mon . "-" . $mos_day . "%20" . $mos_h . ":00";
-        $link = "http://mesonet.agron.iastate.edu/mos/csv.php?station=" . $ob_station . "&runtime=" . $mos_time . "&model=NAM";
+        $link = "https://mesonet.agron.iastate.edu/mos/csv.php?station=" . $ob_station . "&runtime=" . $mos_time . "&model=NAM";
     } elseif ($z == 1) {
         $mos_year = date('Y', $gfs_init);
         $mos_mon = date('m', $gfs_init);
@@ -909,7 +920,7 @@ for ($z = 0; $z <= 2; $z++) {
         $gfs_mos_wind_x = array();
         $gfs_mos_wind_y = array();
         $mos_time = "" . $mos_year . "-" . $mos_mon . "-" . $mos_day . "%20" . $mos_h . ":00";
-        $link = "http://mesonet.agron.iastate.edu/mos/csv.php?station=" . $ob_station . "&runtime=" . $mos_time . "&model=GFS";
+        $link = "https://mesonet.agron.iastate.edu/mos/csv.php?station=" . $ob_station . "&runtime=" . $mos_time . "&model=GFS";
     } elseif ($z == 2) {
         $mos_year = date('Y', $gfsm_init);
         $mos_mon = date('m', $gfsm_init);
@@ -928,13 +939,20 @@ for ($z = 0; $z <= 2; $z++) {
         $gfsm_mos_wind_x = array();
         $gfsm_mos_wind_y = array();
         $mos_time = "" . $mos_year . "-" . $mos_mon . "-" . $mos_day . "%20" . $mos_h . ":00";
-        $link = "http://mesonet.agron.iastate.edu/mos/csv.php?station=" . $ob_station . "&runtime=" . $mos_time . "&model=GFS";
+        $link = "https://mesonet.agron.iastate.edu/mos/csv.php?station=" . $ob_station . "&runtime=" . $mos_time . "&model=GFS";
     }
     $k = -1;
-    $data = file($link);
+    $data = file_get_contents($link);
+    if ($data === false) {
+        continue;
+    }
+    $data = explode("\n", $data);
     foreach ($data as $line) {
         $k++;
         $d = explode(",", trim($line));
+        if (sizeof($d) < 5){
+            continue;
+        }
         if ($k >= 1) {
             $mos_time = strtotime($d[3]);
             if ($z == 0 && $nam_mos == 1 && in_array($site, $sites) && $mos_time >= $start && $mos_time <= $end) {
@@ -967,8 +985,8 @@ for ($z = 0; $z <= 2; $z++) {
                 $gfs_mos_wspd[] = $d[9] * 1.15077945;
                 $gfs_mos_snow[] = $d[16];
                 $gfs_mos_qpf[] = $d[12];
-                $gfs_mos_snow_accum[] = array_sum($gfs_mos_snow);
-                $gfs_mos_qpf_accum[] = array_sum($gfs_mos_qpf);
+                $gfs_mos_snow_accum[] = @array_sum($gfs_mos_snow);
+                $gfs_mos_qpf_accum[] = @array_sum($gfs_mos_qpf);
                 $gfs_mos_wind_x[] = cos(deg2rad(270 - $d[8])) * ($d[9] * 0.514444444);
                 $gfs_mos_wind_y[] = sin(deg2rad(270 - $d[8])) * ($d[9] * 0.514444444);
                 $temp_c = ($d[5] - 32) * (5 / 9);
@@ -989,8 +1007,8 @@ for ($z = 0; $z <= 2; $z++) {
                 $gfsm_mos_wspd[] = $d[9] * 1.15077945;
                 $gfsm_mos_snow[] = $d[16];
                 $gfsm_mos_qpf[] = $d[12];
-                $gfsm_mos_snow_accum[] = array_sum($gfsm_mos_snow);
-                $gfsm_mos_qpf_accum[] = array_sum($gfsm_mos_qpf);
+                $gfsm_mos_snow_accum[] = @array_sum($gfsm_mos_snow);
+                $gfsm_mos_qpf_accum[] = @array_sum($gfsm_mos_qpf);
                 $gfsm_mos_wind_x[] = cos(deg2rad(270 - $d[8])) * ($d[9] * 0.514444444);
                 $gfsm_mos_wind_y[] = sin(deg2rad(270 - $d[8])) * ($d[9] * 0.514444444);
                 $temp_c = ($d[5] - 32) * (5 / 9);
@@ -1410,41 +1428,6 @@ if ($con == 1) {
         }
     }
 }
-
-//Harvey Freese
-$freese_time = array();
-$freese_wind = array();
-if ($freese != "no") {
-    $z = 0;
-    $link = "http://www.vorticity.weather.net/public/images/" . $freese . ".txt";
-    $data = @file($link);
-    if ($data == False) {
-        die("Unable to plot data.  Likely problem with link: " . $link . "");
-    } else {
-        foreach ($data as $line) {
-            $z++;
-            if ($z >= 5 && $z <= 12) {
-                $d = explode(",", trim($line));
-                $freese_id = $d[0];
-                $d2 = str_split($d[2]);
-                $fmon = "" . $d2[0] . "" . $d2[1] . "";
-                $fday = "" . $d2[2] . "" . $d2[3] . "";
-                $fyear = "" . $d2[4] . "" . $d2[5] . "" . $d2[6] . "" . $d2[7] . "";
-                for ($i = 3; $i <= 26; $i++) {
-                    $ftime = strtotime("" . $fyear . "-" . $fmon . "-" . $fday . " " . ($i - 3) . ":00:00 " . $f_local . "");
-                    if ($ftime >= $min && $ftime <= $max) {
-                        $freese_time[] = $ftime;
-                        $freese_wind[] = $d[$i];
-                    }
-                }
-            } elseif ($z == 3) {
-                $d = str_split($line);
-                $f_local = "" . $d[5] . "" . $d[6] . "" . $d[7] . "";
-            }
-        }
-    }
-}
-
 
 
 $graph = new Graph(1100, 450);

@@ -1,22 +1,23 @@
 <?php
 require_once "../../config/settings.php";
+require_once "../../include/forms.php";
 
 putenv("TZ=UTC");
 date_default_timezone_set('UTC');
 
 header('Content-type: text/plain');
 
-$model = isset($_GET["model"]) ? $_GET["model"] : "nam";
-$member = isset($_GET["member"]) ? $_GET["member"] : "1";
-$site = isset($_GET["site"]) ? $_GET["site"] : "kdsm";
-$ratio = isset($_GET["ratio"]) ? $_GET["ratio"] : "11";
-$hgt = isset($_GET["hgt"]) ? $_GET["hgt"] : "80";
-$psfc = isset($_GET["psfc"]) ? $_GET["psfc"] : "500";
-$z0 = isset($_GET["z0"]) ? $_GET["z0"] : "11";
-$unleash = isset($_GET["unleash"]) ? $_GET["unleash"] : "0";
-$date = isset($_GET["date"]) ? $_GET["date"] : "";
-$start_time = isset($_GET["start_time"]) ? $_GET["start_time"] : "";
-$end_time = isset($_GET["end_time"]) ? $_GET["end_time"] : "";
+$model = get_str404("model", "nam");
+$member = get_str404("member", "1");
+$site = get_str404("site", "kdsm");
+$ratio = get_str404("ratio", "11");
+$hgt = get_str404("hgt", "80");
+$psfc = get_str404("psfc", "500");
+$z0 = get_str404("z0", "11");
+$unleash = get_str404("unleash", "0");
+$date = get_str404("date", "");
+$start_time = get_str404("start_time", "");
+$end_time = get_str404("end_time", "");
 
 $i = 0;
 $j = 0;
@@ -45,7 +46,7 @@ for ($z = 0; $z <= 1; $z++) {
     }
 }
 if (!(in_array($site, $sites)) && !(in_array($site, $europe))) {
-    die("Site " . $site . " is not available.  Try again.");
+    die("Site `$site` is not available.  Try again.");
 }
 
 if ($date != "" && strlen($date) == 10) {
@@ -55,11 +56,9 @@ if ($date != "" && strlen($date) == 10) {
     $day = "" . $d[6] . "" . $d[7] . "";
     $hr = "" . $d[8] . "" . $d[9] . "";
     $dCheck = strtotime($d[0] . "" . $d[1] . "" . $d[2] . "" . $d[3] . "-" . $d[4] . "" . $d[5] . "-" . $d[6] . "" . $d[7] . " " . $d[8] . "" . $d[9] . ":00:00 UTC");
-    //echo $dCheck."\n";
 } else {
     $dCheck = strtotime(date("Y-m-d H:i:s"));
 }
-
 
 $var = array('stn', 'date', 'pmsl', 'pres', 'sktc', 'stc1', 'snfl', 'wtns', 'p01m', 'c01m', 'stc2', 'lcld', 'mcld', 'hcld', 'snra', 'uwnd', 'vwnd', 'r01m', 'bfgr', 't2ms', 'q2ms', 'wxts', 'wxtp', 'wxtz', 'wxtr', 'ustm', 'vstm', 'hlcy', 'sllh', 'wsym', 'cdbp', 'vsbk', 'td2m', 'evap', 'p03m', 'c03m', 'swem', 's03m', 'show', 'lift', 'swet', 'kinx', 'lclp', 'pwat', 'totl', 'cape', 'lclt', 'cins', 'eqlv', 'lfct', 'brch', 'buf_snow_sr', 'buf_snow_maxt', 'snra_constant', 'snra_maxt', 'maxt', 'mom_wind_mean', 'mom_wind_max', 'tf', 'td', 'wspd', 'wdir', 'hiwc', 'qpf', 'qpf_accum', 'wagl', 'frz_rain', 'sleet', 'rh', 'buf_snow_sr_rate', 'buf_snow_maxt_rate', 'frz_rain_rate', 'sleet_rate', 'init');
 
@@ -168,12 +167,13 @@ if ($model == "nam") {
     }
 } elseif ($model == "rap" || $model == "ruc") {
     if ($date == "" && $model == "rap") {
-        $link = "rap/rap_" . $site . ".buf";
-        $fh = @fopen($link, "r");
-        if ($fh == false) {
+        $link = METFS1 . "bufkit/rap/rap_" . $site . ".buf";
+        $fh = file_get_contents($link);
+        if ($fh === false) {
             die();
         }
-        while (($line = fgets($fh)) !== false) {
+        $lines = explode("\n", $fh);
+        foreach ($lines as $line) {
             $e = explode(" ", trim($line));
             if (@$e[0] == "STID") {
                 $hr = substr($e[8], 7, 2);
@@ -241,12 +241,13 @@ if ($model == "nam") {
     }
 } elseif ($model == "hrrr") {
     if ($date == "") {
-        $link = "hrrr/hrrr_" . $site . ".buf";
-        $fh = @fopen($link, "r");
-        if ($fh == false) {
+        $link = METFS1 . "bufkit/hrrr/hrrr_" . $site . ".buf";
+        $fh = file_get_contents($link);
+        if ($fh === false) {
             die();
         }
-        while (($line = fgets($fh)) !== false) {
+        $lines = explode("\n", $fh);
+        foreach ($lines as $line) {
             $e = explode(" ", trim($line));
             if (@$e[0] == "STID") {
                 $hr = substr($e[8], 7, 2);
@@ -412,7 +413,11 @@ foreach (explode("\n", $fh) as $line) {
                 $tf[] = $temp_f;
                 $wind_10m = pow((($gfs_u * $gfs_u) + ($d[0] * $d[0])), (1 / 2)) * 2.23693629;
                 $wspd[] = $wind_10m;
-                $wind_dir = @rad2deg(atan($d[0] / $gfs_u));
+                if ($gfs_u == 0) {
+                    $wind_dir = 0;
+                } else {
+                    $wind_dir = rad2deg(atan($d[0] / $gfs_u));
+                }
                 if ($gfs_u < 0 && $d[0] > 0) {
                     $wind_dir = $wind_dir + 180;
                 }
@@ -510,8 +515,6 @@ foreach (explode("\n", $fh) as $line) {
                             $mom_wind_mean[$z] = round(array_sum(@$mom_wind) / count(@$mom_wind), 2);
                             $mom_wind_max[$z] = @$mom_wind[count(@$mom_wind) - 1];
                         }
-                        //print_r($mom_wind);
-                        //echo "".$mom_wind_mean[$z].",".$mom_wind_max[$z]."\n";
                     }
                     $mom_trip = 0;
                 }

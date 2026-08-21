@@ -1209,17 +1209,16 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
             }
         }
         if ($archive_check != 1) {
-            $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
+            $link = ROOTURL . "data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
         } else {
-            $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&date=" . $parse_date . "";
-            //echo "".$link."\n";
+            $link = ROOTURL . "data/parser.php?model=" . $mdl . "&site=" . $site_l . "&date=" . $parse_date . "";
         }
-        $data = file($link);
+        $data = file_get_contents($link);
         $z2 = 0;
-        if ($data == False) {
+        if ($data === False) {
             continue;
         } else {
-            foreach ($data as $line) {
+            foreach (explode("\n", $data) as $line) {
                 $d = explode("\t", trim($line));
                 $z2++;
                 if ($z2 == 1) {
@@ -1367,15 +1366,15 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         $min = min($gfs_time[0], $gfsm_time[0]);
         $max = max($gfs_time[count($gfs_time) - 1], @$gfsm_time[count($gfsm_time) - 1]);
     } else {
-        $link = "/data/parser.php?model=gfs&site=kdsm&date=" . $gfs_init_date . "";
-        $data = file($link);
-        foreach ($data as $line) {
+        $link = ROOTURL . "data/parser.php?model=gfs&site=kdsm&date=" . $gfs_init_date . "";
+        $data = file_get_contents($link);
+        foreach (explode("\n", $data) as $line) {
             $d = explode("\t", trim($line));
             $buf_t_gfs[] = strtotime($d[1]);
         }
-        $link = "/data/parser.php?model=gfsm&site=kdsm&" . $gfsm_init_date . "";
-        $data = file($link);
-        foreach ($data as $line) {
+        $link = ROOTURL . "data/parser.php?model=gfsm&site=kdsm&date=" . $gfsm_init_date . "";
+        $data = file_get_contents($link);
+        foreach (explode("\n", $data) as $line) {
             $d = explode("\t", trim($line));
             $buf_t_gfsm[] = strtotime($d[1]);
         }
@@ -1383,8 +1382,6 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         $max = max($buf_t_gfs[count($buf_t_gfs) - 1], $buf_t_gfsm[count($buf_t_gfsm) - 1]);
     }
     $diff = ($max - $min) / 3600;
-    //echo "".$max.",".$min.",".$diff.",hello\n";
-    //die();
     if ($archive_check == 1) {
         $link = "http://mesonet.agron.iastate.edu/request/asos/csv.php?lat=" . $lat . "&lon=" . $lon . "&date=" . date("Y-m-d", $min) . "";
     } else {
@@ -1936,7 +1933,11 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
             $con_pa[] = round($total_pa / $n, 2);
             $total_wind_x = $total_wd_x / $n;
             $total_wind_y = $total_wd_y / $n;
-            $wind_dir = @rad2deg(atan($total_wind_y / $total_wind_x));
+            if ($total_wind_x == 0) {
+                $wind_dir = 0;
+            } else {
+                $wind_dir = rad2deg(atan($total_wind_y / $total_wind_x));
+            }
             if ($total_wind_x < 0 && $total_wind_y > 0) {
                 $wind_dir = $wind_dir + 180;
             }
