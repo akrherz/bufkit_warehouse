@@ -53,7 +53,6 @@ jobs:
         chmod 755 $HOME
         sudo cp config/bufkit_warehouse.inc /etc/apache2/sites-available/bufkit_warehouse.conf
         sudo ln -s $PWD /opt/bufkit_warehouse
-        sudo cp .github/php_fpm.conf /etc/php/8.3/fpm/pool.d/00-bw.conf
         sudo a2ensite bufkit_warehouse.conf
         sudo systemctl restart apache2
         sudo systemctl restart php8.3-fpm
@@ -66,7 +65,7 @@ jobs:
     - name: Make Web Requests
       run: |
         set -e
-        result=$(curl -f http://localhost/bufkit/bufkit.html)
+        result=$(curl -f http://localhost/bufkit/bufkit.php)
         # Ensure that the ?php string does not exist in the result
         if echo "$result" | grep -q "?php"; then
           echo "PHP code detected in response!"

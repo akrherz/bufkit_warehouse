@@ -4,11 +4,13 @@ Alias /bufkit "/opt/bufkit_warehouse/htdocs"
     Options -Indexes +MultiViews
     AllowOverride None
     Require all granted
-    <FilesMatch \.html$>
-        ProxyErrorOverride On
-        # sigh, this is CI specific at the moment
-        SetHandler "proxy:unix:/run/php/php8.3-fpm.sock|fcgi://localhost"
-    </FilesMatch>
+
+    # Rewrite any requested .html file as .php due to a legacy issue
+    # with orig files being named .html but containing .php
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)\.html$ $1.php [L]
+
 </Directory>
 
 # Redirect away data references
