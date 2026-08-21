@@ -1,5 +1,7 @@
-  
-  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+<?php
+require_once "../../config/settings.php";
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
       Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
  
 
@@ -9,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="settings.css">
 <script src="https://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAADuETMnGmE9CXPlmmgT6spBTUZgBGsGXWhbYmRz9hXJqpp7N0lBRjj4joAemJSECW1m0b1HiqC7nj6g" type="text/javascript"></script>
 <script src='https://openlayers.org/api/2.11/OpenLayers.js'></script>
-<script src='https://www.meteor.iastate.edu/~ckarsten/bufkit/data/olselect_global.js'></script>
+<script src='/data/olselect_global.js'></script>
 <meta name="keywords" content="bufkit, bufkit warehouse, bufkit data,
 bufkit documentation, bufkit files, bufkit download, bufkit links, install
 bufkit, bufget, use bufkit, bufkit archive">
@@ -23,7 +25,7 @@ $a_year = date("Y",$at);
 $a_month = date("m",$at);
 $a_day = date("d",$at);
 
-$archive = "https://mtarchive.geol.iastate.edu/".$a_year."/".$a_month."/".$a_day."/bufkit/";
+$archive = MTARCHIVE .$a_year."/".$a_month."/".$a_day."/bufkit/";
 
 ?>
 

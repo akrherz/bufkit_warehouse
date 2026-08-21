@@ -83,7 +83,7 @@ function init(){
    });
 
   var geojsoni = new OpenLayers.Layer.GML("Global Bufkit Sites", 
-    "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/global_network.php?"+ (new Date()).getTime(),
+    "/data/global_network.php?"+ (new Date()).getTime(),
             {
                 projection: new OpenLayers.Projection('EPSG:4326'),
                 format: OpenLayers.Format.GeoJSON, 

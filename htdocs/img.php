@@ -34,9 +34,6 @@ $day = isset($_GET["day"]) ? $_GET["day"] : "";
 $hour = isset($_GET["hour"]) ? $_GET["hour"] : "";
 $archive = isset($_GET["archive"]) ? $_GET["archive"] : "0";
 
-//$gfs_init_date = 0;
-//$gfsm_init_date = 0;
-
 if ($year == "" || $month == "" || $day == "" || $hour == "") {
     $year = date("Y");
     $month = date("m");
@@ -908,7 +905,7 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
                             title="IEM" />
 
                         <area shape=rect coords="972,8,1232,56"
-                            href="http://www.meteor.iastate.edu/~ckarsten/bufkit/bufkit.html" alt="Bufkit Warehouse"
+                            href="/bufkit.html" alt="Bufkit Warehouse"
                             title="Bufkit Warehouse" />
 
                 </td>
@@ -958,12 +955,15 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
 
     <?php
 
-    // define wind dir function
+    /**
+     * Get wind direction from wind angle
+     * @param float $cam_ang Wind angle in degrees
+     * @return string Wind direction (e.g., "N", "NE", "E", etc.)
+     */
     function get_wind_dir($cam_ang)
     {
-        if (0 <= $cam_ang && $cam_ang <= 11) {
-            $dir = "N";
-        } elseif (11 < $cam_ang && $cam_ang <= 34) {
+        $dir = "N";
+        if (11 < $cam_ang && $cam_ang <= 34) {
             $dir = "NNE";
         } elseif (34 < $cam_ang && $cam_ang <= 45) {
             $dir = "NE";
@@ -1004,7 +1004,6 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         } elseif (349 < $cam_ang && $cam_ang <= 360) {
             $dir = "N";
         }
-
         return $dir;
     }
 
@@ -1181,9 +1180,9 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
             }
         }
         if ($archive_check != 1) {
-            $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
+            $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
         } else {
-            $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&date=" . $parse_date . "";
+            $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "&date=" . $parse_date . "";
             //echo "".$link."\n";
         }
         $data = file($link);
@@ -1339,13 +1338,13 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         $min = min($gfs_time[0], $gfsm_time[0]);
         $max = max($gfs_time[60], @$gfsm_time[60]);
     } else {
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfs&site=kdsm&date=" . $gfs_init_date . "";
+        $link = "/data/parser.php?model=gfs&site=kdsm&date=" . $gfs_init_date . "";
         $data = file($link);
         foreach ($data as $line) {
             $d = explode("\t", trim($line));
             $buf_t_gfs[] = strtotime($d[1]);
         }
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfsm&site=kdsm&" . $gfsm_init_date . "";
+        $link = "/data/parser.php?model=gfsm&site=kdsm&" . $gfsm_init_date . "";
         $data = file($link);
         foreach ($data as $line) {
             $d = explode("\t", trim($line));
@@ -1355,8 +1354,6 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         $max = max($buf_t_gfs[60], $buf_t_gfsm[60]);
     }
     $diff = ($max - $min) / 3600;
-    //echo "".$max.",".$min.",".$diff.",hello\n";
-    //die();
     if ($archive_check == 1) {
         $link = "http://mesonet.agron.iastate.edu/request/asos/csv.php?lat=" . $lat . "&lon=" . $lon . "&date=" . date("Y-m-d", $min) . "";
     } else {
@@ -1373,8 +1370,8 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
     $ob_station = "";
     $z = 0;
     $kf = -1;
-    $data = file($link);
-    foreach ($data as $line) {
+    $data = file_get_contents($link);
+    foreach (explode("\n", $data) as $line) {
         $z++;
         if ($z > 1) {
             $d = explode(",", trim($line));
@@ -1407,9 +1404,6 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
             }
         }
     }
-
-    //echo "".$ob_station."\n";
-    //die();
 
     //start of NWS fetching
 

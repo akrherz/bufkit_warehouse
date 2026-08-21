@@ -12,9 +12,9 @@ $URLS = array(
     6 => "http://www.srh.noaa.gov/images/shv/shp/Day4-8_Conv_Outlook/Day4-8_Conv_Outlook.latest.kml",
     7 => "http://mesonet.agron.iastate.edu/geojson/convective_sigmet.php",
     8 => "http://www.hpc.ncep.noaa.gov/kml/qpf/QPF120hr_Day1-5_latest.kml",
-    9 => "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/wdssii_ref.kml",
+    9 => "/data/wdssii_ref.kml",
     10 => "http://wdssii.nssl.noaa.gov/realtime/conus_full.kmz",
-    11 => "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/100510_rpts.kml"
+    11 => "/data/100510_rpts.kml"
 );
 $id = isset($_REQUEST['id']) ? intval($_REQUEST['id']) : die('No ID Set');
 

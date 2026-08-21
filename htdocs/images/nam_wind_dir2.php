@@ -1,4 +1,5 @@
 <?php
+require_once "../../../config/settings.php";
 
 // Script to read a bufkit file and parse it into a more friendly format.
 // Written by Chris Karstens with help from the IEM Horse - 07/2008.
@@ -15,11 +16,11 @@ $line_count3 = 11230;
 $j = 0;
 $i = -1;
 $k = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/nam/nam_".$site.".buf";
+$link = METFS1 . "bufkit/nam/nam_".$site.".buf";
 $store = array();
 
-$data = file($link) or die('Could not read file!');
-foreach ($data as $line) {
+$data = file_get_contents($link) or die('Could not read file!');
+foreach (explode("\n", $data) as $line) {
 
      $j++;
      if ($j == $line_count && $j <= 11739){
@@ -76,10 +77,10 @@ $line_count3 = 11230;
 $j = 0;
 $i = -1;
 $x = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/namm/namm_".$site.".buf";
+$link = METFS1 . "bufkit/namm/namm_".$site.".buf";
 
-$data = file($link) or die('Could not read file!');
-foreach ($data as $line) {
+$data = file_get_contents($link) or die('Could not read file!');
+foreach (explode("\n", $data) as $line) {
 
      $j++;
      if ($j == $line_count && $j <= 11739){
@@ -130,7 +131,7 @@ foreach ($data as $line) {
 }
 
 
-$link2 = "/home/ckarsten/WWW/bufkit/data/gfs/gfs3_".$site.".buf";
+$link2 = METFS1 . "bufkit/gfs/gfs3_".$site.".buf";
 $line_count = 8549;
 $line_count2 = 8548;
 $line_count3 = 8548;
@@ -140,8 +141,8 @@ $i = -1;
 $y = -1;
 $l = -1;
 
-$data = file($link2) or die('Could not read file!');
-foreach ($data as $line) {
+$data = file_get_contents($link2) or die('Could not read file!');
+foreach (explode("\n", $data) as $line) {
 
      $j++;
 
@@ -204,7 +205,7 @@ foreach ($data as $line) {
      }
 }
 
-$link2 = "/home/ckarsten/WWW/bufkit/data/gfsm/gfs3_".$site.".buf";
+$link2 = METFS1 . "bufkit/gfsm/gfs3_".$site.".buf";
 $line_count = 8549;
 $line_count2 = 8548;
 $line_count3 = 8548;
@@ -214,8 +215,8 @@ $i = -1;
 $z = -1;
 $l = -1;
 
-$data = file($link2) or die('Could not read file!');
-foreach ($data as $line) {
+$data = file_get_contents($link2) or die('Could not read file!');
+foreach (explode("\n", $data) as $line) {
 
      $j++;
      if($j == $line_count && $j <= 8791){
@@ -283,10 +284,10 @@ $line_count3 = 2138;
 $j = 0;
 $i = -1;
 $x = -1;
-$link = "/home/ckarsten/WWW/bufkit/data/ruc/ruc_".$site.".buf";
+$link = METFS1 . "bufkit/ruc/ruc_".$site.".buf";
 
-$data = file($link) or die('Could not read file!');
-foreach ($data as $line) {
+$data = file_get_contents($link) or die('Could not read file!');
+foreach (explode("\n", $data) as $line) {
 
      $j++;
      if ($j == $line_count && $j <= 2251){

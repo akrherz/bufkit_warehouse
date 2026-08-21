@@ -108,7 +108,7 @@ function init(){
     var n0q = new OpenLayers.Layer.TMS(
                 'NEXRAD Base Reflectivity',
                 'https://mesonet.agron.iastate.edu/cache/tile.py/',
-                // Find more layer names here: http://mesonet.agron.iastate.edu/ogc/
+                // Find more layer names here: https://mesonet.agron.iastate.edu/ogc/
                 {layername      : 'nexrad-n0q-900913',
                 service         : '1.0.0',
                 type            : 'png',
@@ -119,7 +119,7 @@ function init(){
     var dmx = new OpenLayers.Layer.TMS(
                 'DMX Base Reflectivity',
                 'https://mesonet.agron.iastate.edu/cache/tile.py/',
-                // Find more layer names here: http://mesonet.agron.iastate.edu/ogc/
+                // Find more layer names here: https://mesonet.agron.iastate.edu/ogc/
                 {layername      : 'ridge::DMX-N0Q-0',
                 service         : '1.0.0',
                 type            : 'png',
@@ -167,11 +167,6 @@ function init(){
 
    map.addControl(selectControli);
    selectControli.activate();
-
-//   geojsoni.events.register('loadend', geojsoni, function() {
-//     var ei = geojsoni.getDataExtent();
-//     map.setCenter( ei.getCenterLonLat(), geojsoni.getZoomForExtent(ei,false));
-//   });
 
    var proj = new OpenLayers.Projection('EPSG:4326');
    var proj2 = new OpenLayers.Projection('EPSG:900913');

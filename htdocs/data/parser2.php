@@ -1,21 +1,23 @@
 <?php
+require_once "../../config/settings.php";
+require_once "../../include/forms.php";
 
 putenv("TZ=UTC");
 date_default_timezone_set('UTC');
 
 header('Content-type: text/plain');
 
-$model = isset($_GET["model"]) ? $_GET["model"] : "nam";
-$member = isset($_GET["member"]) ? $_GET["member"] : "1";
-$site = isset($_GET["site"]) ? $_GET["site"] : "kdsm";
-$ratio = isset($_GET["ratio"]) ? $_GET["ratio"] : "11";
-$hgt = isset($_GET["hgt"]) ? $_GET["hgt"] : "80";
-$psfc = isset($_GET["psfc"]) ? $_GET["psfc"] : "500";
-$z0 = isset($_GET["z0"]) ? $_GET["z0"] : "11";
-$unleash = isset($_GET["unleash"]) ? $_GET["unleash"] : "0";
-$date = isset($_GET["date"]) ? $_GET["date"] : "";
-$start_time = isset($_GET["start_time"]) ? $_GET["start_time"] : "";
-$end_time = isset($_GET["end_time"]) ? $_GET["end_time"] : "";
+$model = get_str404("model", "nam");
+$member = get_str404("member", "1");
+$site = get_str404("site", "kdsm");
+$ratio = get_str404("ratio", "11");
+$hgt = get_str404("hgt", "80");
+$psfc = get_str404("psfc", "500");
+$z0 = get_str404("z0", "11");
+$unleash = get_str404("unleash", "0");
+$date = get_str404("date", "");
+$start_time = get_str404("start_time", "");
+$end_time = get_str404("end_time", "");
 
 $i = 0;
 $j = 0;
@@ -54,7 +56,6 @@ if ($date != "" && strlen($date) == 10) {
     $day = "" . $d[6] . "" . $d[7] . "";
     $hr = "" . $d[8] . "" . $d[9] . "";
     $dCheck = strtotime($d[0] . "" . $d[1] . "" . $d[2] . "" . $d[3] . "-" . $d[4] . "" . $d[5] . "-" . $d[6] . "" . $d[7] . " " . $d[8] . "" . $d[9] . ":00:00 UTC");
-    //echo $dCheck."\n";
 } else {
     $dCheck = strtotime(date("Y-m-d H:i:s"));
 }
@@ -94,105 +95,32 @@ for ($y = 0; $y <= 200; $y++) {
 
 if ($model == "nam") {
     if ($date == "") {
-        $link = "https://metfs1.agron.iastate.edu/data/bufkit/nam/nam_" . $site . ".buf";
+        $link = METFS1 . "bufkit/nam/nam_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/nam_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/nam_" . $site . ".buf";
     }
     $line_start = 11230;
     $line_end = 11739;
     $hrs = 84;
 } elseif ($model == "namm") {
     if ($date == "") {
-        $link = "https://metfs1.agron.iastate.edu/data/bufkit/namm/namm_" . $site . ".buf";
+        $link = METFS1 . "bufkit/namm/namm_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/namm_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/nam/namm_" . $site . ".buf";
     }
     $line_start = 11230;
     $line_end = 11739;
     $hrs = 84;
 } elseif ($model == "nam4km") {
-    $link = "https://metfs1.agron.iastate.edu/data/bufkit/nam4km/nam4km_" . $site . ".buf";
+    $link = METFS1 . "bufkit/nam4km/nam4km_" . $site . ".buf";
     $line_start = 8062;
     $line_end = 8427;
     $hrs = 60;
-} elseif ($model == "sref") {
-    if ($unleash == 1) {
-        system("unzip -oq sref/sref_" . $site . ".buz -d /home/ckarsten/WWW/bufkit/data/sref_temp/");
-        $sref_file = "/home/ckarsten/WWW/bufkit/data/sref_temp/sref_" . $site . ".buf";
-        $link = $sref_file;
-    } else {
-        $link = "/home/ckarsten/WWW/bufkit/data/sref_temp/sref_" . $site . ".buf";
-    }
-    $line_start = 6980;
-    $prof_begin = $line_start - 6978;
-    if ($member == 2) {
-        $line_start = 14471;
-        $prof_begin = $line_start - 6978;
-    } elseif ($member == 3) {
-        $line_start = 21962;
-        $prof_begin = $line_start - 6978;
-    } elseif ($member == 4) {
-        $line_start = 29453;
-        $prof_begin = $line_start - 6978;
-    } elseif ($member == 5) {
-        $line_start = 36944;
-        $prof_begin = $line_start - 6978;
-    } elseif ($member == 6) {
-        $line_start = 46985;
-        $prof_begin = $line_start - 9528;
-    } elseif ($member == 7) {
-        $line_start = 57026;
-        $prof_begin = $line_start - 9528;
-    } elseif ($member == 8) {
-        $line_start = 67067;
-        $prof_begin = $line_start - 9528;
-    } elseif ($member == 9) {
-        $line_start = 77108;
-        $prof_begin = $line_start - 9528;
-    } elseif ($member == 10) {
-        $line_start = 87149;
-        $prof_begin = $line_start - 9528;
-    } elseif ($member == 11) {
-        $line_start = 97190;
-        $prof_begin = $line_start - 9528;
-    } elseif ($member == 12) {
-        $line_start = 107401;
-        $prof_begin = $line_start - 9698;
-    } elseif ($member == 13) {
-        $line_start = 117612;
-        $prof_begin = $line_start - 9698;
-    } elseif ($member == 14) {
-        $line_start = 127823;
-        $prof_begin = $line_start - 9698;
-    } elseif ($member == 15) {
-        $line_start = 138034;
-        $prof_begin = $line_start - 9698;
-    } elseif ($member == 16) {
-        $line_start = 148245;
-        $prof_begin = $line_start - 9698;
-    } elseif ($member == 17) {
-        $line_start = 154546;
-        $prof_begin = $line_start - 5788;
-    } elseif ($member == 18) {
-        $line_start = 160847;
-        $prof_begin = $line_start - 5788;
-    } elseif ($member == 19) {
-        $line_start = 167148;
-        $prof_begin = $line_start - 5788;
-    } elseif ($member == 20) {
-        $line_start = 173449;
-        $prof_begin = $line_start - 5788;
-    } elseif ($member == 21) {
-        $line_start = 179750;
-        $prof_begin = $line_start - 5788;
-    }
-    $line_end = $line_start + 509;
-    $hrs = 84;
 } elseif ($model == "gfs") {
     if ($date == "") {
-        $link = "https://metfs1.agron.iastate.edu/data/bufkit/gfs/gfs3_" . $site . ".buf";
+        $link = METFS1 . "bufkit/gfs/gfs3_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
     }
     if ($date == "") {
         $line_start = 19748;
@@ -209,9 +137,9 @@ if ($model == "nam") {
     }
 } elseif ($model == "gfsm") {
     if ($date == "") {
-        $link = "https://metfs1.agron.iastate.edu/data/bufkit/gfsm/gfs3_" . $site . ".buf";
+        $link = METFS1 . "bufkit/gfsm/gfs3_" . $site . ".buf";
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/gfs/gfs3_" . $site . ".buf";
     }
     if ($date == "") {
         $line_start = 19748;
@@ -229,36 +157,36 @@ if ($model == "nam") {
     }
 } elseif ($model == "rap" || $model == "ruc") {
     if ($date == "" && $model == "rap") {
-        $link = "http://mtarchive.geol.iastate.edu/bufkit/rap/rap_" . $site . ".buf";
+        $link = MTARCHIVE . "bufkit/rap/rap_" . $site . ".buf";
         $line_start = 2474;
         $line_end = 2605;
         $hrs = 21;
     } elseif ($dCheck >= 1471953600) {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
         $line_start = 2474;
         $line_end = 2605;
         $hrs = 21;
     } elseif ($year >= 2012 && $mon >= 05 && $day >= 01) {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/rap/rap_" . $site . ".buf";
         $line_start = 2138;
         $line_end = 2251;
         $hrs = 18;
     } else {
-        $link = "http://mtarchive.geol.iastate.edu/" . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/ruc/ruc_" . $site . ".buf";
+        $link = MTARCHIVE . $year . "/" . $mon . "/" . $day . "/bufkit/" . $hr . "/ruc/ruc_" . $site . ".buf";
         $line_start = 2138;
         $line_end = 2251;
         $hrs = 18;
     }
 }
 
-$fh = fopen($link, "r");
-if ($fh == false) {
+$fh = file_get_contents($link);
+if ($fh === false) {
     die("$link is not available");
 }
 
 $maxtime = new DateTime('1970-01-01 00:00:00', new DateTimeZone('UTC'));
 $mintime = new DateTime('2050-01-01 00:00:00', new DateTimeZone('UTC'));
-while (($line = fgets($fh)) !== false) {
+foreach (explode("\n", $fh) as $line) {
     // Look for TIME = on this line
     if (strpos($line, "TIME =") !== false) {
         $d = explode("TIME =", $line);

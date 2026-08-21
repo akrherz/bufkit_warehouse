@@ -9,7 +9,7 @@ $a_year = date("Y", $at);
 $a_month = date("m", $at);
 $a_day = date("d", $at);
 
-$archive = "http://mtarchive.geol.iastate.edu/" . $a_year . "/" . $a_month . "/" . $a_day . "/bufkit/";
+$archive = MTARCHIVE . $a_year . "/" . $a_month . "/" . $a_day . "/bufkit/";
 
 $c = 0;
 $d = 5;
@@ -155,7 +155,7 @@ foreach ($data as $line) {
         }
     }
 
-    $x_name = "https://www.meteor.iastate.edu/~ckarsten/bufkit/image_loader.phtml?site=" . $site_l . "";
+    $x_name = "/image_loader.phtml?site=" . $site_l . "";
     $load = "Visualize Data!";
 
     if ($ewrf != "---") {

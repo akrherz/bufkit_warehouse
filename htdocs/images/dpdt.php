@@ -168,7 +168,7 @@ $b_index = -1;
 for($z=$start_time;$z<=$end_time;$z=$z+21600){
 	$b_index++;
 	$now = date("YmdH",$z);
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=".$mdl."&site=".$site_l."&hgt=".$hgt."&date=".$now."";
+        $link = "/data/parser.php?model=".$mdl."&site=".$site_l."&hgt=".$hgt."&date=".$now."";
         $data = file($link);
 	$z2 = 0;
         foreach($data as $line){

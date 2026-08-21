@@ -596,7 +596,7 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
                             title="IEM" />
 
                         <area shape=rect coords="972,8,1232,56"
-                            href="http://www.meteor.iastate.edu/~ckarsten/bufkit/bufkit.html" alt="Bufkit Warehouse"
+                            href="/bufkit.html" alt="Bufkit Warehouse"
                             title="Bufkit Warehouse" />
 
                 </td>
@@ -809,7 +809,7 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
             $rap_wind_x = array();
             $rap_wind_y = array();
         }
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
+        $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
         $data = file($link);
         $z2 = 0;
         if ($data == False) {
@@ -946,13 +946,13 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         $min = min($gfs_time[0], $gfsm_time[0]);
         $max = max($gfs_time[60], @$gfsm_time[60]);
     } else {
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfs&site=kdsm";
+        $link = "/data/parser.php?model=gfs&site=kdsm";
         $data = file($link);
         foreach ($data as $line) {
             $d = explode("\t", trim($line));
             $buf_t_gfs[] = strtotime($d[1]);
         }
-        $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=gfsm&site=kdsm";
+        $link = "/data/parser.php?model=gfsm&site=kdsm";
         $data = file($link);
         foreach ($data as $line) {
             $d = explode("\t", trim($line));

@@ -55,7 +55,7 @@ for ($z = 0; $z <= 4; $z++) {
     $z2 = 0;
     $tz2 = 0;
 
-    $link = "http://www.meteor.iastate.edu/~ckarsten/bufkit/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
+    $link = "/data/parser.php?model=" . $mdl . "&site=" . $site_l . "";
     $temp_maxt = 0;
     $temp_sr = 0;
     $data = file($link);
