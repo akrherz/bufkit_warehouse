@@ -1,5 +1,15 @@
 <?php
 require_once "../config/settings.php";
+putenv("TZ=UTC");
+
+$a_now = date("Y-m-d H:00:00");
+$at = strtotime($a_now);
+$a_year = date("Y",$at);
+$a_month = date("m",$at);
+$a_day = date("d",$at);
+
+$archive = "http://mtarchive.geol.iastate.edu/".$a_year."/".$a_month."/".$a_day."/bufkit/";
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
       Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,20 +23,6 @@ require_once "../config/settings.php";
 <meta name="keywords" content="bufkit, bufkit warehouse, bufkit data, 
 bufkit documentation, bufkit files, bufkit download, bufkit links, install 
 bufkit, bufget, use bufkit, bufkit archive">
-<?php
-
-putenv("TZ=UTC");
-
-$a_now = date("Y-m-d H:00:00");
-$at = strtotime($a_now);
-$a_year = date("Y",$at);
-$a_month = date("m",$at);
-$a_day = date("d",$at);
-
-$archive = "http://mtarchive.geol.iastate.edu/".$a_year."/".$a_month."/".$a_day."/bufkit/";
-
-?>
-
 </head>
 <body   text="#FFFFFF">
 
@@ -68,8 +64,6 @@ src="bufkit.png">
   
   </div>
 
-
-  
 <div class="code">
 <?php
 //header ('Content-type: text/html; charset=utf-8');
@@ -103,8 +97,8 @@ $data = @json_decode(file_get_contents($url2));
 <h2>
 <ul>
 <a href="whatsbufkit.html">What Is Bufkit?</a>         
-</h2>
 </ul>
+</h2>
 </p>
 <p>
 <h2>
@@ -119,8 +113,8 @@ $data = @json_decode(file_get_contents($url2));
 <ul>
 <a href="http://www.erh.noaa.gov/er/buf/bufkit/bufkitdocs.html">How Do I
 Use Bufkit?</a>
-</h2>
 </ul>
+</h2>
 </p>
 
 <p>
@@ -128,8 +122,8 @@ Use Bufkit?</a>
 <ul>
 <a href="http://www.wdtb.noaa.gov/tools/bufkit/bufget.html">How Do I Use
 BufGet?</a>
-</h2>
 </ul>
+</h2>
 </p>
 
 <h2>
@@ -140,8 +134,8 @@ BufGet?</a>
 <h2>
 <ul>
 <a href="/data">Data Sources</a>
-</h2>
 </ul>
+</h2>
 </p>
 
 <p>
