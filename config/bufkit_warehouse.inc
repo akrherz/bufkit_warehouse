@@ -10,3 +10,6 @@ Alias /bufkit "/opt/bufkit_warehouse/htdocs"
         SetHandler "proxy:unix:/run/php/php8.3-fpm.sock|fcgi://localhost"
     </FilesMatch>
 </Directory>
+
+# Redirect away data references
+RedirectMatch 301 ^/data/(cobb_gfs|cobb_nam|nam|hrrr|rap|gfs)(.*)$ https://metfs1.agron.iastate.edu/data/bufkit/$1$2
