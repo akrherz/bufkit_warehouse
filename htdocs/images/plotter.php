@@ -856,7 +856,11 @@ if ($obs == "1" && in_array($site, $sites)) {
             $obs_time[] = $ob_time;
             $obs_temp[] = $d[2];
             $obs_dew[] = $d[3];
-            $obs_wspd[] = $d[4] * 1.15077945;
+            if (is_numeric($d[4])) {
+                $obs_wspd[] = $d[4] * 1.15077945;
+            } else {
+                $obs_wspd[] = "";
+            }
             $obs_wdir[] = $d[5];
             $obs_precip[] = $d[6];
             $obs_precip_accum[] = array_sum($obs_precip);
@@ -1170,7 +1174,6 @@ $nws_time_temp = array();
 $nws_var_temp = array();
 for ($i = 0; $i < $len; $i++) {
     if ($nws_time[$i] >= $start && $nws_time[$i] <= $end) {
-        //echo date("Y-m-d H:i:s",$nws_time[$i]).",".date("Y-m-d H:i:s",$start).",".date("Y-m-d H:i:s",$end)."<br>";
         $nws_time_temp[] = $nws_time[$i];
         $nws_var_temp[] = $nws_var[$i];
     }
@@ -2166,6 +2169,14 @@ if ($obs == 1 && !empty($obs_var1) && !empty($obs_time) && count($obs_var1) == c
         $graph->Add($lineplot_obs1);
     }
     $lineplot_obs1->mark->SetFillColor("cyan1");
+}
+
+// Check to see if anything has been plotted to the graph
+if (sizeof($graph->plots) === 0){
+    $bad = imagecreatefrompng("not_available.png");
+    header('Content-Type: image/png');
+    imagepng($bad);
+    die();
 }
 
 if ($var == "wdir") {
