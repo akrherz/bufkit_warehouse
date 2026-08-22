@@ -856,7 +856,7 @@ if ($obs == "1" && in_array($site, $sites)) {
             $obs_time[] = $ob_time;
             $obs_temp[] = $d[2];
             $obs_dew[] = $d[3];
-            if ($d[4] != "") {
+            if (is_numeric($d[4])) {
                 $obs_wspd[] = $d[4] * 1.15077945;
             } else {
                 $obs_wspd[] = "";
