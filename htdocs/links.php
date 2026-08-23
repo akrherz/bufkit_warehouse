@@ -92,7 +92,7 @@ Updated 6 December 2007
 </center></h5></p>
     <br>
    </div>
-<?php include("../include/statcounter.php"); ?>
+
 
 </body>
 </html>

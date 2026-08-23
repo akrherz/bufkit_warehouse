@@ -100,7 +100,6 @@
                 </p>
                 <br>
             </div>
-            <?php include("../include/statcounter.php"); ?>
 
 </body>
 
