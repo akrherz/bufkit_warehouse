@@ -2350,8 +2350,6 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
         </form>
     </map>
 
-<?php include("../include/statcounter.php"); ?>
-
 </body>
 
 </html>

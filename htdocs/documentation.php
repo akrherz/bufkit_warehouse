@@ -136,7 +136,6 @@ Updated 22 February 2008
 
     <br>
    </div>
-<?php include("../include/statcounter.php"); ?>
 
 </body>
 </html>
