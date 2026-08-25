@@ -1424,8 +1424,16 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
                 $obs_time1[] = $ob_time;
                 $ob_time2 = $ob_time + 3600;
                 $obs_time[] = strtotime(date("Y-m-d H:00:00", $ob_time2));
-                $obs_temp[] = "" . round($d[2], 1) . " F";
-                $obs_dew[] = "" . round($d[3], 1) . " F";
+                if (is_numeric($d[2]) && $d[2] != -99) {
+                    $obs_temp[] = "" . round($d[2], 1) . " F";
+                } else {
+                    $obs_temp[] = "M";
+                }
+                if (is_numeric($d[3]) && $d[3] != -99) {
+                    $obs_dew[] = "" . round($d[3], 1) . " F";
+                } else {
+                    $obs_dew[] = "M";
+                }
                 $obs_wspd[] = "" . round($d[4] * 1.15077945, 0) . " mph";
                 $obs_wdir[] = get_wind_dir($d[5]);
                 $obs_precip[] = "" . round($d[6], 2) . " in.";

@@ -1,12 +1,11 @@
 <?php
-require "../../config/settings.php";
+require_once "../../config/settings.php";
+require_once "../../include/util.php";
 
 $c = 0;
 $d = 5;
-$link = "nam/nam_kdsm.buf";
-$data = file($link);
-
-foreach ($data as $line) {
+$lines = get_realtime_lines("nam/nam_kdsm.buf");
+foreach ($lines as $line) {
     $c++;
     if ($c == $d) {
         $get_init = explode(" ", trim($line));
@@ -22,10 +21,8 @@ $nam_i = "NAM Initialized " . $init_mon . "/" . $init_day . "/" . $init_year . "
 
 $c = 0;
 $d = 5;
-$link = "namm/namm_kdsm.buf";
-$data = file($link);
-
-foreach ($data as $line) {
+$lines = get_realtime_lines("namm/namm_kdsm.buf");
+foreach ($lines as $line) {
     $c++;
     if ($c == $d) {
         $get_init = explode(" ", trim($line));
@@ -41,10 +38,8 @@ $namm_i = "NAM Initialized " . $init_mon . "/" . $init_day . "/" . $init_year . 
 
 $c = 0;
 $d = 5;
-$link = "gfs/gfs3_kdsm.buf";
-$data = file($link);
-
-foreach ($data as $line) {
+$lines = get_realtime_lines("gfs/gfs3_kdsm.buf");
+foreach ($lines as $line) {
     $c++;
     if ($c == $d) {
         $get_init = explode(" ", trim($line));
@@ -60,10 +55,8 @@ $gfs_i = "GFS Initialized " . $init_mon . "/" . $init_day . "/" . $init_year . "
 
 $c = 0;
 $d = 5;
-$link = "gfsm/gfs3_kdsm.buf";
-$data = file($link);
-
-foreach ($data as $line) {
+$lines = get_realtime_lines("gfsm/gfs3_kdsm.buf");
+foreach ($lines as $line) {
     $c++;
     if ($c == $d) {
         $get_init = explode(" ", trim($line));
