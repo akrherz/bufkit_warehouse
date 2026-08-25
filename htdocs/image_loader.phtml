@@ -1424,12 +1424,12 @@ bufkit, bufget, use bufkit, bufkit archive, meteogram, generator">
                 $obs_time1[] = $ob_time;
                 $ob_time2 = $ob_time + 3600;
                 $obs_time[] = strtotime(date("Y-m-d H:00:00", $ob_time2));
-                if (is_numeric($d[2]) && $d[2] != -99) {
+                if (is_numeric($d[2])) {
                     $obs_temp[] = "" . round($d[2], 1) . " F";
                 } else {
                     $obs_temp[] = "M";
                 }
-                if (is_numeric($d[3]) && $d[3] != -99) {
+                if (is_numeric($d[3])) {
                     $obs_dew[] = "" . round($d[3], 1) . " F";
                 } else {
                     $obs_dew[] = "M";
