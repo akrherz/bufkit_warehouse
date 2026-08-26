@@ -160,6 +160,13 @@ if ($check1 == $sym) {
     $site_l = "" . $exam[0] . "" . $exam[1] . "" . $exam[2] . "";
 }
 
+// Define all kinds of variables used below
+$nam_cobb_time = array();
+$namm_cobb_time = array();
+$gfs_cobb_time = array();
+$gfsm_cobb_time = array();
+
+
 $mins = array();
 $maxs = array();
 for ($z = 0; $z <= 5; $z++) {
@@ -640,12 +647,7 @@ if (!empty($start_time) && !empty($end_time)) {
     $end = $max;
 }
 
-
 if ($var1 == "snow_accum" && $date == "") {
-    $nam_cobb_time = array();
-    $namm_cobb_time = array();
-    $gfs_cobb_time = array();
-    $gfsm_cobb_time = array();
     for ($z = 0; $z <= 4; $z++) {
         $cobb_snow = array();
         $h = -1;
