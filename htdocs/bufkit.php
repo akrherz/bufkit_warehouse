@@ -1,2 +1,3 @@
 <?php
-header("Location: /");
+header("Location: /", true, 301);
+exit();

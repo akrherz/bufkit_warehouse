@@ -1,6 +1,6 @@
 <?php
 require_once "../config/settings.php";
-putenv("TZ=UTC");
+date_default_timezone_set("UTC");
 
 $a_now = date("Y-m-d H:00:00");
 $at = strtotime($a_now);
