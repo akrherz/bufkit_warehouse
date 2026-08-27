@@ -28,7 +28,7 @@ src="bufkit.png">
      <tr valign="middle">
 
       <td class="menusplit"> </td>
-      <td class="menu"><a href="bufkit.html">Home</a></td>
+      <td class="menu"><a href="/">Home</a></td>
       <td class="menusplit"> </td>
       <td class="menu"><a href="downloads.html">Downloads</a></td>
       <td class="menusplit"> </td>

@@ -24,7 +24,7 @@
                 <tr valign="middle">
 
                     <td class="menusplit"> </td>
-                    <td class="menu"><a href="bufkit.php">Home</a></td>
+                    <td class="menu"><a href="/">Home</a></td>
                     <td class="menusplit"> </td>
                     <td class="menu"><a href="downloads.php">Downloads</a></td>
                     <td class="menusplit"> </td>
