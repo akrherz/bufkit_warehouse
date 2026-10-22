@@ -390,10 +390,22 @@ foreach ($data as $line) {
             } else {
                 $obs_dew[] = "M";
             }
-            $obs_wspd[] = "" . round($d[4] * 1.15077945, 0) . " mph";
+            if (is_numeric($d[4])) {
+                $obs_wspd[] = "" . round($d[4] * 1.15077945, 0) . " mph";
+            } else {
+                $obs_wspd[] = "M";
+            }
             $obs_wdir[] = get_wind_dir($d[5]);
-            $obs_precip[] = "" . round($d[6], 2) . " in.";
-            $obs_precip_accum[] = "" . round(array_sum($obs_precip), 2) . " in.";
+            if (is_numeric($d[6])) {
+                $obs_precip[] = "" . round($d[6], 2) . " in.";
+            } else {
+                $obs_precip[] = "M";
+            }
+            if (is_numeric($d[6])) {
+                $obs_precip_accum[] = "" . round(array_sum($obs_precip), 2) . " in.";
+            } else {
+                $obs_precip_accum[] = "M";
+            }
             $obs_date[] = date("m/d @ H\z", $ob_time2);
             $oHourLast = $oHour;
         }
