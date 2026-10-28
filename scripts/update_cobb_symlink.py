@@ -1,4 +1,4 @@
-"""Updates the cobb symlink on metfs1:/data to point to latest data."""
+"""Updates the cobb symlink to point to latest data."""
 
 from datetime import datetime, timezone
 from pathlib import Path
