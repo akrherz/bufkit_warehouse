@@ -998,7 +998,9 @@ for ($i = $min; $i <= $max; $i = $i + 3600) {
     $mapdata .= "" . $string_begin . $table_html . $string_end . "";
 
     $ul1 = $lr + 1;
-    $lr1 = $lr1 + (899 / ($model_count));
+    if ($model_count > 0) {
+        $lr1 = $lr1 + (899 / ($model_count));
+    }
 
     $ul = round(($ul1), 0);
     $lr = round(($lr1), 0);
