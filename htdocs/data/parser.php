@@ -278,7 +278,7 @@ if ($model == "nam") {
     }
 }
 
-// Fix the relative links with the metfs1 one
+// Fix the relative links
 if (substr($link, 0, 4) !== "http") {
     $link = METFS1 . "bufkit/$link";
 }

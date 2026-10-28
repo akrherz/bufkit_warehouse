@@ -168,10 +168,10 @@ foreach ($data as $line) {
     if ($site_gfs != "---") {
         $gfs_i = $gfs_i_orig;
         $gfsm_i = $gfsm_i_orig;
-        $gfs = "https://metfs1.agron.iastate.edu/data/bufkit/gfs/gfs3_" . $site . ".buf";
-        $gfsm = "https://metfs1.agron.iastate.edu/data/bufkit/gfsm/gfs3_" . $site . ".buf";
-        $gfs_l = "https://metfs1.agron.iastate.edu/data/bufkit/gfs/gfs3_" . $site_l . ".buf";
-        $gfsm_l = "https://metfs1.agron.iastate.edu/data/bufkit/gfsm/gfs3_" . $site_l . ".buf";
+        $gfs = METFS1 . "/data/bufkit/gfs/gfs3_" . $site . ".buf";
+        $gfsm = METFS1 . "/data/bufkit/gfsm/gfs3_" . $site . ".buf";
+        $gfs_l = METFS1 . "/data/bufkit/gfs/gfs3_" . $site_l . ".buf";
+        $gfsm_l = METFS1 . "/data/bufkit/gfsm/gfs3_" . $site_l . ".buf";
         $gfs_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=gfs&site=" . $site_l . "";
         $gfsm_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=gfsm&site=" . $site_l . "";
         $view_gfs_cobb = "View Cobb Output!";
@@ -187,10 +187,10 @@ foreach ($data as $line) {
         $view_gfs_cobb = "";
     }
     if ($site_nam != "---") {
-        $nam = "https://metfs1.agron.iastate.edu/data/bufkit/nam/nam_" . $site . ".buf";
-        $namm = "https://metfs1.agron.iastate.edu/data/bufkit/namm/namm_" . $site . ".buf";
-        $nam_l = "https://metfs1.agron.iastate.edu/data/bufkit/nam/nam_" . $site_l . ".buf";
-        $namm_l = "https://metfs1.agron.iastate.edu/data/bufkit/namm/namm_" . $site_l . ".buf";
+        $nam = METFS1 . "/data/bufkit/nam/nam_" . $site . ".buf";
+        $namm = METFS1 . "/data/bufkit/namm/namm_" . $site . ".buf";
+        $nam_l = METFS1 . "/data/bufkit/nam/nam_" . $site_l . ".buf";
+        $namm_l = METFS1 . "/data/bufkit/namm/namm_" . $site_l . ".buf";
         $nam_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=nam&site=" . $site_l . "";
         $namm_cobb = "https://www.meteor.iastate.edu/~ckarsten/cobb/cobb.php?model=namm&site=" . $site_l . "";
         $view_nam_cobb = "View Cobb Output!";
@@ -208,8 +208,8 @@ foreach ($data as $line) {
         $view_nam_cobb = "";
     }
     if ($site_rap != "---") {
-        $rap = "https://metfs1.agron.iastate.edu/data/bufkit/rap/rap_" . $site . ".buf";
-        $rap_l = "https://metfs1.agron.iastate.edu/data/bufkit/rap/rap_" . $site_l . ".buf";
+        $rap = METFS1 . "/data/bufkit/rap/rap_" . $site . ".buf";
+        $rap_l = METFS1 . "/data/bufkit/rap/rap_" . $site_l . ".buf";
         $rap_cobb = "";
         $rap_i = $rap_i_orig;
     } else {
@@ -219,8 +219,8 @@ foreach ($data as $line) {
         $rap_cobb = "";
     }
     if ($site_rrfs != "---") {
-        $rrfs = "https://metfs1.agron.iastate.edu/data/bufkit/rrfs/rrfs_" . $site . ".buf";
-        $rrfs_l = "https://metfs1.agron.iastate.edu/data/bufkit/rrfs/rrfs_" . $site_l . ".buf";
+        $rrfs = METFS1 . "/data/bufkit/rrfs/rrfs_" . $site . ".buf";
+        $rrfs_l = METFS1 . "/data/bufkit/rrfs/rrfs_" . $site_l . ".buf";
         $rrfs_i = "Latest RRFS Profile";
     } else {
         $rrfs_i = "RRFS Not Available For " . strtoupper($site) . "";
