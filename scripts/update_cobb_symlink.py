@@ -1,6 +1,6 @@
 """Updates the cobb symlink to point to latest data."""
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import click
@@ -10,7 +10,7 @@ import click
 @click.option("--model", required=True, help="Model to generate links for.")
 def main(model: str):
     """Go Main Go."""
-    utcnow = datetime.now(timezone.utc)
+    utcnow = datetime.now(UTC)
     # Go figure out the most recent hour modulo 6
     hour = (utcnow.hour // 6) * 6
     symlink = Path("/data") / "cobb" / model
